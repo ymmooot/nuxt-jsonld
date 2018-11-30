@@ -1,5 +1,5 @@
 {
-  "name": "vue-jsonld",
+  "name": "nuxt-jsonld",
   "version": "0.0.1",
   "description": "manage jsonld in Vue component.",
   "main": "./src/index.js",

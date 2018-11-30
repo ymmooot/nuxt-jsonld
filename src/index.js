@@ -1,7 +1,7 @@
-const vueMetaJsonldMixin = require('./mixin');
+const JsonldMixin = require('./mixin');
 
 module.exports = {
   install(Vue) {
-    Vue.mixin(vueMetaJsonldMixin);
+    Vue.mixin(JsonldMixin);
   },
 };

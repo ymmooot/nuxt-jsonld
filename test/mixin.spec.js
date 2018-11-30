@@ -1,15 +1,15 @@
 const Vue = require('vue');
-const vueMetaJsonldMixin = require('../src/mixin');
+const jsonldMixin = require('../src/mixin');
 
 describe('without jsonld', () => {
   test('head method returns an empty object when jsonld is not defined', () => {
-    const mock = new Vue({ mixins: [vueMetaJsonldMixin] });
+    const mock = new Vue({ mixins: [jsonldMixin] });
     expect(mock.$options.head.call(mock)).toEqual({});
   });
 
   test('head method returns an empty object when jsonld is not a function', () => {
     const mock = new Vue({
-      mixins: [vueMetaJsonldMixin],
+      mixins: [jsonldMixin],
       jsonld: 'hoge',
     });
     expect(mock.$options.head.call(mock)).toEqual({});
@@ -19,7 +19,7 @@ describe('without jsonld', () => {
 describe('with jsonld', () => {
   test('head method returns jsonld metaInfo', () => {
     const mock = new Vue({
-      mixins: [vueMetaJsonldMixin],
+      mixins: [jsonldMixin],
       data() {
         return {
           breadcrumbs: [
@@ -51,7 +51,7 @@ describe('with jsonld', () => {
       },
     });
 
-    const mockHid = `vue-jsonld-${mock._uid}`;
+    const mockHid = `nuxt-jsonld-${mock._uid}`;
 
     expect(mock.$options.head.call(mock)).toEqual({
       __dangerouslyDisableSanitizersByTagID: {

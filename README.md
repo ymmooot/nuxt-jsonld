@@ -1,2 +1,2 @@
-# vue-jsonld
+# nuxt-jsonld
 

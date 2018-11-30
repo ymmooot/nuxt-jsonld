@@ -4,7 +4,7 @@ module.exports = {
       return {};
     }
 
-    const hid = `vue-jsonld-${this._uid}`;
+    const hid = `nuxt-jsonld-${this._uid}`;
     return {
       script: [
         {
