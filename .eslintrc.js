@@ -1,8 +1,17 @@
+const path = require('path');
+
 module.exports = {
   root: true,
   env: {
     browser: true,
     node: true
+  },
+  parserOptions: {
+    parser: 'babel-eslint',
+    ecmaVersion: 6,
+    ecmaFeatures: {
+      jsx: false,
+    },
   },
   extends: [
     'airbnb-base',
@@ -14,9 +23,16 @@ module.exports = {
     'prettier'
   ],
   rules: {
+    'import/no-extraneous-dependencies': false,
     'no-underscore-dangle': ['error', { 'allow': ['_uid'] }],
   },
   settings: {
+    'import/resolver': {
+      alias:[
+        ['vue', path.resolve(__dirname, '/node_modules/vue/dist/vue.js')],
+        ['vue-jsonld', path.resolve(__dirname, 'src/index.js')],
+      ],
+    },
   },
   overrides: [
     {
