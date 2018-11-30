@@ -30,20 +30,22 @@ Make a jsonld method to your Vue components and return structured data object.
 <script>
   export default {
     data() {
-      return [
-        {
-          url: 'https://example.com',
-          text: 'top page',
-        },
-        {
-          url: 'https://example.com/foo',
-          text: 'foo',
-        },
-        {
-          url: 'https://example.com/foo/bar',
-          text: 'bar',
-        },
-      ]
+      return {
+        breadcrumbs: [
+          {
+            url: 'https://example.com',
+            text: 'top page',
+          },
+          {
+            url: 'https://example.com/foo',
+            text: 'foo',
+          },
+          {
+            url: 'https://example.com/foo/bar',
+            text: 'bar',
+          },
+        ]
+      };
     },
     jsonld() {
       const items = this.breadcrumbs.map((item, index) => ({
