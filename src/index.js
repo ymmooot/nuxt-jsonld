@@ -5,5 +5,5 @@ module.exports = {
   install(Vue, options = {}) {
     Vue.use(VueMeta, options);
     Vue.mixin(vueMetaJsonldMixin);
-  }
-}
+  },
+};
