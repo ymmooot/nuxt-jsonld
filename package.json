@@ -16,18 +16,16 @@
   ],
   "scripts": {
     "test": "jest",
-    "lint": "eslint ./src ./test ./examples",
-    "lint:fix": "yarn lint --fix"
-  },
-  "dependencies": {
-    "vue-meta": "^1.5.6"
+    "lint": "eslint . --ignore-pattern .gitignore",
+    "lint:fix": "eslint . --ignore-pattern .gitignore --fix"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.6",
     "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.3.0",
-    "eslint-import-resolver-alias": "^1.1.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.1.0",
     "eslint-plugin-prettier": "^3.0.0",
