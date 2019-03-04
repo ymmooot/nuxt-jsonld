@@ -37,6 +37,7 @@ const mergeStrategy = (toVal, fromVal) => {
 };
 
 module.exports = {
+  mergeStrategy,
   install(Vue) {
     // eslint-disable-next-line no-param-reassign
     Vue.config.optionMergeStrategies.head = mergeStrategy;
