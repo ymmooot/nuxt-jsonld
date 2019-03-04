@@ -6,7 +6,7 @@ module.exports = {
   },
   parserOptions: {
     parser: 'babel-eslint',
-    ecmaVersion: 6,
+    ecmaVersion: 2018,
     ecmaFeatures: {
       jsx: false,
     },
@@ -19,7 +19,7 @@ module.exports = {
     'prettier'
   ],
   rules: {
-    'no-underscore-dangle': ['error', { 'allow': ['_uid'] }],
+    'no-underscore-dangle': ['error', { 'allow': ['_uid', '__dangerouslyDisableSanitizersByTagID'] }],
   },
   overrides: [
     {
