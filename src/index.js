@@ -21,7 +21,7 @@ const mergeStrategy = (toVal, fromVal) => {
     if (res2.script) {
       const hasScript = (res1.script || []).some(s => s.hid === res2.script[0].hid);
       if (!hasScript) {
-        res1.script = res1.script ? res1.script.concat(res2.script) : res2.script;
+        res1.script = [...(res1.script || []), res2.script];
       }
     }
     if (res2.__dangerouslyDisableSanitizersByTagID) {
