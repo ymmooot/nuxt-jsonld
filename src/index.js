@@ -2,24 +2,21 @@ const JsonldMixin = require('./mixin');
 
 const getValue = (val, context) => {
   if (typeof val === 'object') {
-    return val
+    return val;
   }
   if (typeof val === 'function') {
-    return val.call(context)
+    return val.call(context);
   }
-  return undefined
-}
+  return undefined;
+};
 
 const mergeStrategy = (toVal, fromVal) => {
   if (!toVal) return fromVal;
   if (!fromVal) return toVal;
 
   return function head() {
-    const res1 = getValue(fromVal, this)
-    const res2 = getValue(toVal, this)
-    console.log("------------------------------------------"); // eslint-disable-line
-    console.log(res1); // eslint-disable-line
-    console.log(res2); // eslint-disable-line
+    const res1 = getValue(fromVal, this);
+    const res2 = getValue(toVal, this);
 
     if (res2.script) {
       const hasScript = (res1.script || []).some(s => s.hid === res2.script[0].hid);
@@ -40,6 +37,7 @@ const mergeStrategy = (toVal, fromVal) => {
 
 module.exports = {
   install(Vue) {
+    // eslint-disable-next-line no-param-reassign
     Vue.config.optionMergeStrategies.head = mergeStrategy;
     Vue.mixin(JsonldMixin);
   },
