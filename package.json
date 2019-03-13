@@ -3,7 +3,7 @@
   "version": "0.0.5",
   "description": "manage jsonld in Vue component.",
   "main": "./src/index.js",
-  "repository": "ssh://git@github.com/ymmooot/vue-jsonld.git",
+  "repository": "ssh://git@github.com/ymmooot/nuxt-jsonld.git",
   "author": "Ryota Yamamoto <ryota-yamamoto@retty.me>",
   "license": "MIT",
   "keywords": [
