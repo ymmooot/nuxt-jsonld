@@ -1,15 +1,15 @@
 const Vue = require('vue');
-const jsonldMixin = require('../src/mixin');
+const createJsonldMixin = require('../src/mixin');
 
 describe('without jsonld', () => {
   test('head method returns an empty object when jsonld is not defined', () => {
-    const mock = new Vue({ mixins: [jsonldMixin] });
+    const mock = new Vue({ mixins: [createJsonldMixin()] });
     expect(mock.$options.head.call(mock)).toEqual({});
   });
 
   test('head method returns an empty object when jsonld is not a function', () => {
     const mock = new Vue({
-      mixins: [jsonldMixin],
+      mixins: [createJsonldMixin()],
       jsonld: 'hoge',
     });
     expect(mock.$options.head.call(mock)).toEqual({});
@@ -17,9 +17,9 @@ describe('without jsonld', () => {
 });
 
 describe('with jsonld', () => {
-  test('head method returns jsonld metaInfo', () => {
-    const mock = new Vue({
-      mixins: [jsonldMixin],
+  const mockInstanceFactory = mixinOptions =>
+    new Vue({
+      mixins: [createJsonldMixin(mixinOptions)],
       data() {
         return {
           breadcrumbs: [
@@ -50,6 +50,9 @@ describe('with jsonld', () => {
         };
       },
     });
+
+  test('head method returns jsonld metaInfo', () => {
+    const mock = mockInstanceFactory();
 
     const mockHid = `nuxt-jsonld-${mock._uid}`;
 
@@ -83,6 +86,62 @@ describe('with jsonld', () => {
           type: 'application/ld+json',
         },
       ],
+    });
+  });
+
+  describe('customizing indentation', () => {
+    test('using tab', () => {
+      const mock = mockInstanceFactory({ space: '\t' });
+      const mockHid = `nuxt-jsonld-${mock._uid}`;
+
+      expect(mock.$options.head.call(mock)).toEqual({
+        __dangerouslyDisableSanitizersByTagID: {
+          [mockHid]: 'innerHTML',
+        },
+        script: [
+          {
+            hid: mockHid,
+            innerHTML: `{
+	"@context": "http://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"item": {
+				"@id": "https://example.com/"
+			}
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"item": {
+				"@id": "https://example.com/foo/"
+			}
+		}
+	]
+}`,
+            type: 'application/ld+json',
+          },
+        ],
+      });
+    });
+    test('no space', () => {
+      const mock = mockInstanceFactory({ space: 0 });
+      const mockHid = `nuxt-jsonld-${mock._uid}`;
+
+      expect(mock.$options.head.call(mock)).toEqual({
+        __dangerouslyDisableSanitizersByTagID: {
+          [mockHid]: 'innerHTML',
+        },
+        script: [
+          {
+            hid: mockHid,
+            innerHTML: `{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://example.com/"}},{"@type":"ListItem","position":2,"item":{"@id":"https://example.com/foo/"}}]}`,
+            type: 'application/ld+json',
+          },
+        ],
+      });
     });
   });
 });

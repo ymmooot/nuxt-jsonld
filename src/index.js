@@ -1,4 +1,4 @@
-const JsonldMixin = require('./mixin');
+const createJsonldMixin = require('./mixin');
 
 const getValue = (val, context) => {
   if (typeof val === 'object') {
@@ -38,9 +38,9 @@ const mergeStrategy = (toVal, fromVal) => {
 
 module.exports = {
   mergeStrategy,
-  install(Vue) {
+  install(Vue, options) {
     // eslint-disable-next-line no-param-reassign
     Vue.config.optionMergeStrategies.head = mergeStrategy;
-    Vue.mixin(JsonldMixin);
+    Vue.mixin(createJsonldMixin(options));
   },
 };
