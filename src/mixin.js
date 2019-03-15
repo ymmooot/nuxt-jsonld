@@ -1,21 +1,28 @@
-module.exports = {
-  head() {
-    if (!this.$options || typeof this.$options.jsonld !== 'function') {
-      return {};
-    }
+module.exports = options => {
+  const mergedOptions = {
+    space: 2,
+    ...(options || {}),
+  };
 
-    const hid = `nuxt-jsonld-${this._uid}`;
-    return {
-      script: [
-        {
-          hid,
-          type: 'application/ld+json',
-          innerHTML: JSON.stringify(this.$options.jsonld.call(this), null, 2),
+  return {
+    head() {
+      if (!this.$options || typeof this.$options.jsonld !== 'function') {
+        return {};
+      }
+
+      const hid = `nuxt-jsonld-${this._uid}`;
+      return {
+        script: [
+          {
+            hid,
+            type: 'application/ld+json',
+            innerHTML: JSON.stringify(this.$options.jsonld.call(this), null, mergedOptions.space),
+          },
+        ],
+        __dangerouslyDisableSanitizersByTagID: {
+          [hid]: 'innerHTML',
         },
-      ],
-      __dangerouslyDisableSanitizersByTagID: {
-        [hid]: 'innerHTML',
-      },
-    };
-  },
+      };
+    },
+  };
 };
