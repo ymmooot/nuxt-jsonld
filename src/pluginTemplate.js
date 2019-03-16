@@ -1,4 +1,28 @@
-const createJsonldMixin = require('./mixin');
+import Vue from 'vue';
+
+const createMixin = options => ({
+  head() {
+    if (!this.$options || typeof this.$options.jsonld !== 'function') {
+      return {};
+    }
+
+    const hid = `nuxt-jsonld-${this._uid}`;
+    const jsonldString = JSON.stringify(this.$options.jsonld.call(this), null, options.space);
+
+    return {
+      script: [
+        {
+          hid,
+          type: 'application/ld+json',
+          innerHTML: options.space ? `\n${jsonldString}\n` : jsonldString,
+        },
+      ],
+      __dangerouslyDisableSanitizersByTagID: {
+        [hid]: 'innerHTML',
+      },
+    };
+  },
+});
 
 const getValue = (val, context) => {
   if (typeof val === 'object') {
@@ -36,11 +60,17 @@ const mergeStrategy = (toVal, fromVal) => {
   };
 };
 
-module.exports = {
-  mergeStrategy,
+const plugin = {
   install(Vue, options) {
-    // eslint-disable-next-line no-param-reassign
-    Vue.config.optionMergeStrategies.head = mergeStrategy;
-    Vue.mixin(createJsonldMixin(options));
+    const mergedOptions = {
+      space: 2,
+      ...(options || {}),
+    };
+
+    Vue.config.optionMergeStrategies.head = mergeStrategy; // eslint-disable-line no-param-reassign
+    const mixin = createMixin(mergedOptions);
+    Vue.mixin(mixin);
   },
 };
+
+Vue.use(plugin, <%= JSON.stringify(options) %>);
