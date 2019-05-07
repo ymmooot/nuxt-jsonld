@@ -18,6 +18,7 @@
     "test": "jest",
     "prebuild": "rimraf lib",
     "build": "babel src --out-dir lib",
+    "preversion": "npm run build",
     "lint": "eslint . --ignore-pattern .gitignore",
     "lint:fix": "eslint . --ignore-pattern .gitignore --fix"
   },
