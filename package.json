@@ -19,6 +19,7 @@
     "prebuild": "rimraf lib",
     "build": "babel src --out-dir lib",
     "preversion": "npm run build",
+    "release": "semantic-release",
     "lint": "eslint . --ignore-pattern .gitignore",
     "lint:fix": "eslint . --ignore-pattern .gitignore --fix"
   },
@@ -29,6 +30,12 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/github": "^5.2.10",
+    "@semantic-release/npm": "^5.1.4",
+    "@semantic-release/release-notes-generator": "^7.1.4",
     "babel-eslint": "^10.0.1",
     "cz-conventional-changelog": "2.1.0",
     "eslint": "^5.16.0",
@@ -40,11 +47,22 @@
     "jest": "^24.8.0",
     "prettier": "^1.17.0",
     "rimraf": "^2.6.3",
+    "semantic-release": "^15.13.3",
     "vue": "^2.6.10"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/github",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
   }
 }
