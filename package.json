@@ -44,6 +44,7 @@
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jest": "^22.5.1",
     "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^2.2.0",
     "jest": "^24.8.0",
     "prettier": "^1.17.0",
     "rimraf": "^2.6.3",
@@ -64,5 +65,10 @@
       "@semantic-release/npm",
       "@semantic-release/git"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook"
+    }
   }
 }
