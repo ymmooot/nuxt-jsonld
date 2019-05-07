@@ -2,7 +2,7 @@
   "name": "nuxt-jsonld",
   "version": "0.0.6",
   "description": "manage jsonld in Vue component.",
-  "main": "./src/index.js",
+  "main": "lib/index.js",
   "repository": "ssh://git@github.com/ymmooot/nuxt-jsonld.git",
   "author": "Ryota Yamamoto <ryota-yamamoto@retty.me>",
   "license": "MIT",
@@ -16,21 +16,31 @@
   ],
   "scripts": {
     "test": "jest",
+    "prebuild": "rimraf lib",
+    "build": "babel src --out-dir lib",
     "lint": "eslint . --ignore-pattern .gitignore",
     "lint:fix": "eslint . --ignore-pattern .gitignore --fix"
   },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "core-js": "3"
+  },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.4",
-    "eslint": "^5.9.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^22.1.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "jest": "^23.6.0",
-    "prettier": "^1.15.2",
-    "vue": "^2.5.17"
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.5.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "jest": "^24.8.0",
+    "prettier": "^1.17.0",
+    "rimraf": "^2.6.3",
+    "vue": "^2.6.10"
   }
 }
