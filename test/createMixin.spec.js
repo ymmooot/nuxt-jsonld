@@ -63,7 +63,8 @@ describe('with jsonld', () => {
       script: [
         {
           hid: mockHid,
-          innerHTML: `{
+          innerHTML: `
+{
   "@context": "http://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
@@ -82,7 +83,8 @@ describe('with jsonld', () => {
       }
     }
   ]
-}`,
+}
+`,
           type: 'application/ld+json',
         },
       ],
@@ -101,7 +103,8 @@ describe('with jsonld', () => {
         script: [
           {
             hid: mockHid,
-            innerHTML: `{
+            innerHTML: `
+{
 	"@context": "http://schema.org",
 	"@type": "BreadcrumbList",
 	"itemListElement": [
@@ -120,7 +123,8 @@ describe('with jsonld', () => {
 			}
 		}
 	]
-}`,
+}
+`,
             type: 'application/ld+json',
           },
         ],

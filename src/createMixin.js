@@ -1,7 +1,7 @@
-module.exports = options => {
+module.exports = (options = {}) => {
   const mergedOptions = {
     space: 2,
-    ...(options || {}),
+    ...options,
   };
 
   return {
@@ -10,13 +10,16 @@ module.exports = options => {
         return {};
       }
 
+      const stringifiedJson = JSON.stringify(this.$options.jsonld.call(this), null, mergedOptions.space);
+      const innerHTML = mergedOptions.space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
+
       const hid = `nuxt-jsonld-${this._uid}`;
       return {
         script: [
           {
             hid,
             type: 'application/ld+json',
-            innerHTML: JSON.stringify(this.$options.jsonld.call(this), null, mergedOptions.space),
+            innerHTML,
           },
         ],
         __dangerouslyDisableSanitizersByTagID: {
