@@ -20,8 +20,8 @@
     "build": "babel src --out-dir lib",
     "preversion": "npm run build",
     "release": "semantic-release",
-    "lint": "eslint . --ignore-pattern .gitignore",
-    "lint:fix": "eslint . --ignore-pattern .gitignore --fix"
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src"
   },
   "files": [
     "lib"
