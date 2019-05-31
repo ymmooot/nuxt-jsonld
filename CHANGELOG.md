@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/ymmooot/nuxt-jsonld/compare/v1.2.0...v1.3.0) (2019-05-31)
+
+
+### Features
+
+* **typescript:** improve typescript support ([830957f](https://github.com/ymmooot/nuxt-jsonld/commit/830957f)), closes [#18](https://github.com/ymmooot/nuxt-jsonld/issues/18)
+
 # [1.2.0](https://github.com/ymmooot/nuxt-jsonld/compare/v1.1.0...v1.2.0) (2019-05-31)
 
 
