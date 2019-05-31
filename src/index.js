@@ -1,4 +1,5 @@
-const createJsonldMixin = require('./createMixin');
+import createJsonldMixin from './createMixin';
+import decorator from './decorator';
 
 const getValue = (val, context) => {
   if (typeof val === 'object') {
@@ -36,7 +37,9 @@ const mergeStrategy = (toVal, fromVal) => {
   };
 };
 
-module.exports = {
+export const Jsonld = decorator;
+
+export default {
   mergeStrategy,
   install(Vue, options) {
     // eslint-disable-next-line no-param-reassign

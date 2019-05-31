@@ -12,7 +12,8 @@
     "meta",
     "seo",
     "vue",
-    "nuxt"
+    "nuxt",
+    "jsonld"
   ],
   "scripts": {
     "test": "jest",
@@ -24,8 +25,10 @@
     "lint:fix": "eslint --fix src"
   },
   "files": [
-    "lib"
+    "lib",
+    "types/*.d.ts"
   ],
+  "typings": "./@types/index.d.ts",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",

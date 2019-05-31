@@ -1,5 +1,5 @@
-const Vue = require('vue');
-const createJsonldMixin = require('../src/createMixin');
+import Vue from 'vue';
+import createJsonldMixin from '../src/createMixin';
 
 describe('without jsonld', () => {
   test('head method returns an empty object when jsonld is not defined', () => {

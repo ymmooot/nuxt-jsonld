@@ -1,4 +1,4 @@
-const jsonld = require('../src/index');
+import jsonld from '../src/index';
 
 describe('merge strategy', () => {
   it('returns toVal when fromVal is empty', () => {
