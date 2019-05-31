@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/ymmooot/nuxt-jsonld/compare/v1.3.2...v1.3.3) (2019-05-31)
+
+
+### Bug Fixes
+
+* make type for target and don't use "any" ([57cd665](https://github.com/ymmooot/nuxt-jsonld/commit/57cd665))
+
 ## [1.3.2](https://github.com/ymmooot/nuxt-jsonld/compare/v1.3.1...v1.3.2) (2019-05-31)
 
 
