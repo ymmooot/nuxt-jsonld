@@ -25,10 +25,9 @@
     "lint:fix": "eslint --ext .ts --ext .js --fix src test"
   },
   "files": [
-    "lib",
-    "types/*.d.ts"
+    "lib"
   ],
-  "typings": "./types/index.d.ts",
+  "typings": "./lib/index.d.ts",
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/commit-analyzer": "^6.1.0",
