@@ -28,7 +28,7 @@
     "lib",
     "types/*.d.ts"
   ],
-  "typings": "./@types/index.d.ts",
+  "typings": "./types/index.d.ts",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
