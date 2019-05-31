@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/ymmooot/nuxt-jsonld/compare/v1.3.1...v1.3.2) (2019-05-31)
+
+
+### Bug Fixes
+
+* fix bug of type ([9e7c807](https://github.com/ymmooot/nuxt-jsonld/commit/9e7c807))
+
 ## [1.3.1](https://github.com/ymmooot/nuxt-jsonld/compare/v1.3.0...v1.3.1) (2019-05-31)
 
 
