@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/ymmooot/nuxt-jsonld/compare/v1.3.0...v1.3.1) (2019-05-31)
+
+
+### Bug Fixes
+
+* fix to export types ([2020749](https://github.com/ymmooot/nuxt-jsonld/commit/2020749))
+
 # [1.3.0](https://github.com/ymmooot/nuxt-jsonld/compare/v1.2.0...v1.3.0) (2019-05-31)
 
 
