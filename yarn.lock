@@ -4821,11 +4821,6 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-jsonld@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/nuxt-jsonld/-/nuxt-jsonld-1.2.0.tgz#adfe0e8c070e3450c0f63a1a26b186dd8cb54d5c"
-  integrity sha512-OqtunjYO/tfR80du9msmt83fUh05e7Qq94DsUpZllMvVfsyr0bE6VQ0d1ZYD/rLhhfo2ZR2ybqg57cfCcQeWYQ==
-
 nwsapi@^2.0.7:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.1.4.tgz#e006a878db23636f8e8a67d33ca0e4edf61a842f"
