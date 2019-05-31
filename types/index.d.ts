@@ -5,3 +5,9 @@ declare module 'vue/types/options' {
     jsonld?: () => object;
   }
 }
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    _uid: number
+  }
+}

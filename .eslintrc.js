@@ -4,23 +4,36 @@ module.exports = {
     browser: true,
     node: true
   },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    parser: 'babel-eslint',
     ecmaVersion: 2018,
-    ecmaFeatures: {
-      jsx: false,
-    },
+    sourceType: 'module',
+    project: './tsconfig.json'
   },
   extends: [
     'airbnb-base',
     'plugin:prettier/recommended',
   ],
   plugins: [
-    'prettier'
+    'prettier',
+    '@typescript-eslint'
   ],
   rules: {
     'no-underscore-dangle': ['error', { 'allow': ['_uid', '__dangerouslyDisableSanitizersByTagID'] }],
     'no-param-reassign': ['error',  { "props": false }],
+    "no-unused-vars": 'off',
+    "@typescript-eslint/no-unused-vars": "error"
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: [
+          '.js',
+          '.ts',
+        ],
+      },
+    },
+    'import/core-modules': ['vue'],
   },
   overrides: [
     {

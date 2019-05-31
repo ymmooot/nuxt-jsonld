@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "outDir": "./lib/",
+    "target": "es5",
+    "sourceMap": false,
+    "declaration": true,
+    "types": [
+      "./types/"
+    ],
+  },
+  "include": [
+    "src/**/*"
+  ],
+}

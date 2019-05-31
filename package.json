@@ -18,11 +18,11 @@
   "scripts": {
     "test": "jest",
     "prebuild": "rimraf lib",
-    "build": "babel src --out-dir lib",
+    "build": "tsc -p .",
     "preversion": "npm run build",
     "release": "semantic-release",
-    "lint": "eslint src",
-    "lint:fix": "eslint --fix src"
+    "lint": "eslint --ext .ts --ext .js src test",
+    "lint:fix": "eslint --ext .ts --ext .js --fix src test"
   },
   "files": [
     "lib",
@@ -30,28 +30,30 @@
   ],
   "typings": "./types/index.d.ts",
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/commit-analyzer": "^6.1.0",
     "@semantic-release/git": "^7.0.8",
     "@semantic-release/github": "^5.2.10",
     "@semantic-release/npm": "^5.1.4",
     "@semantic-release/release-notes-generator": "^7.1.4",
-    "babel-eslint": "^10.0.1",
+    "@types/jest": "^24.0.13",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
     "cz-conventional-changelog": "2.1.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.2.0",
-    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jest": "^22.5.1",
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.8.0",
     "prettier": "^1.17.0",
     "rimraf": "^2.6.3",
     "semantic-release": "^15.13.3",
-    "vue": "^2.6.10"
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.1",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.1.0"
   },
   "config": {
     "commitizen": {
