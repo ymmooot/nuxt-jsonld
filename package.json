@@ -21,8 +21,8 @@
     "build": "tsc -p .",
     "preversion": "npm run build",
     "release": "semantic-release",
-    "lint": "eslint --ext .ts --ext .js src",
-    "lint:fix": "eslint --ext .ts --ext .js --fix src"
+    "lint": "eslint --ext .ts --ext .js src test",
+    "lint:fix": "eslint --ext .ts --ext .js --fix src test"
   },
   "files": [
     "lib",

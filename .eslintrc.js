@@ -21,6 +21,8 @@ module.exports = {
   rules: {
     'no-underscore-dangle': ['error', { 'allow': ['_uid', '__dangerouslyDisableSanitizersByTagID'] }],
     'no-param-reassign': ['error',  { "props": false }],
+    "no-unused-vars": 'off',
+    "@typescript-eslint/no-unused-vars": "error"
   },
   settings: {
     'import/resolver': {
@@ -35,7 +37,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/*.spec.ts'],
+      files: ['**/*.spec.js'],
       env: {
         jest: true,
       },
