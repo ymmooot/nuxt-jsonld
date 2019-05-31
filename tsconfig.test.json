@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "esnext",
     "declaration": false,
@@ -7,7 +7,7 @@
     "noEmit": true
   },
   "include": [
-      "../src/**/*",
-      "./**/*"
+      "/src/**/*",
+      "./test/**/*"
   ]
 }
