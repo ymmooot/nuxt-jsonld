@@ -1,4 +1,4 @@
-import './declaration.d'
+import './declaration.d';
 import createJsonldMixin from './createMixin';
 import decorator from './decorator';
 
