@@ -7,10 +7,7 @@
     "outDir": "./lib/",
     "target": "es5",
     "sourceMap": false,
-    "declaration": true,
-    "types": [
-      "./types/"
-    ],
+    "declaration": true
   },
   "include": [
     "src/**/*"

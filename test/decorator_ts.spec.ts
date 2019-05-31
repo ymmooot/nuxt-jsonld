@@ -3,7 +3,6 @@ import Component from 'vue-class-component';
 import Jsonld from '../src/decorator';
 
 describe('Jsonld decorator', () => {
-
   test('typecheck', () => {
     const checker = {};
 
@@ -15,7 +14,7 @@ describe('Jsonld decorator', () => {
       }
     }
 
-    const component = new MockComponent()
+    const component = new MockComponent();
 
     expect(component.jsonld).toBeUndefined();
     expect(component.$options.jsonld()).toBe(checker);

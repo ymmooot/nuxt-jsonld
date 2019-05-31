@@ -7,7 +7,6 @@
     "allowJs": true,
     "noEmit": true,
     "types": [
-      "./types/",
       "@types/jest"
     ],
   },

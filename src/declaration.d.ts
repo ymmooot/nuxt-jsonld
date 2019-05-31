@@ -1,4 +1,4 @@
-import Vue, { ComponentOptions } from 'vue'
+import Vue, { ComponentOptions } from 'vue';
 
 declare module 'vue/types/options' {
   interface ComponentOptions<V extends Vue> {
@@ -8,6 +8,6 @@ declare module 'vue/types/options' {
 
 declare module 'vue/types/vue' {
   interface Vue {
-    _uid: number
+    _uid: number;
   }
 }

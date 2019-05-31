@@ -25,10 +25,9 @@
     "lint:fix": "eslint --ext .ts --ext .js --fix src test"
   },
   "files": [
-    "lib",
-    "types/*.d.ts"
+    "lib"
   ],
-  "typings": "./types/index.d.ts",
+  "typings": "./lib/index.d.ts",
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/commit-analyzer": "^6.1.0",
@@ -44,7 +43,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-jest": "^22.5.1",
+    "eslint-plugin-jest": "^22.6.4",
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.8.0",
     "prettier": "^1.17.0",
