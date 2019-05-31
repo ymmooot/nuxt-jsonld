@@ -1,9 +1,9 @@
-import Vue, { ComponentOptions } from 'vue';
+import VueT, { ComponentOptions } from 'vue';
 import createJsonldMixin from './createMixin';
 import decorator from './decorator';
 
 declare module 'vue/types/options' {
-  interface ComponentOptions<V extends Vue> {
+  interface ComponentOptions<V extends VueT> {
     jsonld?: () => object;
   }
 }
