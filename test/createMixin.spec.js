@@ -54,15 +54,13 @@ describe('with jsonld', () => {
   test('head method returns jsonld metaInfo', () => {
     const mock = mockInstanceFactory();
 
-    const mockHid = `nuxt-jsonld-${mock._uid}`;
-
     expect(mock.$options.head.call(mock)).toEqual({
       __dangerouslyDisableSanitizersByTagID: {
-        [mockHid]: 'innerHTML',
+        'nuxt-jsonld-0': 'innerHTML',
       },
       script: [
         {
-          hid: mockHid,
+          hid: 'nuxt-jsonld-0',
           innerHTML: `
 {
   "@context": "http://schema.org",
@@ -94,15 +92,14 @@ describe('with jsonld', () => {
   describe('customizing indentation', () => {
     test('using tab', () => {
       const mock = mockInstanceFactory({ space: '\t' });
-      const mockHid = `nuxt-jsonld-${mock._uid}`;
 
       expect(mock.$options.head.call(mock)).toEqual({
         __dangerouslyDisableSanitizersByTagID: {
-          [mockHid]: 'innerHTML',
+          'nuxt-jsonld-0': 'innerHTML',
         },
         script: [
           {
-            hid: mockHid,
+            hid: 'nuxt-jsonld-0',
             innerHTML: `
 {
 	"@context": "http://schema.org",
@@ -132,20 +129,66 @@ describe('with jsonld', () => {
     });
     test('no space', () => {
       const mock = mockInstanceFactory({ space: 0 });
-      const mockHid = `nuxt-jsonld-${mock._uid}`;
 
       expect(mock.$options.head.call(mock)).toEqual({
         __dangerouslyDisableSanitizersByTagID: {
-          [mockHid]: 'innerHTML',
+          'nuxt-jsonld-0': 'innerHTML',
         },
         script: [
           {
-            hid: mockHid,
+            hid: 'nuxt-jsonld-0',
             innerHTML: `{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://example.com/"}},{"@type":"ListItem","position":2,"item":{"@id":"https://example.com/foo/"}}]}`,
             type: 'application/ld+json',
           },
         ],
       });
     });
+  });
+});
+
+describe('hid', () => {
+  test('increase hid number sufix', () => {
+    const mixin = createJsonldMixin({ space: 0 });
+    const mock1 = new Vue({
+      mixins: [mixin],
+      jsonld() {
+        return {};
+      },
+    });
+    const mock2 = new Vue({
+      mixins: [mixin],
+      jsonld() {
+        return {};
+      },
+    });
+    const mock3 = new Vue({
+      mixins: [mixin],
+      jsonld() {
+        return {};
+      },
+    });
+
+    const actual = [mock1, mock2, mock3].map(mock => mock.$options.head.call(mock));
+
+    expect(actual).toEqual([
+      {
+        __dangerouslyDisableSanitizersByTagID: {
+          'nuxt-jsonld-0': 'innerHTML',
+        },
+        script: [{ hid: 'nuxt-jsonld-0', innerHTML: '{}', type: 'application/ld+json' }],
+      },
+      {
+        __dangerouslyDisableSanitizersByTagID: {
+          'nuxt-jsonld-1': 'innerHTML',
+        },
+        script: [{ hid: 'nuxt-jsonld-1', innerHTML: '{}', type: 'application/ld+json' }],
+      },
+      {
+        __dangerouslyDisableSanitizersByTagID: {
+          'nuxt-jsonld-2': 'innerHTML',
+        },
+        script: [{ hid: 'nuxt-jsonld-2', innerHTML: '{}', type: 'application/ld+json' }],
+      },
+    ]);
   });
 });

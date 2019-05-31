@@ -1,6 +1,12 @@
-import './declaration.d';
+import Vue, { ComponentOptions } from 'vue';
 import createJsonldMixin from './createMixin';
 import decorator from './decorator';
+
+declare module 'vue/types/options' {
+  interface ComponentOptions<V extends Vue> {
+    jsonld?: () => object;
+  }
+}
 
 const getValue = (val, context) => {
   if (typeof val === 'object') {

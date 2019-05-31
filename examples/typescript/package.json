@@ -13,9 +13,9 @@
   "dependencies": {
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
+    "nuxt-jsonld": "file:../../lib/",
     "ts-node": "^8.2.0",
-    "vue-property-decorator": "^8.1.1",
-    "nuxt-jsonld": "file:../../lib"
+    "vue-property-decorator": "^8.1.1"
   },
   "devDependencies": {
     "@nuxt/typescript": "^2.7.1",
