@@ -4,7 +4,7 @@ type Target = {
   options?: ComponentOptions<Vue>;
 } & typeof Vue;
 
-export default (target: Target): any => {
+export default (target: Target): void => {
   if (!target.options) {
     return;
   }
