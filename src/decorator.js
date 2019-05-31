@@ -1,5 +1,5 @@
 export default ({ options }) => {
-  if (!options.methods || !Object.prototype.hasOwnProperty.call(options.methods, 'jsonld')) {
+  if (!options.methods || !options.methods.jsonld || typeof options.methods.jsonld !== 'function') {
     return;
   }
 
