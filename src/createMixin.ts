@@ -1,11 +1,32 @@
-module.exports = (options = {}) => {
+import Vue from 'vue';
+
+interface Options {
+  space?: number | string;
+}
+
+interface JsonldConfig {
+  script?: {
+    hid: string;
+    type: string;
+    innerHTML: string;
+  }[];
+  __dangerouslyDisableSanitizersByTagID?: {
+    [key: string]: 'innerHTML';
+  };
+}
+
+interface JsonldMixin {
+  head: () => JsonldConfig;
+}
+
+export default (options: Options = {}): JsonldMixin => {
   const mergedOptions = {
     space: 2,
     ...options,
   };
 
   return {
-    head() {
+    head(this: Vue) {
       if (!this.$options || typeof this.$options.jsonld !== 'function') {
         return {};
       }
