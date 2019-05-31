@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": { "@/*": [ "./*" ], "~/*": [ "./*" ] },
+    "module": "es2015",
+    "moduleResolution": "node",
+    "types": [
+      "@types/node",
+      "@nuxt/vue-app"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "@types"
+    ]
+  }
+}

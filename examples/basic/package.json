@@ -13,7 +13,7 @@
   "dependencies": {
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
-    "nuxt-jsonld": "file:../lib"
+    "nuxt-jsonld": "file:../../lib"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

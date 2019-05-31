@@ -29,6 +29,12 @@ Vue.use(NuxtJsonld, {
 });
 ```
 
+Then, add plugin config to `nuxt.cofig.js`.
+
+```js
+  plugins: ['~/plugins/jsonld'],
+```
+
 ## Usage
 
 Make a jsonld method to your Vue components and return structured data object.
@@ -111,5 +117,42 @@ export default {
     },
   ]
 }
+</script>
+```
+
+### TypeScript
+
+with `Vue.extned`
+
+```html
+<script lang="ts">
+export default Vue.extend({
+  jsonld() {
+    return {
+      '@context': "http://schema.org",
+      body: 'some text',
+    };
+  },
+});
+</script>
+```
+
+with `vue-property-decorator`
+
+```html
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { Jsonld } from 'nuxt-jsonld';
+
+@Jsonld
+@Component
+export default class Sample extends Vue {
+  jsonld() {
+    return {
+      '@context': "http://schema.org",
+      body: 'some text',
+    };
+  }
+};
 </script>
 ```
