@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ymmooot/nuxt-jsonld/compare/v1.1.0...v1.2.0) (2019-05-31)
+
+
+### Features
+
+* add types and decorator for typescript ([bdddcf3](https://github.com/ymmooot/nuxt-jsonld/commit/bdddcf3)), closes [#16](https://github.com/ymmooot/nuxt-jsonld/issues/16)
+
 # [1.1.0](https://github.com/ymmooot/nuxt-jsonld/compare/v1.0.0...v1.1.0) (2019-05-13)
 
 
