@@ -25,7 +25,7 @@ Vue.use(NuxtJsonld);
 
 // you can set the indentation
 Vue.use(NuxtJsonld, {
-  space: 4, // default: 2
+  space: process.env.NODE_ENV === 'production' ? 0 : 2, // default: 2
 });
 ```
 
@@ -119,6 +119,29 @@ export default {
 }
 </script>
 ```
+
+If you do not want to make jsonld tag, just return null;
+
+```html
+<script>
+export default {
+  props: ['foo'],
+  jsonld() {
+    if (!this.foo) {
+      return null;
+    }
+
+    return {
+      '@context': 'http://schema.org',
+      '@type': 'SomeType',
+      body: foo,
+    };
+  },
+};
+</script>
+
+```
+
 
 ### TypeScript
 
