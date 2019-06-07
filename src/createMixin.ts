@@ -33,6 +33,10 @@ export default (options: Options = {}): JsonldMixin => {
         return {};
       }
 
+      if (this.$options.jsonld.call(this) === null) {
+        return {};
+      }
+
       const stringifiedJson = JSON.stringify(this.$options.jsonld.call(this), null, mergedOptions.space);
       const innerHTML = mergedOptions.space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
 
