@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/ymmooot/nuxt-jsonld/compare/v1.3.4...v1.4.0) (2019-06-07)
+
+
+### Features
+
+* 🎸 not make jsonld tags when jsonld method returns null ([c4c8b0d](https://github.com/ymmooot/nuxt-jsonld/commit/c4c8b0d)), closes [#23](https://github.com/ymmooot/nuxt-jsonld/issues/23)
+
 ## [1.3.4](https://github.com/ymmooot/nuxt-jsonld/compare/v1.3.3...v1.3.4) (2019-05-31)
 
 
