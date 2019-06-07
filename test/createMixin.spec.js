@@ -89,6 +89,12 @@ describe('with jsonld', () => {
     });
   });
 
+  test('head method returns an empty object when jsonld returns null', () => {
+    const mock = mockInstanceFactory();
+    mock.$options.jsonld = () => null;
+    expect(mock.$options.head.call(mock)).toEqual({});
+  })
+
   describe('customizing indentation', () => {
     test('using tab', () => {
       const mock = mockInstanceFactory({ space: '\t' });
