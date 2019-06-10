@@ -1,26 +1,46 @@
-version: 2
+version: 2.1
+
+executors:
+  node:
+    docker:
+      - image: circleci/node:10.15
+
+commands:
+  yarn_install:
+    steps:
+    - restore_cache:
+        name: Restore Yarn Package Cache
+        keys:
+          - nuxt-jsonld-{{ checksum "yarn.lock" }}
+    - run:
+        name: Install Dependencies
+        command: yarn install --frozen-lockfile
+    - save_cache:
+        name: Save Yarn Package Cache
+        key: nuxt-jsonld-{{ checksum "yarn.lock" }}
+        paths:
+          - ~/.cache/yarn
+
 jobs:
+  lint:
+    executor: node
+    steps:
+      - checkout
+      - yarn_install
+      - run: yarn lint
+
   test:
-    docker:
-      - image: circleci/node:10.15
+    executor: node
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-      - run: yarn install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      - yarn_install
       - run: yarn test
+
   release:
-    docker:
-      - image: circleci/node:10.15
+    executor: node
     steps:
       - checkout
-      - run: yarn install
+      - yarn_install
       - run: npx semantic-release
 
 workflows:
@@ -28,6 +48,9 @@ workflows:
   test_and_release:
     jobs:
       - test
+      - lint
       - release:
           requires:
             - test
+            - lint
+
