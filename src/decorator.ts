@@ -17,4 +17,4 @@ export default (target: Target): void => {
 
   options.jsonld = options.methods.jsonld;
   delete options.methods.jsonld;
-}
+};
