@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -37,7 +37,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['./test/**/*.spec.*'],
+      files: ['test/**/**.spec.*'],
       env: {
         jest: true,
       },
