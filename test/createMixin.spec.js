@@ -1,6 +1,40 @@
 import Vue from 'vue';
 import createJsonldMixin from '../src/createMixin';
 
+const mockInstanceFactory = mixinOptions =>
+  new Vue({
+    mixins: [createJsonldMixin(mixinOptions)],
+    data() {
+      return {
+        breadcrumbs: [
+          {
+            url: 'https://example.com/',
+            name: 'top page',
+          },
+          {
+            url: 'https://example.com/foo/',
+            name: 'foo',
+          },
+        ],
+      };
+    },
+    jsonld() {
+      const items = this.breadcrumbs.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@id': item.url,
+          name: item.text,
+        },
+      }));
+      return {
+        '@context': 'http://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: items,
+      };
+    },
+  });
+
 describe('without jsonld', () => {
   test('head method returns an empty object when jsonld is not defined', () => {
     const mock = new Vue({ mixins: [createJsonldMixin()] });
@@ -17,40 +51,6 @@ describe('without jsonld', () => {
 });
 
 describe('with jsonld', () => {
-  const mockInstanceFactory = mixinOptions =>
-    new Vue({
-      mixins: [createJsonldMixin(mixinOptions)],
-      data() {
-        return {
-          breadcrumbs: [
-            {
-              url: 'https://example.com/',
-              name: 'top page',
-            },
-            {
-              url: 'https://example.com/foo/',
-              name: 'foo',
-            },
-          ],
-        };
-      },
-      jsonld() {
-        const items = this.breadcrumbs.map((item, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          item: {
-            '@id': item.url,
-            name: item.text,
-          },
-        }));
-        return {
-          '@context': 'http://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: items,
-        };
-      },
-    });
-
   test('head method returns jsonld metaInfo', () => {
     const mock = mockInstanceFactory();
 
@@ -153,7 +153,7 @@ describe('with jsonld', () => {
 });
 
 describe('hid', () => {
-  test('hid number suffix is xxHash based innerHTML', () => {
+  test('hid hash suffix is xxHash based innerHTML', () => {
     const mixin = createJsonldMixin({ space: 0 });
     const mock1 = new Vue({
       mixins: [mixin],
@@ -214,5 +214,13 @@ describe('hid', () => {
         ],
       },
     ]);
+  });
+
+  test('hid hash suffix is same when innerHTML is same', () => {
+    const mock = mockInstanceFactory();
+    const mock2 = mockInstanceFactory();
+
+    expect(mock.$options.head.call(mock).script[0].hid).toBe('nuxt-jsonld-8251e634');
+    expect(mock2.$options.head.call(mock).script[0].hid).toBe('nuxt-jsonld-8251e634');
   });
 });
