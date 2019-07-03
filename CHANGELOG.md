@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.0...v1.4.1) (2019-07-03)
+
+
+### Bug Fixes
+
+* not use counter for hid not to change hid every request ([ae1cccb](https://github.com/ymmooot/nuxt-jsonld/commit/ae1cccb)), closes [#58](https://github.com/ymmooot/nuxt-jsonld/issues/58)
+
 # [1.4.0](https://github.com/ymmooot/nuxt-jsonld/compare/v1.3.4...v1.4.0) (2019-06-07)
 
 
