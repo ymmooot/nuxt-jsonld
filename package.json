@@ -28,6 +28,9 @@
     "lib"
   ],
   "typings": "./lib/index.d.ts",
+  "dependencies": {
+    "xxhashjs": "^0.2.2"
+  },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/commit-analyzer": "^6.1.0",
@@ -38,7 +41,7 @@
     "@types/jest": "^24.0.13",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
-    "cz-conventional-changelog": "2.1.0",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^6.0.0",
