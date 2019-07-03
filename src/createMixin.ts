@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import XXH from 'xxhashjs';
 
 interface Options {
   space?: number | string;
@@ -25,8 +26,6 @@ export default (options: Options = {}): JsonldMixin => {
     ...options,
   };
 
-  let counter = 0;
-
   return {
     head(this: Vue) {
       if (!this.$options || typeof this.$options.jsonld !== 'function') {
@@ -40,8 +39,9 @@ export default (options: Options = {}): JsonldMixin => {
       const stringifiedJson = JSON.stringify(this.$options.jsonld.call(this), null, mergedOptions.space);
       const innerHTML = mergedOptions.space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
 
-      const hid = `nuxt-jsonld-${counter}`;
-      counter += 1;
+      const hash = XXH.h32(innerHTML, 0).toString(16);
+      const hid = `nuxt-jsonld-${hash}`;
+
       return {
         script: [
           {
