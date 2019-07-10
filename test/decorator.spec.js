@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Jsonld from '../src/decorator';
 
 describe('Jsonld decorator', () => {
-  it('does not anything when jsonld does not exist', () => {
+  it('does nothing when jsonld does not exist', () => {
     const mock = Vue.extend({});
     Jsonld(mock);
     expect(mock).toBe(mock);
