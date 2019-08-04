@@ -4,7 +4,7 @@
 [![version](https://img.shields.io/npm/v/nuxt-jsonld.svg)](https://www.npmjs.com/package/nuxt-jsonld)
 [![dependencies](https://david-dm.org/ymmooot/nuxt-jsonld/status.svg)](https://david-dm.org/ymmooot/nuxt-jsonld)
 [![downloads](https://img.shields.io/npm/dt/nuxt-jsonld.svg)](https://www.npmjs.com/package/nuxt-jsonld)
-
+[![codecov](https://codecov.io/gh/ymmooot/nuxt-jsonld/branch/master/graph/badge.svg)](https://codecov.io/gh/ymmooot/nuxt-jsonld)
 
 
 A Nuxt.js plugin to manage jsonld in Vue component.

@@ -3,3 +3,4 @@ yarn-error.log
 build
 lib/
 .eslintcache
+coverage/

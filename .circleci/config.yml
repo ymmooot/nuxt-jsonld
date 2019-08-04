@@ -34,7 +34,7 @@ jobs:
     steps:
       - checkout
       - yarn_install
-      - run: yarn test
+      - run: yarn test:ci
 
   release:
     executor: node
