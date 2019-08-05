@@ -5,4 +5,5 @@ module.exports = {
       tsConfig: './tsconfig.test.json',
     },
   },
+  collectCoverageFrom: ['src/**/*.{js,ts}'],
 };
