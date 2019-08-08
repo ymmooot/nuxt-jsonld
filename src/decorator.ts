@@ -5,11 +5,7 @@ type Target = {
 } & typeof Vue;
 
 export default (target: Target): void => {
-  if (!target.options) {
-    return;
-  }
-
-  const { options } = target;
+  const options = target.options || {};
 
   if (!options.methods || !options.methods.jsonld || typeof options.methods.jsonld !== 'function') {
     return;
