@@ -15,7 +15,7 @@ const getValue = (val, context) => {
   if (typeof val === 'function') {
     return val.call(context);
   }
-  return undefined;
+  return {};
 };
 
 const mergeStrategy = (toVal, fromVal) => {
