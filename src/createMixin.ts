@@ -12,7 +12,7 @@ interface JsonldConfig {
     innerHTML: string;
   }[];
   __dangerouslyDisableSanitizersByTagID?: {
-    [key: string]: 'innerHTML';
+    [key: string]: ['innerHTML'];
   };
 }
 
@@ -51,7 +51,7 @@ export default (options: Options = {}): JsonldMixin => {
           },
         ],
         __dangerouslyDisableSanitizersByTagID: {
-          [hid]: 'innerHTML',
+          [hid]: ['innerHTML'],
         },
       };
     },

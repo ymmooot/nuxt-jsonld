@@ -81,19 +81,19 @@ describe('merge strategy', () => {
   test('object already has __dangerouslyDisableSanitizersByTagID', () => {
     const from = {
       __dangerouslyDisableSanitizersByTagID: {
-        foo: 'innerHTML',
+        foo: ['innerHTML'],
       },
     };
     const to = {
       __dangerouslyDisableSanitizersByTagID: {
-        bar: 'innerHTML',
+        bar: ['innerHTML'],
       },
     };
     const resFunc = jsonld.mergeStrategy(to, from);
     expect(resFunc()).toEqual({
       __dangerouslyDisableSanitizersByTagID: {
-        foo: 'innerHTML',
-        bar: 'innerHTML',
+        foo: ['innerHTML'],
+        bar: ['innerHTML'],
       },
     });
   });
