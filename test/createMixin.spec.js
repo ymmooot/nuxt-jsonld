@@ -56,7 +56,7 @@ describe('with jsonld', () => {
 
     expect(mock.$options.head.call(mock)).toEqual({
       __dangerouslyDisableSanitizersByTagID: {
-        'nuxt-jsonld-8251e634': 'innerHTML',
+        'nuxt-jsonld-8251e634': ['innerHTML'],
       },
       script: [
         {
@@ -101,7 +101,7 @@ describe('with jsonld', () => {
 
       expect(mock.$options.head.call(mock)).toEqual({
         __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-a36cc3c0': 'innerHTML',
+          'nuxt-jsonld-a36cc3c0': ['innerHTML'],
         },
         script: [
           {
@@ -138,7 +138,7 @@ describe('with jsonld', () => {
 
       expect(mock.$options.head.call(mock)).toEqual({
         __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-5414b96e': 'innerHTML',
+          'nuxt-jsonld-5414b96e': ['innerHTML'],
         },
         script: [
           {
@@ -191,7 +191,7 @@ describe('hid', () => {
     expect(actual).toEqual([
       {
         __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-4e298139': 'innerHTML',
+          'nuxt-jsonld-4e298139': ['innerHTML'],
         },
         script: [
           {
@@ -203,7 +203,7 @@ describe('hid', () => {
       },
       {
         __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-90d62c9': 'innerHTML',
+          'nuxt-jsonld-90d62c9': ['innerHTML'],
         },
         script: [
           {
