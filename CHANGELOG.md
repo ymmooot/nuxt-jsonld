@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.1...v1.4.2) (2019-08-20)
+
+
+### Bug Fixes
+
+* bug that jsonlds are sanitized with nuxt2.9 ([cb976f0](https://github.com/ymmooot/nuxt-jsonld/commit/cb976f0))
+
 ## [1.4.1](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.0...v1.4.1) (2019-07-03)
 
 
