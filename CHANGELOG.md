@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.2...v1.4.3) (2019-09-06)
+
+
+### Bug Fixes
+
+* fix merge strategy bug ([4b190ca](https://github.com/ymmooot/nuxt-jsonld/commit/4b190ca)), closes [#112](https://github.com/ymmooot/nuxt-jsonld/issues/112)
+
 ## [1.4.2](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.1...v1.4.2) (2019-08-20)
 
 
