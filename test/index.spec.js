@@ -1,9 +1,9 @@
 import jsonld from '../src/index';
 
 describe('merge strategy', () => {
-  it('returns toVal when fromVal is empty', () => {
-    const from = undefined;
-    const to = {
+  it('returns parentVal when childVal is empty', () => {
+    const child = undefined;
+    const parent = {
       script: [
         {
           hid: 2,
@@ -11,12 +11,12 @@ describe('merge strategy', () => {
         },
       ],
     };
-    const res = jsonld.mergeStrategy(to, from);
-    expect(res).toEqual(to);
+    const mergedFn = jsonld.mergeStrategy(parent, child);
+    expect(mergedFn()).toEqual(parent);
   });
 
-  it('returns fromVal when toVal is empty', () => {
-    const from = {
+  it('returns childVal when parentVal is empty', () => {
+    const child = {
       script: [
         {
           hid: 1,
@@ -24,13 +24,13 @@ describe('merge strategy', () => {
         },
       ],
     };
-    const to = undefined;
-    const res = jsonld.mergeStrategy(to, from);
-    expect(res).toEqual(from);
+    const parent = undefined;
+    const mergedFn = jsonld.mergeStrategy(parent, child);
+    expect(mergedFn()).toEqual(child);
   });
 
-  test('fromVal and toVal are both object', () => {
-    const from = {
+  test('childVal and parentVal are both object', () => {
+    const child = {
       script: [
         {
           hid: 1,
@@ -38,7 +38,7 @@ describe('merge strategy', () => {
         },
       ],
     };
-    const to = {
+    const parent = {
       script: [
         {
           hid: 2,
@@ -46,12 +46,12 @@ describe('merge strategy', () => {
         },
       ],
     };
-    const resFunc = jsonld.mergeStrategy(to, from);
+    const resFunc = jsonld.mergeStrategy(parent, child);
     expect(resFunc()).toEqual({ script: [{ hid: 1, innerHtml: 'test' }, { hid: 2, innerHtml: 'test2' }] });
   });
 
-  test('both of fromVal and toVal are functions', () => {
-    const from = () => ({
+  test('both of childVal and parentVal are functions', () => {
+    const child = () => ({
       script: [
         {
           hid: 1,
@@ -59,7 +59,7 @@ describe('merge strategy', () => {
         },
       ],
     });
-    const to = () => ({
+    const parent = () => ({
       script: [
         {
           hid: 2,
@@ -67,29 +67,22 @@ describe('merge strategy', () => {
         },
       ],
     });
-    const resFunc = jsonld.mergeStrategy(to, from);
+    const resFunc = jsonld.mergeStrategy(parent, child);
     expect(resFunc()).toEqual({ script: [{ hid: 1, innerHtml: 'test' }, { hid: 2, innerHtml: 'test2' }] });
-  });
-
-  test('both of fromVal and toVal are not functions or object', () => {
-    const from = 12;
-    const to = 'test';
-    const resFunc = jsonld.mergeStrategy(to, from);
-    expect(resFunc()).toEqual({});
   });
 
   test('object already has __dangerouslyDisableSanitizersByTagID', () => {
-    const from = {
+    const child = {
       __dangerouslyDisableSanitizersByTagID: {
         foo: ['innerHTML'],
       },
     };
-    const to = {
+    const parent = {
       __dangerouslyDisableSanitizersByTagID: {
         bar: ['innerHTML'],
       },
     };
-    const resFunc = jsonld.mergeStrategy(to, from);
+    const resFunc = jsonld.mergeStrategy(parent, child);
     expect(resFunc()).toEqual({
       __dangerouslyDisableSanitizersByTagID: {
         foo: ['innerHTML'],
