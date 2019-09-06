@@ -5,12 +5,13 @@
   "author": "Ryota Yamamoto",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate"
   },
   "dependencies": {
+    "@nuxt/typescript-runtime": "^0.1.5",
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
     "nuxt-jsonld": "file:../../lib/",
@@ -18,7 +19,7 @@
     "vue-property-decorator": "^8.1.1"
   },
   "devDependencies": {
-    "@nuxt/typescript": "^2.7.1",
+    "@nuxt/typescript-build": "^0.2.6",
     "nodemon": "^1.11.0"
   }
 }
