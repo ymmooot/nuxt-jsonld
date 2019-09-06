@@ -8,39 +8,34 @@ declare module 'vue/types/options' {
   }
 }
 
-const getValue = (val, context) => {
-  if (typeof val === 'object') {
-    return val;
+const mergeStrategy = (parent, child, vm) => {
+  if (vm) {
+    return child;
   }
-  if (typeof val === 'function') {
-    return val.call(context);
-  }
-  return {};
-};
-
-const mergeStrategy = (toVal, fromVal) => {
-  if (!toVal) return fromVal;
-  if (!fromVal) return toVal;
 
   return function head() {
-    const res1 = getValue(fromVal, this);
-    const res2 = getValue(toVal, this);
+    const p = typeof parent === 'function' ? parent.call(this) : parent;
+    const c = typeof child === 'function' ? child.call(this) : child;
 
-    if (res2.script) {
-      const fromValScript = res1.script || [];
-      const hasScript = fromValScript.some(s => s.hid === res2.script[0].hid);
-      if (!hasScript) {
-        res1.script = [...fromValScript, ...res2.script];
-      }
+    if (!p) {
+      return c;
     }
-    if (res2.__dangerouslyDisableSanitizersByTagID) {
-      res1.__dangerouslyDisableSanitizersByTagID = {
-        ...(res1.__dangerouslyDisableSanitizersByTagID || {}),
-        ...res2.__dangerouslyDisableSanitizersByTagID,
+    if (!c) {
+      return p;
+    }
+
+    if (c.script || p.script) {
+      c.script = [...(c.script || []), ...(p.script || [])];
+    }
+
+    if (c.__dangerouslyDisableSanitizersByTagID || p.__dangerouslyDisableSanitizersByTagID) {
+      c.__dangerouslyDisableSanitizersByTagID = {
+        ...(c.__dangerouslyDisableSanitizersByTagID || {}),
+        ...(p.__dangerouslyDisableSanitizersByTagID || {}),
       };
     }
 
-    return res1;
+    return c;
   };
 };
 

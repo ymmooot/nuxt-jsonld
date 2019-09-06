@@ -7,7 +7,7 @@
     "moduleResolution": "node",
     "types": [
       "@types/node",
-      "@nuxt/vue-app"
+      "@nuxt/types"
     ],
     "typeRoots": [
       "node_modules/@types",
