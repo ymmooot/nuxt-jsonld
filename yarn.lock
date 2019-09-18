@@ -620,15 +620,6 @@
     regexpp "^2.0.1"
     tsutils "^3.17.1"
 
-"@typescript-eslint/experimental-utils@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-2.2.0.tgz#31d855fbc425168ecf56960c777aacfcca391cff"
-  integrity sha512-IMhbewFs27Frd/ICHBRfIcsUCK213B8MsEUqvKFK14SDPjPR5JF6jgOGPlroybFTrGWpMvN5tMZdXAf+xcmxsA==
-  dependencies:
-    "@types/json-schema" "^7.0.3"
-    "@typescript-eslint/typescript-estree" "2.2.0"
-    eslint-scope "^5.0.0"
-
 "@typescript-eslint/experimental-utils@2.3.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-2.3.0.tgz#19a8e1b8fcee7d7469f3b44691d91830568de140"
@@ -664,16 +655,6 @@
   dependencies:
     lodash.unescape "4.0.1"
     semver "5.5.0"
-
-"@typescript-eslint/typescript-estree@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-2.2.0.tgz#1e2aad5ed573f9f7a8e3261eb79404264c4fc57f"
-  integrity sha512-9/6x23A3HwWWRjEQbuR24on5XIfVmV96cDpGR9671eJv1ebFKHj2sGVVAwkAVXR2UNuhY1NeKS2QMv5P8kQb2Q==
-  dependencies:
-    glob "^7.1.4"
-    is-glob "^4.0.1"
-    lodash.unescape "4.0.1"
-    semver "^6.3.0"
 
 "@typescript-eslint/typescript-estree@2.3.0":
   version "2.3.0"
@@ -2215,9 +2196,9 @@ eslint-visitor-keys@^1.0.0, eslint-visitor-keys@^1.1.0:
   integrity sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==
 
 eslint@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-6.3.0.tgz#1f1a902f67bfd4c354e7288b81e40654d927eb6a"
-  integrity sha512-ZvZTKaqDue+N8Y9g0kp6UPZtS4FSY3qARxBs7p4f0H0iof381XHduqVerFWtK8DPtKmemqbqCFENWSQgPR/Gow==
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-6.4.0.tgz#5aa9227c3fbe921982b2eda94ba0d7fae858611a"
+  integrity sha512-WTVEzK3lSFoXUovDHEbkJqCVPEPwbhCq4trDktNI6ygs7aO41d4cDT0JFAT5MivzZeVLWlg7vHL+bgrQv/t3vA==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     ajv "^6.10.0"
