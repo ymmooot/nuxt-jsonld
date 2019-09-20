@@ -29,35 +29,19 @@ const stringifyLD = (options: Options) => function () {
 }
 
 export default function (pluginOpts: Options) {
-  const head = [];
-
   if (!this.$options) { return; }
 
+  this.$options.computed = this.$options.computed || {}
+
+  this.$options.computed.$jsonld = stringifyLD(pluginOpts)
+
   if (this.$options.head) {
-    head.push(this.$options.head);
-  }
-
-  if (this.$options.jsonld) {
-    head.push(stringifyLD(pluginOpts))
-  }
-
-  return () => {
-    if (!head) { return {} }
-
-    if (!Array.isArray(head)) {
-      return head;
+    if (typeof this.$options.head === 'function') {
+      this.$options.computed.$head = this.$options.head;
+    } else {
+      this.$head = this.$options.head;
     }
-
-    return head.reduce((acc, i) => {
-      switch (typeof i) {
-        case 'function':
-          Object.assign(acc, i.call(this));
-          break;
-        case 'object':
-          Object.assign(acc, i);
-          break;
-      }
-      return acc;
-    }, {})
   }
+
+  return () => Object.assign({}, this.$head, this.$jsonld)
 };
