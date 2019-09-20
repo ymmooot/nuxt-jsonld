@@ -1,8 +1,8 @@
-import XXH from 'xxhashjs';
-
 interface Options {
   space?: number | string;
 }
+
+let jsonID = 1;
 
 const stringifyLD = (options: Options) => function () {
   const jsonLd = this.$options.jsonld.call(this);
@@ -11,8 +11,7 @@ const stringifyLD = (options: Options) => function () {
     const stringifiedJson = JSON.stringify(jsonLd, null, options.space);
     const innerHTML = options.space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
 
-    const hash = XXH.h32(innerHTML, 0).toString(16);
-    const hid = `nuxt-jsonld-${hash}`;
+    const hid = `nuxt-jsonld-${jsonID++}`;
 
     return {
       script: [
@@ -52,10 +51,10 @@ export default function (pluginOpts: Options) {
     return head.reduce((acc, i) => {
       switch (typeof i) {
         case 'function':
-          acc = { ...acc, ...i.call(this) }
+          Object.assign(acc, i.call(this));
           break;
         case 'object':
-          acc = { ...acc, ...i };
+          Object.assign(acc, i);
           break;
       }
       return acc;

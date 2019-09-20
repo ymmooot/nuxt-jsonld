@@ -29,9 +29,7 @@
     "lib"
   ],
   "typings": "./lib/index.d.ts",
-  "dependencies": {
-    "xxhashjs": "^0.2.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/commit-analyzer": "^6.3.0",
