@@ -1,23 +1,12 @@
 import Vue from 'vue';
-import XXH from 'xxhashjs';
+import mergeHead from './mergeHead';
 
 interface Options {
   space?: number | string;
 }
 
-interface JsonldConfig {
-  script?: {
-    hid: string;
-    type: string;
-    innerHTML: string;
-  }[];
-  __dangerouslyDisableSanitizersByTagID?: {
-    [key: string]: ['innerHTML'];
-  };
-}
-
 interface JsonldMixin {
-  head: () => JsonldConfig;
+  beforeCreate: () => void;
 }
 
 export default (options: Options = {}): JsonldMixin => {
@@ -27,33 +16,10 @@ export default (options: Options = {}): JsonldMixin => {
   };
 
   return {
-    head(this: Vue) {
-      if (!this.$options || typeof this.$options.jsonld !== 'function') {
-        return {};
+    beforeCreate (this: Vue) {
+      if (this.$options && typeof this.$options.jsonld === 'function') {
+        this.$options.head = mergeHead.call(this, mergedOptions)
       }
-
-      if (this.$options.jsonld.call(this) === null) {
-        return {};
-      }
-
-      const stringifiedJson = JSON.stringify(this.$options.jsonld.call(this), null, mergedOptions.space);
-      const innerHTML = mergedOptions.space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
-
-      const hash = XXH.h32(innerHTML, 0).toString(16);
-      const hid = `nuxt-jsonld-${hash}`;
-
-      return {
-        script: [
-          {
-            hid,
-            type: 'application/ld+json',
-            innerHTML,
-          },
-        ],
-        __dangerouslyDisableSanitizersByTagID: {
-          [hid]: ['innerHTML'],
-        },
-      };
     },
   };
 };

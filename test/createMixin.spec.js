@@ -35,25 +35,16 @@ const mockInstanceFactory = mixinOptions =>
     },
   });
 
-describe('without jsonld', () => {
-  test('head method returns an empty object when jsonld is not defined', () => {
+describe('without head and without jsonld', () => {
+  test('head method does not exist when jsonld is not defined', () => {
     const mock = new Vue({ mixins: [createJsonldMixin()] });
-    expect(mock.$options.head.call(mock)).toEqual({});
-  });
-
-  test('head method returns an empty object when jsonld is not a function', () => {
-    const mock = new Vue({
-      mixins: [createJsonldMixin()],
-      jsonld: 'hoge',
-    });
-    expect(mock.$options.head.call(mock)).toEqual({});
+    expect(mock.$options.head).toBeUndefined();
   });
 });
 
-describe('with jsonld', () => {
+describe('without head and with jsonld', () => {
   test('head method returns jsonld metaInfo', () => {
     const mock = mockInstanceFactory();
-
     expect(mock.$options.head.call(mock)).toEqual({
       __dangerouslyDisableSanitizersByTagID: {
         'nuxt-jsonld-8251e634': ['innerHTML'],
@@ -88,7 +79,9 @@ describe('with jsonld', () => {
       ],
     });
   });
+});
 
+describe('with head and jsonld', () => {
   test('head method returns an empty object when jsonld returns null', () => {
     const mock = mockInstanceFactory();
     mock.$options.jsonld = () => null;
@@ -98,7 +91,6 @@ describe('with jsonld', () => {
   describe('customizing indentation', () => {
     test('using tab', () => {
       const mock = mockInstanceFactory({ space: '\t' });
-
       expect(mock.$options.head.call(mock)).toEqual({
         __dangerouslyDisableSanitizersByTagID: {
           'nuxt-jsonld-a36cc3c0': ['innerHTML'],
@@ -151,6 +143,7 @@ describe('with jsonld', () => {
     });
   });
 });
+
 
 describe('hid', () => {
   test('hid hash suffix is xxHash based innerHTML', () => {
