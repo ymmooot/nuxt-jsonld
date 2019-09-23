@@ -57,7 +57,8 @@
     "ts-jest": "^24.0.2",
     "typescript": "^3.6.2",
     "vue": "^2.6.10",
-    "vue-class-component": "^7.1.0"
+    "vue-class-component": "^7.1.0",
+    "vue-meta": "^2.2.2"
   },
   "config": {
     "commitizen": {

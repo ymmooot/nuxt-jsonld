@@ -4,10 +4,14 @@ interface Options {
   space?: number | string;
 }
 
-const stringifyLD = (options: Options) => function () {
-  const jsonLd = this.$options.jsonld.call(this);
+const stringifyLD = (options: Options): Function =>
+  function stringifyLDFn(): any {
+    const jsonLd = this.$options.jsonld.call(this);
 
-  if (jsonLd !== null) {
+    if (jsonLd === null) {
+      return {};
+    }
+
     const stringifiedJson = JSON.stringify(jsonLd, null, options.space);
     const innerHTML = options.space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
     const hid = `nuxt-jsonld-${XXH.h32(innerHTML, 0).toString(16)}`;
@@ -22,17 +26,18 @@ const stringifyLD = (options: Options) => function () {
       ],
       __dangerouslyDisableSanitizersByTagID: {
         [hid]: ['innerHTML'],
-      }
-    }
+      },
+    };
+  };
+
+export default function(pluginOpts: Options): Function {
+  if (!this.$options) {
+    return () => {};
   }
-}
 
-export default function (pluginOpts: Options) {
-  if (!this.$options) { return; }
+  this.$options.computed = this.$options.computed || {};
 
-  this.$options.computed = this.$options.computed || {}
-
-  this.$options.computed.$jsonld = stringifyLD(pluginOpts)
+  this.$options.computed.$jsonld = stringifyLD(pluginOpts);
 
   if (this.$options.head) {
     if (typeof this.$options.head === 'function') {
@@ -42,5 +47,5 @@ export default function (pluginOpts: Options) {
     }
   }
 
-  return () => Object.assign({}, this.$head, this.$jsonld)
-};
+  return () => ({ ...this.$head, ...this.$jsonld });
+}

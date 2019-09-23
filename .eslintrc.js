@@ -32,7 +32,7 @@ module.exports = {
         ],
       },
     },
-    'import/core-modules': ['vue'],
+    'import/core-modules': ['vue', 'vue-meta'],
   },
   overrides: [
     {

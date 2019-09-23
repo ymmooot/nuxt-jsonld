@@ -144,7 +144,6 @@ describe('with head and jsonld', () => {
   });
 });
 
-
 describe('hid', () => {
   test('hid hash suffix is xxHash based innerHTML', () => {
     const mixin = createJsonldMixin({ space: 0 });

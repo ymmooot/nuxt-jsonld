@@ -16,9 +16,9 @@ export default (options: Options = {}): JsonldMixin => {
   };
 
   return {
-    beforeCreate (this: Vue) {
+    beforeCreate(this: Vue) {
       if (this.$options && typeof this.$options.jsonld === 'function') {
-        this.$options.head = mergeHead.call(this, mergedOptions)
+        this.$options.head = mergeHead.call(this, mergedOptions);
       }
     },
   };

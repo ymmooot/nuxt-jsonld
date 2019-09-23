@@ -1,11 +1,12 @@
 import VueT from 'vue';
+import { MetaInfo } from 'vue-meta';
 import createJsonldMixin from './createMixin';
 import decorator from './decorator';
 
 declare module 'vue/types/options' {
   interface ComponentOptions<V extends VueT> {
     jsonld?: () => object;
-    head?: object;
+    head?: MetaInfo | (() => MetaInfo);
   }
 }
 
