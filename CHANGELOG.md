@@ -1,3 +1,17 @@
+## [1.4.4](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.3...v1.4.4) (2019-09-23)
+
+
+### Bug Fixes
+
+* only inject metainfo into correct components ([5c08259](https://github.com/ymmooot/nuxt-jsonld/commit/5c08259))
+* removed dependency and hashing, removed spread in reduce ([5880435](https://github.com/ymmooot/nuxt-jsonld/commit/5880435))
+* restored hash and associated tests ([e79db81](https://github.com/ymmooot/nuxt-jsonld/commit/e79db81))
+
+
+### Performance Improvements
+
+* refactored head to use computed ([d7f7785](https://github.com/ymmooot/nuxt-jsonld/commit/d7f7785))
+
 ## [1.4.3](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.2...v1.4.3) (2019-09-06)
 
 
