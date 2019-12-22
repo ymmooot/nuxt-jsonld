@@ -1,5 +1,3 @@
-import XXH from 'xxhashjs';
-
 interface Options {
   space?: number | string;
 }
@@ -14,7 +12,8 @@ const stringifyLD = (options: Options): Function =>
 
     const stringifiedJson = JSON.stringify(jsonLd, null, options.space);
     const innerHTML = options.space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
-    const hid = `nuxt-jsonld-${XXH.h32(innerHTML, 0).toString(16)}`;
+    // FIXME: private api
+    const hid = `nuxt-jsonld-${this._uid}`;
 
     return {
       script: [

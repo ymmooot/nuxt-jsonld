@@ -18,16 +18,20 @@
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
+      <Count/>
+      <nuxt-link to="/">next</nuxt-link>
     </div>
   </section>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import Count from '~/components/Count.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    Count,
   },
   head() {
     return {
