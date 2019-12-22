@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.4...v1.4.5) (2019-12-22)
+
+
+### Bug Fixes
+
+* do not use hash to make hid ([e743b99](https://github.com/ymmooot/nuxt-jsonld/commit/e743b994db9e0e5092b846f35230fa574a615f4b))
+
 ## [1.4.4](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.3...v1.4.4) (2019-09-23)
 
 

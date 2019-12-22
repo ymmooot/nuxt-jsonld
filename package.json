@@ -1,6 +1,6 @@
 {
   "name": "nuxt-jsonld",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "manage jsonld in Vue component.",
   "main": "lib/index.js",
   "repository": "ssh://git@github.com/ymmooot/nuxt-jsonld.git",
@@ -29,8 +29,7 @@
     "lib"
   ],
   "typings": "./lib/index.d.ts",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/commit-analyzer": "^6.3.0",
