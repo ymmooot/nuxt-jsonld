@@ -47,11 +47,11 @@ describe('without head and with jsonld', () => {
     const mock = mockInstanceFactory();
     expect(mock.$options.head.call(mock)).toEqual({
       __dangerouslyDisableSanitizersByTagID: {
-        'nuxt-jsonld-8251e634': ['innerHTML'],
+        'nuxt-jsonld-1': ['innerHTML'],
       },
       script: [
         {
-          hid: 'nuxt-jsonld-8251e634',
+          hid: 'nuxt-jsonld-1',
           innerHTML: `
 {
   "@context": "http://schema.org",
@@ -93,11 +93,11 @@ describe('with head and jsonld', () => {
       const mock = mockInstanceFactory({ space: '\t' });
       expect(mock.$options.head.call(mock)).toEqual({
         __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-a36cc3c0': ['innerHTML'],
+          'nuxt-jsonld-3': ['innerHTML'],
         },
         script: [
           {
-            hid: 'nuxt-jsonld-a36cc3c0',
+            hid: 'nuxt-jsonld-3',
             innerHTML: `
 {
 	"@context": "http://schema.org",
@@ -130,89 +130,16 @@ describe('with head and jsonld', () => {
 
       expect(mock.$options.head.call(mock)).toEqual({
         __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-5414b96e': ['innerHTML'],
+          'nuxt-jsonld-4': ['innerHTML'],
         },
         script: [
           {
-            hid: 'nuxt-jsonld-5414b96e',
+            hid: 'nuxt-jsonld-4',
             innerHTML: `{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://example.com/"}},{"@type":"ListItem","position":2,"item":{"@id":"https://example.com/foo/"}}]}`,
             type: 'application/ld+json',
           },
         ],
       });
     });
-  });
-});
-
-describe('hid', () => {
-  test('hid hash suffix is xxHash based innerHTML', () => {
-    const mixin = createJsonldMixin({ space: 0 });
-    const mock1 = new Vue({
-      mixins: [mixin],
-      jsonld() {
-        return {
-          '@context': 'http://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              item: {
-                '@id': 'https://example.jp/',
-                name: 'home',
-              },
-            },
-          ],
-        };
-      },
-    });
-    const mock2 = new Vue({
-      mixins: [mixin],
-      jsonld() {
-        return {
-          '@context': 'http://schema.org',
-          '@type': 'WebSite',
-          name: 'nuxt-jsonld',
-          url: 'https://github.com/ymmooot/nuxt-jsonld/',
-        };
-      },
-    });
-
-    const actual = [mock1, mock2].map(mock => mock.$options.head.call(mock));
-
-    expect(actual).toEqual([
-      {
-        __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-4e298139': ['innerHTML'],
-        },
-        script: [
-          {
-            hid: 'nuxt-jsonld-4e298139',
-            innerHTML: `{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://example.jp/","name":"home"}}]}`,
-            type: 'application/ld+json',
-          },
-        ],
-      },
-      {
-        __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-90d62c9': ['innerHTML'],
-        },
-        script: [
-          {
-            hid: 'nuxt-jsonld-90d62c9',
-            innerHTML: `{"@context":"http://schema.org","@type":"WebSite","name":"nuxt-jsonld","url":"https://github.com/ymmooot/nuxt-jsonld/"}`,
-            type: 'application/ld+json',
-          },
-        ],
-      },
-    ]);
-  });
-
-  test('hid hash suffix is same when innerHTML is same', () => {
-    const mock = mockInstanceFactory();
-    const mock2 = mockInstanceFactory();
-
-    expect(mock.$options.head.call(mock).script[0].hid).toBe('nuxt-jsonld-8251e634');
-    expect(mock2.$options.head.call(mock).script[0].hid).toBe('nuxt-jsonld-8251e634');
   });
 });
