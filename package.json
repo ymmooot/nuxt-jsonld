@@ -52,7 +52,7 @@
     "mem": "6.0.1",
     "prettier": "^1.18.2",
     "rimraf": "^3.0.0",
-    "semantic-release": "^15.13.24",
+    "semantic-release": "^17.0.2",
     "ts-jest": "^25.0.0",
     "typescript": "^3.6.2",
     "vue": "^2.6.10",
