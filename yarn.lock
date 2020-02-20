@@ -625,7 +625,7 @@
     p-retry "^4.0.0"
     url-join "^4.0.0"
 
-"@semantic-release/npm@^5.0.5", "@semantic-release/npm@^5.1.15":
+"@semantic-release/npm@^5.0.5":
   version "5.3.5"
   resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-5.3.5.tgz#4a83952056d32e1401e1078c3910a159afc0cba8"
   integrity sha512-AOREQ6rUT8OAiqXvWCp0kMNjcdnLLq1JdP0voZL4l5zf6Tgs/65YA7ctP+9shthW01Ps85Nu0pILW3p9GkaYuw==
@@ -642,6 +642,25 @@
     read-pkg "^5.0.0"
     registry-auth-token "^4.0.0"
     tempy "^0.3.0"
+
+"@semantic-release/npm@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-7.0.3.tgz#0831f837c8e63cafd3c8a9e052b5aaf99a5a4921"
+  integrity sha512-3wOXMtAdJkaAnW5183iSmWSimtUmOx7m6g/DWPYRs2Gq6iyB+ztMmhgwbn6luNcM9t6pGbgHvRPEXpWkygMxCA==
+  dependencies:
+    "@semantic-release/error" "^2.2.0"
+    aggregate-error "^3.0.0"
+    execa "^4.0.0"
+    fs-extra "^8.0.0"
+    lodash "^4.17.15"
+    nerf-dart "^1.0.0"
+    normalize-url "^5.0.0"
+    npm "^6.10.3"
+    rc "^1.2.8"
+    read-pkg "^5.0.0"
+    registry-auth-token "^4.0.0"
+    semver "^7.1.2"
+    tempy "^0.4.0"
 
 "@semantic-release/release-notes-generator@^7.1.2", "@semantic-release/release-notes-generator@^7.3.0":
   version "7.3.5"
@@ -1943,6 +1962,11 @@ crypto-random-string@^1.0.0:
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
   integrity sha1-ojD2T1aDEOFJgAmUB5DsmVRbyn4=
 
+crypto-random-string@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-2.0.0.tgz#ef2a7a966ec11083388369baa02ebead229b30d5"
+  integrity sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==
+
 cssom@^0.4.1:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/cssom/-/cssom-0.4.4.tgz#5a66cf93d2d0b661d80bf6a44fb65f5c2e4e0a10"
@@ -2584,6 +2608,21 @@ execa@^3.2.0:
     npm-run-path "^4.0.0"
     onetime "^5.1.0"
     p-finally "^2.0.0"
+    signal-exit "^3.0.2"
+    strip-final-newline "^2.0.0"
+
+execa@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-4.0.0.tgz#7f37d6ec17f09e6b8fc53288611695b6d12b9daf"
+  integrity sha512-JbDUxwV3BoT5ZVXQrSVbAiaXhXUkIwvbhPIwZ0N13kX+5yCzOhUNdocxB/UQRuYOHRYYwAxKYwJYc0T4D12pDA==
+  dependencies:
+    cross-spawn "^7.0.0"
+    get-stream "^5.0.0"
+    human-signals "^1.1.1"
+    is-stream "^2.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^4.0.0"
+    onetime "^5.1.0"
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
 
@@ -5202,6 +5241,11 @@ normalize-url@^4.0.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.0.tgz#453354087e6ca96957bd8f5baf753f5982142129"
   integrity sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
 
+normalize-url@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-5.0.0.tgz#f46c9dc20670495e4e18fbd1b4396e41d199f63c"
+  integrity sha512-bAEm2fx8Dq/a35Z6PIRkkBBJvR56BbEJvhpNtvCZ4W9FyORSna77fn+xtYFjqk5JpBS+fMnAOG/wFgkQBmB7hw==
+
 npm-audit-report@^1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/npm-audit-report/-/npm-audit-report-1.3.2.tgz#303bc78cd9e4c226415076a4f7e528c89fc77018"
@@ -6671,10 +6715,10 @@ semver@^6.0.0, semver@^6.1.2, semver@^6.3.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
   integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
 
-semver@^7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.1.1.tgz#29104598a197d6cbe4733eeecbe968f7b43a9667"
-  integrity sha512-WfuG+fl6eh3eZ2qAf6goB7nhiCd7NPXhmyFxigB/TOkQyeLP8w8GsVehvtGNtnNmyboz4TgeK40B1Kbql/8c5A==
+semver@^7.1.1, semver@^7.1.2:
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.1.3.tgz#e4345ce73071c53f336445cfc19efb1c311df2a6"
+  integrity sha512-ekM0zfiA9SCBlsKa2X1hxyxiI4L3B6EbVJkkdgQXnSEEaHlGdvyodMruTiulSRWMMB4NeIuYNMC9rTKTz97GxA==
 
 set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"
@@ -7252,6 +7296,11 @@ temp-dir@^1.0.0:
   resolved "https://registry.yarnpkg.com/temp-dir/-/temp-dir-1.0.0.tgz#0a7c0ea26d3a39afa7e0ebea9c1fc0bc4daa011d"
   integrity sha1-CnwOom06Oa+n4OvqnB/AvE2qAR0=
 
+temp-dir@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/temp-dir/-/temp-dir-2.0.0.tgz#bde92b05bdfeb1516e804c9c00ad45177f31321e"
+  integrity sha512-aoBAniQmmwtcKp/7BzsH8Cxzv8OL736p7v1ihGb5e9DJ9kTwGWHrQrVB5+lfVDzfGrdRzXch+ig7LHaY1JTOrg==
+
 tempy@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/tempy/-/tempy-0.3.0.tgz#6f6c5b295695a16130996ad5ab01a8bd726e8bf8"
@@ -7260,6 +7309,15 @@ tempy@^0.3.0:
     temp-dir "^1.0.0"
     type-fest "^0.3.1"
     unique-string "^1.0.0"
+
+tempy@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/tempy/-/tempy-0.4.0.tgz#2240e944cbb6b843415b7ef10b6dff9cda7297d0"
+  integrity sha512-mKnScm8aXv+cG6l1Nzp6mERGgC4UblbPnSDeQp83JgZ7xqDcnl+7u3+6zXnf1UE7YluDUTEIna1iKYwCSaOk9g==
+  dependencies:
+    temp-dir "^2.0.0"
+    type-fest "^0.10.0"
+    unique-string "^2.0.0"
 
 term-size@^1.2.0:
   version "1.2.0"
@@ -7478,6 +7536,11 @@ type-detect@4.0.8:
   resolved "https://registry.yarnpkg.com/type-detect/-/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
   integrity sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==
 
+type-fest@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.10.0.tgz#7f06b2b9fbfc581068d1341ffabd0349ceafc642"
+  integrity sha512-EUV9jo4sffrwlg8s0zDhP0T2WD3pru5Xi0+HTE3zTUmBaZNhfkite9PdSJwdXLwPVW0jnAHT56pZHIOYckPEiw==
+
 type-fest@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.3.1.tgz#63d00d204e059474fe5e1b7c011112bbd1dc29e1"
@@ -7558,6 +7621,13 @@ unique-string@^1.0.0:
   integrity sha1-nhBXzKhRq7kzmPizOuGHuZyuwRo=
   dependencies:
     crypto-random-string "^1.0.0"
+
+unique-string@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/unique-string/-/unique-string-2.0.0.tgz#39c6451f81afb2749de2b233e3f7c5e8843bd89d"
+  integrity sha512-uNaeirEPvpZWSgzwsPGtU2zVSTrn/8L5q/IexZmH0eH6SA73CmAA5U4GwORTxQAZs95TAXLNqeLoPPNO5gZfWg==
+  dependencies:
+    crypto-random-string "^2.0.0"
 
 universal-user-agent@^4.0.0:
   version "4.0.0"
