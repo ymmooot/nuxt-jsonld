@@ -145,7 +145,7 @@ export default {
 
 ### TypeScript
 
-with `Vue.extned`
+with `Vue.extend`
 
 ```html
 <script lang="ts">
