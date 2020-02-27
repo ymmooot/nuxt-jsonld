@@ -7713,9 +7713,9 @@ vue-class-component@^7.1.0:
   integrity sha512-oEqYpXKaFN+TaXU+mRLEx8dX0ah85aAJEe61mpdoUrq0Bhe/6sWhyZX1JjMQLhVsHAkncyhedhmCdDVSasUtDw==
 
 vue-meta@^2.2.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/vue-meta/-/vue-meta-2.3.2.tgz#d87a456582da040ff7bc9304701cca47ac36ee1e"
-  integrity sha512-6xKy+K1J4yCs16x4UhvYI2joKADPnxxPcCUkzckaUt6xqMonBCYwK0JSh8BicooDpKcrre6JGZcQRIVIDttOVg==
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/vue-meta/-/vue-meta-2.3.3.tgz#2a097f62817204b0da78be4d62aee0cb566eaee0"
+  integrity sha512-FmeekLkd5+BI7NFBnU4bEnTpVZqmu3q8ztW4R4U3GBQljgDM7QAuwMXs8/aJP0U1tjtxobX8T6HcyZXimGj1DQ==
   dependencies:
     deepmerge "^4.2.2"
 
