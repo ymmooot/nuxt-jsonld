@@ -3,7 +3,7 @@ version: 2.1
 executors:
   node:
     docker:
-      - image: circleci/node:10.15
+      - image: circleci/node:12
 
 commands:
   yarn_install:
@@ -43,6 +43,12 @@ jobs:
       - yarn_install
       - run: npx semantic-release
 
+workflows-references:
+  hook-on-master: &hook-on-master
+    filters:
+      branches:
+        only: master
+
 workflows:
   version: 2
   test_and_release:
@@ -50,7 +56,7 @@ workflows:
       - test
       - lint
       - release:
+          <<: *hook-on-master
           requires:
             - test
             - lint
-
