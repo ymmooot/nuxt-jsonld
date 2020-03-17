@@ -36,6 +36,18 @@ jobs:
       - yarn_install
       - run: yarn test:ci
 
+  prepare_release:
+    executor: node
+    steps:
+      - checkout
+      - yarn_install
+      - run:
+          name: Prepare release
+          command: |
+            git config --global user.email "ryota.yama.9@gmail.com"
+            git config --global user.name "ryota yamamoto"
+            yarn release:prepare --yes --no-browse
+
   release:
     executor: node
     steps:
@@ -55,9 +67,11 @@ workflows:
     jobs:
       - test
       - lint
+      - prepare_release:
+          <<: *hook-on-master
       - release:
           <<: *hook-on-master
           requires:
             - test
             - lint
-
+            - prepare_release
