@@ -1,12 +1,20 @@
 {
   "name": "nuxt-jsonld",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "manage jsonld in Vue component.",
   "main": "lib/index.js",
   "repository": "ssh://git@github.com/ymmooot/nuxt-jsonld.git",
   "author": "Ryota Yamamoto <ryota.yama.9@gmail.com>",
   "license": "MIT",
-  "keywords": ["attribute", "head", "meta", "seo", "vue", "nuxt", "jsonld"],
+  "keywords": [
+    "attribute",
+    "head",
+    "meta",
+    "seo",
+    "vue",
+    "nuxt",
+    "jsonld"
+  ],
   "scripts": {
     "test": "jest",
     "test:ci": "jest --coverage && codecov",
@@ -19,7 +27,9 @@
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "typings": "./lib/index.d.ts",
   "dependencies": {},
   "devDependencies": {
