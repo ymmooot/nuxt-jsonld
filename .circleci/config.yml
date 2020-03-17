@@ -43,6 +43,12 @@ jobs:
       - yarn_install
       - run: npx semantic-release
 
+workflows-references:
+  hook-on-master: &hook-on-master
+    filters:
+      branches:
+        only: master
+
 workflows:
   version: 2
   test_and_release:
@@ -50,7 +56,7 @@ workflows:
       - test
       - lint
       - release:
+          <<: *hook-on-master
           requires:
             - test
             - lint
-
