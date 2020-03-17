@@ -67,7 +67,8 @@ workflows:
     jobs:
       - test
       - lint
-      - prepare_release
+      - prepare_release:
+          <<: *hook-on-master
       - release:
           <<: *hook-on-master
           requires:
