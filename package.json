@@ -50,7 +50,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "jest": "^25.1.0",
     "mem": "6.0.1",
-    "prettier": "^1.18.2",
+    "prettier": "^2.0.3",
     "rimraf": "^3.0.0",
     "semantic-release": "^17.0.4",
     "ts-jest": "^25.0.0",
