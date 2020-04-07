@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import createJsonldMixin from '../src/createMixin';
 
-const mockInstanceFactory = mixinOptions =>
+const mockInstanceFactory = (mixinOptions) =>
   new Vue({
     mixins: [createJsonldMixin(mixinOptions)],
     data() {

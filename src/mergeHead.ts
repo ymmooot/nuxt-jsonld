@@ -29,7 +29,7 @@ const stringifyLD = (options: Options): Function =>
     };
   };
 
-export default function(pluginOpts: Options): Function {
+export default function (pluginOpts: Options): Function {
   if (!this.$options) {
     return () => {};
   }
