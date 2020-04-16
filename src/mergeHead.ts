@@ -1,4 +1,6 @@
-interface Options {
+import JsonLDParser from './JsonLDParser';
+
+export interface Options {
   space?: number | string;
 }
 
@@ -10,23 +12,7 @@ const stringifyLD = (options: Options): Function =>
       return {};
     }
 
-    const stringifiedJson = JSON.stringify(jsonLd, null, options.space);
-    const innerHTML = options.space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
-    // FIXME: private api
-    const hid = `nuxt-jsonld-${this._uid}`;
-
-    return {
-      script: [
-        {
-          hid,
-          type: 'application/ld+json',
-          innerHTML,
-        },
-      ],
-      __dangerouslyDisableSanitizersByTagID: {
-        [hid]: ['innerHTML'],
-      },
-    };
+    return JsonLDParser.call(this, jsonLd, options);
   };
 
 export default function (pluginOpts: Options): Function {

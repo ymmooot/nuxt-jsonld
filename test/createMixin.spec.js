@@ -142,4 +142,55 @@ describe('with head and jsonld', () => {
       });
     });
   });
+
+  test('jsonld with an array creates multiple json-ld scripts', () => {
+    const mock = new Vue({
+      mixins: [createJsonldMixin()],
+      jsonld() {
+        return [
+          {
+            '@context': 'http://schema.org',
+            '@type': 'Article',
+            name: 'Some name',
+          },
+          {
+            '@context': 'http://schema.org',
+            '@type': 'Organization',
+            name: 'Some name',
+          },
+        ];
+      },
+    });
+    const mockCall = mock.$options.head.call(mock);
+
+    expect(mockCall).toEqual({
+      __dangerouslyDisableSanitizersByTagID: {
+        'nuxt-jsonld-5': ['innerHTML'],
+      },
+      script: [
+        {
+          hid: 'nuxt-jsonld-5',
+          innerHTML: `
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Some name"
+}
+`,
+          type: 'application/ld+json',
+        },
+        {
+          hid: 'nuxt-jsonld-5',
+          innerHTML: `
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Some name"
+}
+`,
+          type: 'application/ld+json',
+        },
+      ],
+    });
+  });
 });
