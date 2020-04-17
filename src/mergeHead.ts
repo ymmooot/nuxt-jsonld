@@ -41,10 +41,10 @@ export default function (pluginOpts: Options): Function {
   if (this.$options.head) {
     if (typeof this.$options.head === 'function') {
       this.$options.computed.$head = this.$options.head;
-      headScript = headScript.concat(this.$options.head().script);
+      headScript = this.$options.head().script;
     } else {
       this.$head = this.$options.head;
-      headScript = headScript.concat(this.$options.head.script);
+      headScript = this.$options.head.script;
     }
   }
 
