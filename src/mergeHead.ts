@@ -36,15 +36,19 @@ export default function (pluginOpts: Options): Function {
 
   this.$options.computed = this.$options.computed || {};
 
-  this.$options.computed.$jsonld = stringifyLD(pluginOpts, this.$options.head ? this.$options.head.script : []);
+  let headScript = []
 
   if (this.$options.head) {
     if (typeof this.$options.head === 'function') {
       this.$options.computed.$head = this.$options.head;
+      headScript = headScript.concat(this.$options.head().script);
     } else {
       this.$head = this.$options.head;
+      headScript = headScript.concat(this.$options.head.script);
     }
   }
+
+  this.$options.computed.$jsonld = stringifyLD(pluginOpts, headScript);
 
   return () => ({ ...this.$head, ...this.$jsonld });
 }
