@@ -43,7 +43,7 @@ export default function (pluginOpts: Options): Function {
   if (this.$options.head) {
     if (typeof this.$options.head === 'function') {
       this.$options.computed.$head = this.$options.head;
-      const head = this.$options.head.call(this)
+      const head = this.$options.head.call(this);
       script = head.script || [];
       disableSanitizers = head.__dangerouslyDisableSanitizersByTagID || {};
     } else {
