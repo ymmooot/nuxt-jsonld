@@ -2,7 +2,7 @@ interface Options {
   space?: number | string;
 }
 
-const stringifyLD = (options: Options): Function =>
+const stringifyLD = (options: Options, headScript: any[]): Function =>
   function stringifyLDFn(): any {
     const jsonLd = this.$options.jsonld.call(this);
 
@@ -16,13 +16,13 @@ const stringifyLD = (options: Options): Function =>
     const hid = `nuxt-jsonld-${this._uid}`;
 
     return {
-      script: [
+      script: headScript.concat([
         {
           hid,
           type: 'application/ld+json',
           innerHTML,
         },
-      ],
+      ]),
       __dangerouslyDisableSanitizersByTagID: {
         [hid]: ['innerHTML'],
       },
@@ -36,15 +36,19 @@ export default function (pluginOpts: Options): Function {
 
   this.$options.computed = this.$options.computed || {};
 
-  this.$options.computed.$jsonld = stringifyLD(pluginOpts);
+  let headScript = []
 
   if (this.$options.head) {
     if (typeof this.$options.head === 'function') {
       this.$options.computed.$head = this.$options.head;
+      headScript = this.$options.head().script;
     } else {
       this.$head = this.$options.head;
+      headScript = this.$options.head.script;
     }
   }
+
+  this.$options.computed.$jsonld = stringifyLD(pluginOpts, headScript);
 
   return () => ({ ...this.$head, ...this.$jsonld });
 }

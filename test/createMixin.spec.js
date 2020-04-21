@@ -18,6 +18,14 @@ const mockInstanceFactory = (mixinOptions) =>
         ],
       };
     },
+    head: {
+        title: 'title',
+        script: [
+            {
+                src: 'script.js',
+            },
+        ],
+    },
     jsonld() {
       const items = this.breadcrumbs.map((item, index) => ({
         '@type': 'ListItem',
@@ -49,7 +57,11 @@ describe('without head and with jsonld', () => {
       __dangerouslyDisableSanitizersByTagID: {
         'nuxt-jsonld-1': ['innerHTML'],
       },
+      title: 'title',
       script: [
+        {
+            src: 'script.js',
+        },
         {
           hid: 'nuxt-jsonld-1',
           innerHTML: `
@@ -85,7 +97,14 @@ describe('with head and jsonld', () => {
   test('head method returns an empty object when jsonld returns null', () => {
     const mock = mockInstanceFactory();
     mock.$options.jsonld = () => null;
-    expect(mock.$options.head.call(mock)).toEqual({});
+    expect(mock.$options.head.call(mock)).toEqual({
+        title: 'title',
+        script: [
+            {
+                src: 'script.js',
+            },
+        ]
+    });
   });
 
   describe('customizing indentation', () => {
@@ -95,7 +114,11 @@ describe('with head and jsonld', () => {
         __dangerouslyDisableSanitizersByTagID: {
           'nuxt-jsonld-3': ['innerHTML'],
         },
+        title: 'title',
         script: [
+          {
+              src: 'script.js',
+          },
           {
             hid: 'nuxt-jsonld-3',
             innerHTML: `
@@ -132,7 +155,11 @@ describe('with head and jsonld', () => {
         __dangerouslyDisableSanitizersByTagID: {
           'nuxt-jsonld-4': ['innerHTML'],
         },
+        title: 'title',
         script: [
+          {
+              src: 'script.js',
+          },
           {
             hid: 'nuxt-jsonld-4',
             innerHTML: `{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://example.com/"}},{"@type":"ListItem","position":2,"item":{"@id":"https://example.com/foo/"}}]}`,
