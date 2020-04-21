@@ -1,3 +1,10 @@
+## [1.4.6](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.5...v1.4.6) (2020-04-21)
+
+
+### Bug Fixes
+
+* [#336](https://github.com/ymmooot/nuxt-jsonld/issues/336) ([cc3c77c](https://github.com/ymmooot/nuxt-jsonld/commit/cc3c77c5b1bca57d511d522f54845707001f0b33))
+
 ## [1.4.5](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.4...v1.4.5) (2019-12-22)
 
 
