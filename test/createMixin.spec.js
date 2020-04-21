@@ -19,12 +19,12 @@ const mockInstanceFactory = (mixinOptions) =>
       };
     },
     head: {
-        title: 'title',
-        script: [
-            {
-                src: 'script.js',
-            },
-        ],
+      title: 'title',
+      script: [
+        {
+          src: 'script.js',
+        },
+      ],
     },
     jsonld() {
       const items = this.breadcrumbs.map((item, index) => ({
@@ -60,7 +60,7 @@ describe('without head and with jsonld', () => {
       title: 'title',
       script: [
         {
-            src: 'script.js',
+          src: 'script.js',
         },
         {
           hid: 'nuxt-jsonld-1',
@@ -98,12 +98,12 @@ describe('with head and jsonld', () => {
     const mock = mockInstanceFactory();
     mock.$options.jsonld = () => null;
     expect(mock.$options.head.call(mock)).toEqual({
-        title: 'title',
-        script: [
-            {
-                src: 'script.js',
-            },
-        ]
+      title: 'title',
+      script: [
+        {
+          src: 'script.js',
+        },
+      ],
     });
   });
 
@@ -117,7 +117,7 @@ describe('with head and jsonld', () => {
         title: 'title',
         script: [
           {
-              src: 'script.js',
+            src: 'script.js',
           },
           {
             hid: 'nuxt-jsonld-3',
@@ -158,7 +158,7 @@ describe('with head and jsonld', () => {
         title: 'title',
         script: [
           {
-              src: 'script.js',
+            src: 'script.js',
           },
           {
             hid: 'nuxt-jsonld-4',

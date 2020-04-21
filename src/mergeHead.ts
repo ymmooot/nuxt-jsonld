@@ -36,7 +36,7 @@ export default function (pluginOpts: Options): Function {
 
   this.$options.computed = this.$options.computed || {};
 
-  let headScript = []
+  let headScript = [];
 
   if (this.$options.head) {
     if (typeof this.$options.head === 'function') {
