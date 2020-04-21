@@ -2,7 +2,7 @@ interface Options {
   space?: number | string;
 }
 
-const stringifyLD = (options: Options, headScript: any[]): Function =>
+const stringifyLD = (options: Options, script: any[], disableSanitizers: object): Function =>
   function stringifyLDFn(): any {
     const jsonLd = this.$options.jsonld.call(this);
 
@@ -16,7 +16,7 @@ const stringifyLD = (options: Options, headScript: any[]): Function =>
     const hid = `nuxt-jsonld-${this._uid}`;
 
     return {
-      script: headScript.concat([
+      script: script.concat([
         {
           hid,
           type: 'application/ld+json',
@@ -24,6 +24,7 @@ const stringifyLD = (options: Options, headScript: any[]): Function =>
         },
       ]),
       __dangerouslyDisableSanitizersByTagID: {
+        ...disableSanitizers,
         [hid]: ['innerHTML'],
       },
     };
@@ -36,19 +37,23 @@ export default function (pluginOpts: Options): Function {
 
   this.$options.computed = this.$options.computed || {};
 
-  let headScript = [];
+  let script = [];
+  let disableSanitizers = {};
 
   if (this.$options.head) {
     if (typeof this.$options.head === 'function') {
       this.$options.computed.$head = this.$options.head;
-      headScript = this.$options.head().script;
+      const head = this.$options.head.call(this)
+      script = head.script || [];
+      disableSanitizers = head.__dangerouslyDisableSanitizersByTagID || {};
     } else {
       this.$head = this.$options.head;
-      headScript = this.$options.head.script;
+      script = this.$options.head.script || [];
+      disableSanitizers = this.$options.head.__dangerouslyDisableSanitizersByTagID || {};
     }
   }
 
-  this.$options.computed.$jsonld = stringifyLD(pluginOpts, headScript);
+  this.$options.computed.$jsonld = stringifyLD(pluginOpts, script, disableSanitizers);
 
   return () => ({ ...this.$head, ...this.$jsonld });
 }
