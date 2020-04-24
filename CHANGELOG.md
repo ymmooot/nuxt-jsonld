@@ -1,3 +1,10 @@
+## [1.4.9](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.8...v1.4.9) (2020-04-24)
+
+
+### Bug Fixes
+
+* fix bug that head method can not access data of 'this' context ([c94e297](https://github.com/ymmooot/nuxt-jsonld/commit/c94e29773cf3892d5f6abcf3fddcd513e03a275a)), closes [#347](https://github.com/ymmooot/nuxt-jsonld/issues/347)
+
 ## [1.4.6](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.5...v1.4.6) (2020-04-21)
 
 
