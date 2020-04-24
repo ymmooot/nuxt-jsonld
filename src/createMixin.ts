@@ -1,24 +1,29 @@
 import Vue from 'vue';
 import mergeHead from './mergeHead';
 
-interface Options {
+type Required<T> = { [P in keyof T & keyof any]: T[P] };
+type UserOptions = {
   space?: number | string;
-}
-
-interface JsonldMixin {
+};
+export type Options = Required<UserOptions>;
+type JsonldMixin = {
   beforeCreate: () => void;
-}
+};
 
-export default (options: Options = {}): JsonldMixin => {
-  const mergedOptions = {
+export default (_options: UserOptions = {}): JsonldMixin => {
+  const options: Options = {
     space: 2,
-    ...options,
+    ..._options,
   };
 
   return {
     beforeCreate(this: Vue) {
       if (this.$options && typeof this.$options.jsonld === 'function') {
-        this.$options.head = mergeHead.call(this, mergedOptions);
+        const originalHead = this.$options.head;
+
+        this.$options.head = () => {
+          return mergeHead.call(this, originalHead, options);
+        };
       }
     },
   };

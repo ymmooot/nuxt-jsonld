@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import createJsonldMixin from '../src/createMixin';
 
-const mockInstanceFactory = (mixinOptions) =>
-  new Vue({
+const mockInstanceFactory = (head, mixinOptions) => {
+  const mock = new Vue({
     mixins: [createJsonldMixin(mixinOptions)],
     data() {
       return {
@@ -18,14 +18,7 @@ const mockInstanceFactory = (mixinOptions) =>
         ],
       };
     },
-    head: {
-      title: 'title',
-      script: [
-        {
-          src: 'script.js',
-        },
-      ],
-    },
+    head,
     jsonld() {
       const items = this.breadcrumbs.map((item, index) => ({
         '@type': 'ListItem',
@@ -42,11 +35,19 @@ const mockInstanceFactory = (mixinOptions) =>
       };
     },
   });
+  mock._uid = 12;
+  return mock;
+};
 
 describe('without head and without jsonld', () => {
-  test('head method does not exist when jsonld is not defined', () => {
+  test('head method does not exist when head and jsonld are not defined', () => {
     const mock = new Vue({ mixins: [createJsonldMixin()] });
     expect(mock.$options.head).toBeUndefined();
+  });
+
+  test('head method returns an empty object when head and jsonld return null', () => {
+    const mock = new Vue({ mixins: [createJsonldMixin()], head: () => null, jsonld: () => null });
+    expect(mock.$options.head()).toEqual({});
   });
 });
 
@@ -55,15 +56,11 @@ describe('without head and with jsonld', () => {
     const mock = mockInstanceFactory();
     expect(mock.$options.head.call(mock)).toEqual({
       __dangerouslyDisableSanitizersByTagID: {
-        'nuxt-jsonld-1': ['innerHTML'],
+        'nuxt-jsonld-12': ['innerHTML'],
       },
-      title: 'title',
       script: [
         {
-          src: 'script.js',
-        },
-        {
-          hid: 'nuxt-jsonld-1',
+          hid: 'nuxt-jsonld-12',
           innerHTML: `
 {
   "@context": "http://schema.org",
@@ -94,8 +91,13 @@ describe('without head and with jsonld', () => {
 });
 
 describe('with head and jsonld', () => {
+  const head = {
+    title: 'title',
+    script: [{ src: 'script.js' }],
+  };
   test('head method returns an empty object when jsonld returns null', () => {
-    const mock = mockInstanceFactory();
+    const mock = mockInstanceFactory(head);
+
     mock.$options.jsonld = () => null;
     expect(mock.$options.head.call(mock)).toEqual({
       title: 'title',
@@ -109,10 +111,10 @@ describe('with head and jsonld', () => {
 
   describe('customizing indentation', () => {
     test('using tab', () => {
-      const mock = mockInstanceFactory({ space: '\t' });
+      const mock = mockInstanceFactory(head, { space: '\t' });
       expect(mock.$options.head.call(mock)).toEqual({
         __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-3': ['innerHTML'],
+          'nuxt-jsonld-12': ['innerHTML'],
         },
         title: 'title',
         script: [
@@ -120,7 +122,7 @@ describe('with head and jsonld', () => {
             src: 'script.js',
           },
           {
-            hid: 'nuxt-jsonld-3',
+            hid: 'nuxt-jsonld-12',
             innerHTML: `
 {
 	"@context": "http://schema.org",
@@ -149,11 +151,11 @@ describe('with head and jsonld', () => {
       });
     });
     test('no space', () => {
-      const mock = mockInstanceFactory({ space: 0 });
+      const mock = mockInstanceFactory(head, { space: 0 });
 
       expect(mock.$options.head.call(mock)).toEqual({
         __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-4': ['innerHTML'],
+          'nuxt-jsonld-12': ['innerHTML'],
         },
         title: 'title',
         script: [
@@ -161,12 +163,31 @@ describe('with head and jsonld', () => {
             src: 'script.js',
           },
           {
-            hid: 'nuxt-jsonld-4',
+            hid: 'nuxt-jsonld-12',
             innerHTML: `{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://example.com/"}},{"@type":"ListItem","position":2,"item":{"@id":"https://example.com/foo/"}}]}`,
             type: 'application/ld+json',
           },
         ],
       });
+    });
+  });
+});
+
+describe('with head and without jsonld', () => {
+  test('head method returns a result of original head method', () => {
+    const mock = new Vue({
+      mixins: [createJsonldMixin()],
+      head: {
+        title: 'title',
+        script: [{ src: 'script.js' }],
+      },
+      jsonld() {
+        return null;
+      },
+    });
+    expect(mock.$options.head.call(mock)).toEqual({
+      title: 'title',
+      script: [{ src: 'script.js' }],
     });
   });
 });

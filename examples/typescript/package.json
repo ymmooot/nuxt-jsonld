@@ -11,15 +11,15 @@
     "generate": "nuxt-ts generate"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^0.2.10",
-    "cross-env": "^6.0.3",
+    "@nuxt/typescript-runtime": "^0.4.5",
+    "cross-env": "^7.0.2",
     "nuxt": "^2.10.2",
     "nuxt-jsonld": "file:../../lib/",
     "ts-node": "^8.5.4",
     "vue-property-decorator": "^8.3.0"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.3.10",
+    "@nuxt/typescript-build": "^0.6.5",
     "nodemon": "^2.0.1"
   }
 }

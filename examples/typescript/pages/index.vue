@@ -30,10 +30,28 @@ export default Vue.extend({
   components: {
     Logo,
   },
+  head() {
+    return {
+      title: 'This should be title of page',
+      script: [
+        {
+          src: `https://cdnjs.cloudflare.com/ajax/libs/materialize/${this.ver}/js/materialize.min.js`
+        }
+      ]
+    }
+  },
+  data(): object {
+    return {
+      ver: '1.0.0',
+    }
+  },
   jsonld() {
     return {
       '@context': "http://schema.org",
-      body: 'text from index.vue',
+      body: {
+        ver: this.ver,
+        fuga: this.$store.state.fuga,
+      },
     };
   },
 });

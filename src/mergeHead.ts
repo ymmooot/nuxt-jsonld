@@ -1,59 +1,64 @@
-interface Options {
-  space?: number | string;
+import { Options } from './createMixin';
+
+interface JsonLDObject {
+  script: object[];
+  __dangerouslyDisableSanitizersByTagID: object;
 }
 
-const stringifyLD = (options: Options, script: any[], disableSanitizers: object): Function =>
-  function stringifyLDFn(): any {
-    const jsonLd = this.$options.jsonld.call(this);
+const getOriginalHeadObject = (that, originalHead): JsonLDObject => {
+  if (typeof originalHead === 'function') {
+    return originalHead.call(that);
+  }
+  return originalHead || null;
+};
 
-    if (jsonLd === null) {
-      return {};
-    }
+const getJsonLdHeadObject = (that, jsonLdFunc: Function, space: Options['space']): JsonLDObject => {
+  const jsonLd = jsonLdFunc.call(that);
+  if (jsonLd === null) {
+    return null;
+  }
 
-    const stringifiedJson = JSON.stringify(jsonLd, null, options.space);
-    const innerHTML = options.space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
-    // FIXME: private api
-    const hid = `nuxt-jsonld-${this._uid}`;
+  const stringifiedJson = JSON.stringify(jsonLd, null, space);
+  const innerHTML = space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
+  // FIXME: private api
+  const hid = `nuxt-jsonld-${that._uid}`;
 
-    return {
-      script: script.concat([
-        {
-          hid,
-          type: 'application/ld+json',
-          innerHTML,
-        },
-      ]),
-      __dangerouslyDisableSanitizersByTagID: {
-        ...disableSanitizers,
-        [hid]: ['innerHTML'],
+  return {
+    script: [
+      {
+        hid,
+        type: 'application/ld+json',
+        innerHTML,
       },
-    };
+    ],
+    __dangerouslyDisableSanitizersByTagID: {
+      [hid]: ['innerHTML'],
+    },
   };
+};
 
-export default function (pluginOpts: Options): Function {
-  if (!this.$options) {
-    return () => {};
+const isEmptyObject = (obj: object): boolean => obj === undefined || obj === null || Object.keys(obj).length === 0;
+
+export default function (originalHead, { space }: Options) {
+  const head = getOriginalHeadObject(this, originalHead);
+  const jsonLd = getJsonLdHeadObject(this, this.$options.jsonld, space);
+
+  if (isEmptyObject(head) && jsonLd === null) {
+    return {};
+  }
+  if (isEmptyObject(head)) {
+    return jsonLd;
+  }
+  if (jsonLd === null) {
+    return head;
   }
 
-  this.$options.computed = this.$options.computed || {};
-
-  let script = [];
-  let disableSanitizers = {};
-
-  if (this.$options.head) {
-    if (typeof this.$options.head === 'function') {
-      this.$options.computed.$head = this.$options.head;
-      const head = this.$options.head.call(this);
-      script = head.script || [];
-      disableSanitizers = head.__dangerouslyDisableSanitizersByTagID || {};
-    } else {
-      this.$head = this.$options.head;
-      script = this.$options.head.script || [];
-      disableSanitizers = this.$options.head.__dangerouslyDisableSanitizersByTagID || {};
-    }
-  }
-
-  this.$options.computed.$jsonld = stringifyLD(pluginOpts, script, disableSanitizers);
-
-  return () => ({ ...this.$head, ...this.$jsonld });
+  return {
+    ...head,
+    script: [...(head.script || []), ...jsonLd.script],
+    __dangerouslyDisableSanitizersByTagID: {
+      ...(head.__dangerouslyDisableSanitizersByTagID || {}),
+      ...jsonLd.__dangerouslyDisableSanitizersByTagID,
+    },
+  };
 }
