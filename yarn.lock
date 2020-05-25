@@ -594,9 +594,9 @@
     p-reduce "^2.0.0"
 
 "@semantic-release/github@^7.0.0", "@semantic-release/github@^7.0.4":
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.0.5.tgz#042b515cbae8695aa60bc4ed17722c34512a5b89"
-  integrity sha512-1nJCMeomspRIXKiFO3VXtkUMbIBEreYLFNBdWoLjvlUNcEK0/pEbupEZJA3XHfJuSzv43u3OLpPhF/JBrMuv+A==
+  version "7.0.7"
+  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.0.7.tgz#e3999b06433d08871acd68ecec2b4e212c05d09f"
+  integrity sha512-Sai2UucYQ+5rJzKVEVJ4eiZNDdoo0/CzfpValBdeU5h97uJE7t4CoBTmUWkiXlPOx46CSw1+JhI+PHC1PUxVZw==
   dependencies:
     "@octokit/rest" "^17.0.0"
     "@semantic-release/error" "^2.2.0"
