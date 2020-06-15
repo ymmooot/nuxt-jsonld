@@ -5,7 +5,7 @@ import decorator from './decorator';
 
 declare module 'vue/types/options' {
   interface ComponentOptions<V extends VueT> {
-    jsonld?: () => object;
+    jsonld?: () => object | null;
     head?: MetaInfo | (() => MetaInfo);
   }
 }
