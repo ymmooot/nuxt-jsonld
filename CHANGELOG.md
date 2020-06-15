@@ -1,3 +1,10 @@
+## [1.4.10](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.9...v1.4.10) (2020-06-15)
+
+
+### Bug Fixes
+
+* return value types of jsonld ([4ceee10](https://github.com/ymmooot/nuxt-jsonld/commit/4ceee10123ea06987762e4ad213473d18c562fda))
+
 ## [1.4.9](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.8...v1.4.9) (2020-04-24)
 
 
