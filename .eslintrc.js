@@ -9,27 +9,27 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  extends: [
-    'airbnb-base',
-    'plugin:prettier/recommended',
-  ],
-  plugins: [
-    'prettier',
-    '@typescript-eslint'
-  ],
+  extends: ['airbnb-base', 'plugin:prettier/recommended'],
+  plugins: ['prettier', '@typescript-eslint'],
   rules: {
-    'no-underscore-dangle': ['error', { 'allow': ['_uid', '__dangerouslyDisableSanitizersByTagID'] }],
-    'no-param-reassign': ['error',  { "props": false }],
-    "no-unused-vars": 'off',
-    "@typescript-eslint/no-unused-vars": "error"
+    'no-underscore-dangle': ['error', { allow: ['_uid', '__dangerouslyDisableSanitizersByTagID'] }],
+    'no-param-reassign': ['error', { props: false }],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        ts: 'never',
+        vue: 'always',
+      },
+    ],
   },
   settings: {
     'import/resolver': {
       node: {
-        extensions: [
-          '.js',
-          '.ts',
-        ],
+        extensions: ['.js', '.ts'],
       },
     },
     'import/core-modules': ['vue', 'vue-meta'],
@@ -43,4 +43,4 @@ module.exports = {
       plugins: ['jest'],
     },
   ],
-}
+};
