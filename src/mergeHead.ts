@@ -39,7 +39,7 @@ const getJsonLdHeadObject = (that, jsonLdFunc: Function, space: Options['space']
 
 const isEmptyObject = (obj: object): boolean => obj === undefined || obj === null || Object.keys(obj).length === 0;
 
-export default function (originalHead, { space }: Options) {
+export default function mergeHead(originalHead, { space }: Options) {
   const head = getOriginalHeadObject(this, originalHead);
   const jsonLd = getJsonLdHeadObject(this, this.$options.jsonld, space);
 
