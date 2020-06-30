@@ -73,5 +73,9 @@
       "@semantic-release/npm",
       "@semantic-release/git"
     ]
+  },
+  "resolutions": {
+    "mkdirp/minimist": "^1.2.5",
+    "optimist/minimist": "^1.2.5"
   }
 }
