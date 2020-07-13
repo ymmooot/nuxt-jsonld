@@ -30,7 +30,7 @@ Vue.use(NuxtJsonld, {
 });
 ```
 
-Then, add plugin config to `nuxt.cofig.js`.
+Then, add plugin config to `nuxt.config.js`.
 
 ```js
   plugins: ['~/plugins/jsonld'],
