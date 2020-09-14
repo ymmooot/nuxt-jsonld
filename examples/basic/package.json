@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "cross-env": "^7.0.2",
-    "nuxt": "^2.13.2",
+    "nuxt": "^2.14.5",
     "nuxt-jsonld": "file:../../lib"
   },
   "devDependencies": {

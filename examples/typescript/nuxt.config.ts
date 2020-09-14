@@ -1,7 +1,8 @@
+import { Configuration } from '@nuxt/types'
 const pkg = require('./package')
 
-module.exports = {
-  mode: 'universal',
+const config: Configuration = {
+  ssr: true,
 
   /*
   ** Headers of the page
@@ -51,3 +52,5 @@ module.exports = {
     }
   }
 }
+
+module.exports = config

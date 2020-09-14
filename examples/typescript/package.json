@@ -11,15 +11,16 @@
     "generate": "nuxt-ts generate"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^0.4.5",
+    "@nuxt/typescript-runtime": "^2.0.0",
     "cross-env": "^7.0.2",
-    "nuxt": "^2.10.2",
-    "nuxt-jsonld": "file:../../lib/",
-    "ts-node": "^8.5.4",
-    "vue-property-decorator": "^8.3.0"
+    "nuxt": "^2.14.5",
+    "nuxt-jsonld": "file:../../lib",
+    "ts-node": "^9.0.0",
+    "vue-property-decorator": "^9.0.0"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.6.5",
-    "nodemon": "^2.0.1"
+    "@nuxt/types": "^2.14.5",
+    "@nuxt/typescript-build": "^2.0.3",
+    "nodemon": "^2.0.4"
   }
 }
