@@ -1,3 +1,4 @@
+import XXH from 'xxhashjs';
 import { Options } from './createMixin';
 
 interface JsonLDObject {
@@ -18,10 +19,11 @@ const getJsonLdHeadObject = (that, jsonLdFunc: Function, space: Options['space']
     return null;
   }
 
+  const minifiedString = JSON.stringify(jsonLd, null, '');
+  const hid = `nuxt-jsonld-${XXH.h32(minifiedString, 0).toString(16)}`;
+
   const stringifiedJson = JSON.stringify(jsonLd, null, space);
   const innerHTML = space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
-  // FIXME: private api
-  const hid = `nuxt-jsonld-${that._uid}`;
 
   return {
     script: [

@@ -4,6 +4,7 @@ import createJsonldMixin from './createMixin';
 import decorator from './decorator';
 
 declare module 'vue/types/options' {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface ComponentOptions<V extends VueT> {
     jsonld?: () => object | null;
     head?: MetaInfo | (() => MetaInfo);
