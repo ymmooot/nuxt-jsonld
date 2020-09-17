@@ -10,6 +10,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { WithContext, Product } from 'schema-dts'
 
 type Data = {
   name: string,
@@ -23,12 +24,12 @@ export default Vue.extend({
       count: 0,
     }
   },
-  jsonld(): object {
+  jsonld(): WithContext<Product> {
     return {
       '@context': "https://schema.org",
       "@type": "Product",
       name: this.name,
-      count: this.count,
+      productID: this.count.toString(),
     };
   },
 })
