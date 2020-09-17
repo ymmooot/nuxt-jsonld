@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.10...v1.5.0) (2020-09-17)
+
+
+### Bug Fixes
+
+* make hash from json object to generate hid ([b5326e4](https://github.com/ymmooot/nuxt-jsonld/commit/b5326e42dd9e5beb1e54169da7f0af9c40947d0a)), closes [#219](https://github.com/ymmooot/nuxt-jsonld/issues/219)
+
+
+### Features
+
+* use schema-dts for return type ([4c5bc33](https://github.com/ymmooot/nuxt-jsonld/commit/4c5bc3313dffdeca4434ad241ee17a7d40ad083f))
+
 ## [1.4.10](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.9...v1.4.10) (2020-06-15)
 
 
