@@ -1,26 +1,22 @@
 {
   "name": "typescript",
-  "version": "1.0.0",
   "description": "My grand Nuxt.js project",
-  "author": "Ryota Yamamoto",
-  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
-    "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate"
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
-    "cross-env": "^7.0.2",
     "nuxt": "^2.14.5",
     "nuxt-jsonld": "file:../../lib",
-    "ts-node": "^9.0.0",
-    "vue-property-decorator": "^9.0.0"
+    "vue-class-component": "^7.2.5"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.5",
-    "@nuxt/typescript-build": "^2.0.3",
-    "nodemon": "^2.0.4"
+    "@nuxt/typescript-build": "^2.0.3"
   }
 }

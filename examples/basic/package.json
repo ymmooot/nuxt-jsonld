@@ -1,23 +1,16 @@
 {
-  "name": "example",
+  "name": "basic",
+  "description": "My grand Nuxt.js project",
   "version": "1.0.0",
-  "description": "My marvelous Nuxt.js project",
-  "author": "Ryota Yamamoto",
-  "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
     "generate": "nuxt generate",
-    "export": "nuxt build --target static && nuxt export",
-    "serve": "nuxt serve"
+    "start": "nuxt start"
   },
   "dependencies": {
-    "cross-env": "^7.0.2",
     "nuxt": "^2.14.5",
     "nuxt-jsonld": "file:../../lib"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
   }
 }

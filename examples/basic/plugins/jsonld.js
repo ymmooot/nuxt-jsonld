@@ -1,6 +1,6 @@
-import Vue from 'vue';
-import NuxtJsonld from 'nuxt-jsonld';
+import Vue from 'vue'
+import NuxtJsonld from 'nuxt-jsonld'
 
 Vue.use(NuxtJsonld, {
-  space: 4, // default: 2
-});
+  spaces: 4,
+})
