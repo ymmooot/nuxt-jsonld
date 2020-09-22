@@ -40,9 +40,9 @@ const mockInstanceFactory = (head, mixinOptions) => {
 };
 
 describe('without head and without jsonld', () => {
-  test('head method does not exist when head and jsonld are not defined', () => {
+  test('head method returns an empty object when head and jsonld are not defined', () => {
     const mock = new Vue({ mixins: [createJsonldMixin()] });
-    expect(mock.$options.head).toBeUndefined();
+    expect(mock.$options.head()).toEqual({});
   });
 
   test('head method returns an empty object when head and jsonld return null', () => {

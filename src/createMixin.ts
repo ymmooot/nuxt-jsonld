@@ -18,13 +18,11 @@ export default (_options: UserOptions = {}): JsonldMixin => {
 
   return {
     beforeCreate(this: Vue) {
-      if (this.$options && typeof this.$options.jsonld === 'function') {
-        const originalHead = this.$options.head;
+      const originalHead = this.$options.head;
 
-        this.$options.head = () => {
-          return mergeHead.call(this, originalHead, options);
-        };
-      }
+      this.$options.head = () => {
+        return mergeHead.call(this, originalHead, options);
+      };
     },
   };
 };

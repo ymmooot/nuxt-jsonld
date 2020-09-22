@@ -14,6 +14,10 @@ const getOriginalHeadObject = (that, originalHead): JsonLDObject => {
 };
 
 const getJsonLdHeadObject = (that, jsonLdFunc: Function, space: Options['space']): JsonLDObject => {
+  if (!jsonLdFunc) {
+    return null;
+  }
+
   const jsonLd = jsonLdFunc.call(that);
   if (jsonLd === null) {
     return null;
@@ -42,6 +46,10 @@ const getJsonLdHeadObject = (that, jsonLdFunc: Function, space: Options['space']
 const isEmptyObject = (obj: object): boolean => obj === undefined || obj === null || Object.keys(obj).length === 0;
 
 export default function mergeHead(originalHead, { space }: Options) {
+  if (!this.$options) {
+    this.$options = {};
+  }
+
   const head = getOriginalHeadObject(this, originalHead);
   const jsonLd = getJsonLdHeadObject(this, this.$options.jsonld, space);
 

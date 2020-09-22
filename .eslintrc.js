@@ -16,6 +16,7 @@ module.exports = {
     'no-param-reassign': ['error', { props: false }],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
+    'import/prefer-default-export': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',

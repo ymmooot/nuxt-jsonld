@@ -30,6 +30,7 @@
   ],
   "typings": "./lib/index.d.ts",
   "dependencies": {
+    "@vue/composition-api": "^1.0.0-beta.14",
     "schema-dts": "^0.7.1",
     "xxhashjs": "^0.2.2"
   },
