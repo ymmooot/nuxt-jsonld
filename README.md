@@ -75,7 +75,7 @@ export default {
       },
     }));
     return {
-      '@context': 'http://schema.org',
+      '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: items,
     };
@@ -133,9 +133,9 @@ export default {
     }
 
     return {
-      '@context': 'http://schema.org',
-      '@type': 'SomeType',
-      body: foo,
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: 'product name',
     };
   },
 };
@@ -152,8 +152,9 @@ with `Vue.extend`
 export default Vue.extend({
   jsonld() {
     return {
-      '@context': "http://schema.org",
-      body: 'some text',
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: 'product name',
     };
   },
 });
@@ -172,8 +173,9 @@ import { Jsonld } from 'nuxt-jsonld';
 export default class Sample extends Vue {
   jsonld() {
     return {
-      '@context': "http://schema.org",
-      body: 'some text',
+      '@context': 'https://schema.org',
+      '@type': 'Product'
+      name: 'product name',
     };
   }
 };
