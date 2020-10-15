@@ -142,6 +142,24 @@ export default {
 </script>
 ```
 
+You can return multiple json data as an array.
+
+```js
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [/* breadcrumb items*/]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {/* article info */}
+  },
+]
+```
+
+Or use `@graph` notation. [#247](https://github.com/ymmooot/nuxt-jsonld/issues/247#issuecomment-579851220)
 
 ### TypeScript
 
@@ -181,3 +199,4 @@ export default class Sample extends Vue {
 };
 </script>
 ```
+
