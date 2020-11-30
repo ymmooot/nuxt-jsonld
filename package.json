@@ -52,7 +52,7 @@
     "eslint-plugin-jest": "^24.0.1",
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.4.2",
-    "mem": "6.1.1",
+    "mem": "8.0.0",
     "prettier": "^2.1.1",
     "rimraf": "^3.0.0",
     "semantic-release": "^17.1.1",
