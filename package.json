@@ -30,7 +30,7 @@
   ],
   "typings": "./lib/index.d.ts",
   "dependencies": {
-    "schema-dts": "^0.7.1",
+    "schema-dts": "^0.8.1",
     "xxhashjs": "^0.2.2"
   },
   "devDependencies": {

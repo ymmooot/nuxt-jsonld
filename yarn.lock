@@ -6836,10 +6836,10 @@ saxes@^5.0.0:
   dependencies:
     xmlchars "^2.2.0"
 
-schema-dts@^0.7.1:
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-0.7.4.tgz#28f46dae4c91accc769a54867a0f2158e516bc5c"
-  integrity sha512-nVdu+10WHq8svJF+5ep2Q6eFJvkTTuahn+mgmLsnAMZ3YbUmf/o5MyXl+IOkUcXCCI29czSX7wY53tbuj8MrmA==
+schema-dts@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-0.8.1.tgz#db04845d26377c5a8de15e87afc97c9047127c59"
+  integrity sha512-GlLkN812img1pWqkTlhCKIuABF0s8aXqmyD5wUaeGWMJ7tvEYFJ4xdGABlVs7yEEtNwVrOXMWGMJhnY7z/hYUA==
 
 semantic-release@^17.1.1:
   version "17.3.0"
