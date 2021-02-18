@@ -1,7 +1,10 @@
 import Vue, { ComponentOptions } from 'vue';
+import { Thing, WithContext } from 'schema-dts';
 
 type Target = {
-  options?: ComponentOptions<Vue>;
+  options?: ComponentOptions<Vue> & {
+    jsonld?: () => WithContext<Thing> | WithContext<Thing>[] | null;
+  };
 } & typeof Vue;
 
 export default (target: Target): void => {
@@ -11,6 +14,6 @@ export default (target: Target): void => {
     return;
   }
 
-  options.jsonld = options.methods.jsonld;
-  delete options.methods.jsonld;
+  target.options.jsonld = options.methods.jsonld;
+  delete target.options.methods.jsonld;
 };
