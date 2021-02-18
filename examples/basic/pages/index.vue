@@ -16,6 +16,11 @@ export default {
       count: 0,
     }
   },
+  head() {
+    return {
+      title: 'top'
+    }
+  },
   jsonld() {
     return {
       '@context': "https://schema.org",

@@ -29,7 +29,7 @@ export const createJsonldMixin = (jsonldManager: JsonldManager) => ({
   watch: {
     _jsonld: {
       handler(val) {
-        if (val) {
+        if (val !== undefined) {
           jsonldManager.update(this._uid, val);
         }
       },
