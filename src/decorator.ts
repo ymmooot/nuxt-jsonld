@@ -1,14 +1,13 @@
 import Vue, { ComponentOptions } from 'vue';
-import { Thing, WithContext } from 'schema-dts';
 
 type Target = {
   options?: ComponentOptions<Vue> & {
-    jsonld?: () => WithContext<Thing> | WithContext<Thing>[] | null;
+    jsonld?: any;
   };
 } & typeof Vue;
 
 export default (target: Target): void => {
-  const options = target.options || {};
+  const { options } = target;
 
   if (!options.methods || !options.methods.jsonld || typeof options.methods.jsonld !== 'function') {
     return;

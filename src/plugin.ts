@@ -5,10 +5,10 @@ import { createRootMixin, createJsonldMixin } from './mixins';
 export default {
   install(Vue: typeof VueT, options = {}) {
     const opts = {
-      ...options,
       ...{
         space: '',
       },
+      ...options,
     };
     const jsonldManager = new JsonldManager(opts);
     const rootMixin = createRootMixin(jsonldManager);
