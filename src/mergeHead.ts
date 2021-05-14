@@ -1,4 +1,3 @@
-import XXH from 'xxhashjs';
 import { Options } from './createMixin';
 
 interface JsonLDObject {
@@ -13,6 +12,24 @@ const getOriginalHeadObject = (that, originalHead): JsonLDObject => {
   return originalHead || null;
 };
 
+function hashCode(s: string) {
+  /**
+   * Using the java hashCode function
+   * https://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/
+   * https://www.thejavaprogrammer.com/what-is-hashcode-in-java/
+   */
+  let hash = 0;
+  if (s.length === 0) {
+    return hash;
+  }
+  for (let i = 0; i < s.length; i += 1) {
+    const char = s.charCodeAt(i);
+    hash = (hash << 5) - hash + char; // eslint-disable-line no-bitwise
+    hash &= hash; // eslint-disable-line no-bitwise
+  }
+  return hash;
+}
+
 const getJsonLdHeadObject = (that, jsonLdFunc: Function, space: Options['space']): JsonLDObject => {
   const jsonLd = jsonLdFunc.call(that);
   if (jsonLd === null) {
@@ -20,7 +37,7 @@ const getJsonLdHeadObject = (that, jsonLdFunc: Function, space: Options['space']
   }
 
   const minifiedString = JSON.stringify(jsonLd, null, '');
-  const hid = `nuxt-jsonld-${XXH.h32(minifiedString, 0).toString(16)}`;
+  const hid = `nuxt-jsonld-${hashCode(minifiedString).toString(16)}`;
 
   const stringifiedJson = JSON.stringify(jsonLd, null, space);
   const innerHTML = space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
