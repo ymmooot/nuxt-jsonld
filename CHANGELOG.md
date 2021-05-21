@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.0...v1.5.1) (2021-05-21)
+
+
+### Bug Fixes
+
+* remove xxhashjs ([d997e57](https://github.com/ymmooot/nuxt-jsonld/commit/d997e573a8f014d6ef57b7818f22647fe0ab8286)), closes [#638](https://github.com/ymmooot/nuxt-jsonld/issues/638)
+
 # [1.5.0](https://github.com/ymmooot/nuxt-jsonld/compare/v1.4.10...v1.5.0) (2020-09-17)
 
 
