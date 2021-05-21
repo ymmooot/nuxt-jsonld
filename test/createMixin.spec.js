@@ -56,11 +56,11 @@ describe('without head and with jsonld', () => {
     const mock = mockInstanceFactory();
     expect(mock.$options.head.call(mock)).toEqual({
       __dangerouslyDisableSanitizersByTagID: {
-        'nuxt-jsonld-5414b96e': ['innerHTML'],
+        'nuxt-jsonld-24692542': ['innerHTML'],
       },
       script: [
         {
-          hid: 'nuxt-jsonld-5414b96e',
+          hid: 'nuxt-jsonld-24692542',
           innerHTML: `
 {
   "@context": "http://schema.org",
@@ -114,7 +114,7 @@ describe('with head and jsonld', () => {
       const mock = mockInstanceFactory(head, { space: '\t' });
       expect(mock.$options.head.call(mock)).toEqual({
         __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-5414b96e': ['innerHTML'],
+          'nuxt-jsonld-24692542': ['innerHTML'],
         },
         title: 'title',
         script: [
@@ -122,7 +122,7 @@ describe('with head and jsonld', () => {
             src: 'script.js',
           },
           {
-            hid: 'nuxt-jsonld-5414b96e',
+            hid: 'nuxt-jsonld-24692542',
             innerHTML: `
 {
 	"@context": "http://schema.org",
@@ -155,7 +155,7 @@ describe('with head and jsonld', () => {
 
       expect(mock.$options.head.call(mock)).toEqual({
         __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-5414b96e': ['innerHTML'],
+          'nuxt-jsonld-24692542': ['innerHTML'],
         },
         title: 'title',
         script: [
@@ -163,7 +163,7 @@ describe('with head and jsonld', () => {
             src: 'script.js',
           },
           {
-            hid: 'nuxt-jsonld-5414b96e',
+            hid: 'nuxt-jsonld-24692542',
             innerHTML: `{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://example.com/"}},{"@type":"ListItem","position":2,"item":{"@id":"https://example.com/foo/"}}]}`,
             type: 'application/ld+json',
           },

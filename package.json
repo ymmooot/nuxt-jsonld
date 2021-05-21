@@ -30,8 +30,7 @@
   ],
   "typings": "./lib/index.d.ts",
   "dependencies": {
-    "schema-dts": "^0.8.2",
-    "xxhashjs": "^0.2.2"
+    "schema-dts": "^0.8.2"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
