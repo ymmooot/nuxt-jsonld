@@ -4,6 +4,7 @@
 ### Bug Fixes
 
 * use json attribute of vue-meta to sanitize content ([f0313f4](https://github.com/ymmooot/nuxt-jsonld/commit/f0313f4b6bace7f518287b8aaeb755d8a37a8f69)), closes [#671](https://github.com/ymmooot/nuxt-jsonld/issues/671)
+  * delete space option because this script does not use `JSON.stringify()`.
 
 ## [1.5.1](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.0...v1.5.1) (2021-05-21)
 
