@@ -16,9 +16,6 @@ function hashCode(s: string) {
    * https://www.thejavaprogrammer.com/what-is-hashcode-in-java/
    */
   let hash = 0;
-  if (s.length === 0) {
-    return hash;
-  }
   for (let i = 0; i < s.length; i += 1) {
     const char = s.charCodeAt(i);
     hash = (hash << 5) - hash + char; // eslint-disable-line no-bitwise

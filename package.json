@@ -30,7 +30,7 @@
   ],
   "typings": "./lib/index.d.ts",
   "dependencies": {
-    "schema-dts": "^0.8.2"
+    "schema-dts": "^0.10.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
@@ -46,16 +46,16 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "2.22.0",
     "eslint-plugin-jest": "^24.0.1",
     "eslint-plugin-prettier": "^3.1.4",
-    "jest": "^26.4.2",
+    "jest": "^27.0.6",
     "mem": "8.0.0",
     "prettier": "^2.1.1",
     "rimraf": "^3.0.0",
     "semantic-release": "^17.1.1",
-    "ts-jest": "^26.3.0",
+    "ts-jest": "^27.0.4",
     "typescript": "^4.0.2",
     "vue": "^2.6.12",
     "vue-class-component": "^7.2.5",
