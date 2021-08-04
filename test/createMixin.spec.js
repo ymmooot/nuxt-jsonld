@@ -55,34 +55,29 @@ describe('without head and with jsonld', () => {
   test('head method returns jsonld metaInfo', () => {
     const mock = mockInstanceFactory();
     expect(mock.$options.head.call(mock)).toEqual({
-      __dangerouslyDisableSanitizersByTagID: {
-        'nuxt-jsonld-24692542': ['innerHTML'],
-      },
       script: [
         {
           hid: 'nuxt-jsonld-24692542',
-          innerHTML: `
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@id": "https://example.com/"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@id": "https://example.com/foo/"
-      }
-    }
-  ]
-}
-`,
+          json: {
+            '@context': 'http://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                item: {
+                  '@id': 'https://example.com/',
+                },
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                item: {
+                  '@id': 'https://example.com/foo/',
+                },
+              },
+            ],
+          },
           type: 'application/ld+json',
         },
       ],
@@ -113,9 +108,6 @@ describe('with head and jsonld', () => {
     test('using tab', () => {
       const mock = mockInstanceFactory(head, { space: '\t' });
       expect(mock.$options.head.call(mock)).toEqual({
-        __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-24692542': ['innerHTML'],
-        },
         title: 'title',
         script: [
           {
@@ -123,28 +115,26 @@ describe('with head and jsonld', () => {
           },
           {
             hid: 'nuxt-jsonld-24692542',
-            innerHTML: `
-{
-	"@context": "http://schema.org",
-	"@type": "BreadcrumbList",
-	"itemListElement": [
-		{
-			"@type": "ListItem",
-			"position": 1,
-			"item": {
-				"@id": "https://example.com/"
-			}
-		},
-		{
-			"@type": "ListItem",
-			"position": 2,
-			"item": {
-				"@id": "https://example.com/foo/"
-			}
-		}
-	]
-}
-`,
+            json: {
+              '@context': 'http://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  item: {
+                    '@id': 'https://example.com/',
+                  },
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  item: {
+                    '@id': 'https://example.com/foo/',
+                  },
+                },
+              ],
+            },
             type: 'application/ld+json',
           },
         ],
@@ -154,9 +144,6 @@ describe('with head and jsonld', () => {
       const mock = mockInstanceFactory(head, { space: 0 });
 
       expect(mock.$options.head.call(mock)).toEqual({
-        __dangerouslyDisableSanitizersByTagID: {
-          'nuxt-jsonld-24692542': ['innerHTML'],
-        },
         title: 'title',
         script: [
           {
@@ -164,7 +151,14 @@ describe('with head and jsonld', () => {
           },
           {
             hid: 'nuxt-jsonld-24692542',
-            innerHTML: `{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://example.com/"}},{"@type":"ListItem","position":2,"item":{"@id":"https://example.com/foo/"}}]}`,
+            json: {
+              '@context': 'http://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, item: { '@id': 'https://example.com/' } },
+                { '@type': 'ListItem', position: 2, item: { '@id': 'https://example.com/foo/' } },
+              ],
+            },
             type: 'application/ld+json',
           },
         ],

@@ -10,7 +10,5 @@
     "declaration": true,
     "lib": ["es2015", "es2017", "dom"]
   },
-  "include": [
-    "src/**/*"
-  ],
+  "include": ["src/**/*"]
 }

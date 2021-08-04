@@ -15,7 +15,7 @@ declare module 'vue/types/options' {
 export const Jsonld = decorator;
 
 export default {
-  install(Vue, options) {
-    Vue.mixin(createJsonldMixin(options));
+  install(Vue) {
+    Vue.mixin(createJsonldMixin());
   },
 };

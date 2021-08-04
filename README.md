@@ -6,7 +6,6 @@
 [![CircleCI](https://circleci.com/gh/ymmooot/nuxt-jsonld.svg?style=shield)](https://circleci.com/gh/ymmooot/nuxt-jsonld)
 [![codecov](https://codecov.io/gh/ymmooot/nuxt-jsonld/branch/master/graph/badge.svg)](https://codecov.io/gh/ymmooot/nuxt-jsonld)
 
-
 A Nuxt.js plugin to manage jsonld in Vue component.
 
 ## Installation
@@ -23,11 +22,6 @@ import Vue from 'vue';
 import NuxtJsonld from 'nuxt-jsonld';
 
 Vue.use(NuxtJsonld);
-
-// you can set the indentation
-Vue.use(NuxtJsonld, {
-  space: process.env.NODE_ENV === 'production' ? 0 : 2, // default: 2
-});
 ```
 
 Then, add plugin config to `nuxt.config.js`.
@@ -41,9 +35,7 @@ Then, add plugin config to `nuxt.config.js`.
 Make a jsonld method to your Vue components and return structured data object.
 
 ```vue
-<template>
-  ...
-</template>
+<template>...</template>
 
 <script>
 export default {
@@ -88,36 +80,36 @@ export default {
 
 ```html
 <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@id": "https://example.com",
-        "name": "top page"
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://example.com",
+          "name": "top page"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "https://example.com/foo",
+          "name": "foo"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://example.com/foo/bar",
+          "name": "bar"
+        }
       }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@id": "https://example.com/foo",
-        "name": "foo"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@id": "https://example.com/foo/bar",
-        "name": "bar"
-      }
-    },
-  ]
-}
+    ]
+  }
 </script>
 ```
 
@@ -125,20 +117,20 @@ If you do not want to make jsonld tag, just return null;
 
 ```html
 <script>
-export default {
-  props: ['foo'],
-  jsonld() {
-    if (!this.foo) {
-      return null;
-    }
+  export default {
+    props: ['foo'],
+    jsonld() {
+      if (!this.foo) {
+        return null;
+      }
 
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: 'product name',
-    };
-  },
-};
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'product name',
+      };
+    },
+  };
 </script>
 ```
 
@@ -147,16 +139,20 @@ You can return multiple json data as an array.
 ```js
 [
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [/* breadcrumb items*/]
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      /* breadcrumb items*/
+    ],
   },
   {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "mainEntityOfPage": {/* article info */}
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    mainEntityOfPage: {
+      /* article info */
+    },
   },
-]
+];
 ```
 
 Or use `@graph` notation. [#247](https://github.com/ymmooot/nuxt-jsonld/issues/247#issuecomment-579851220)
@@ -167,15 +163,15 @@ with `Vue.extend`
 
 ```html
 <script lang="ts">
-export default Vue.extend({
-  jsonld() {
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: 'product name',
-    };
-  },
-});
+  export default Vue.extend({
+    jsonld() {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'product name',
+      };
+    },
+  });
 </script>
 ```
 
@@ -183,20 +179,19 @@ with `vue-property-decorator`
 
 ```html
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import { Jsonld } from 'nuxt-jsonld';
+  import { Component, Vue } from 'vue-property-decorator'
+  import { Jsonld } from 'nuxt-jsonld';
 
-@Jsonld
-@Component
-export default class Sample extends Vue {
-  jsonld() {
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'Product'
-      name: 'product name',
-    };
-  }
-};
+  @Jsonld
+  @Component
+  export default class Sample extends Vue {
+    jsonld() {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Product'
+        name: 'product name',
+      };
+    }
+  };
 </script>
 ```
-

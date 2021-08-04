@@ -16,11 +16,14 @@ export default {
     }
   },
   jsonld() {
+    const s = 'script'
+    const dirty = `<${s}>if(process.browser) alert('yes')</${s}>`
     return {
       '@context': "https://schema.org",
       "@type": "Product",
       name: this.name,
       count: this.count,
+      dirty,
     };
   },
 }

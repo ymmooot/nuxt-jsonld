@@ -6,12 +6,7 @@
     "declaration": false,
     "allowJs": true,
     "noEmit": true,
-    "types": [
-      "@types/jest"
-    ],
+    "types": ["@types/jest"]
   },
-  "include": [
-    "/src/**/*",
-    "./test/**/*"
-  ]
+  "include": ["/src/**/*", "./test/**/*"]
 }

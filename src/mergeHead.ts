@@ -1,8 +1,5 @@
-import { Options } from './createMixin';
-
 interface JsonLDObject {
   script: object[];
-  __dangerouslyDisableSanitizersByTagID: object;
 }
 
 const getOriginalHeadObject = (that, originalHead): JsonLDObject => {
@@ -30,7 +27,7 @@ function hashCode(s: string) {
   return hash;
 }
 
-const getJsonLdHeadObject = (that, jsonLdFunc: Function, space: Options['space']): JsonLDObject => {
+const getJsonLdHeadObject = (that, jsonLdFunc: Function): JsonLDObject => {
   const jsonLd = jsonLdFunc.call(that);
   if (jsonLd === null) {
     return null;
@@ -39,28 +36,22 @@ const getJsonLdHeadObject = (that, jsonLdFunc: Function, space: Options['space']
   const minifiedString = JSON.stringify(jsonLd, null, '');
   const hid = `nuxt-jsonld-${hashCode(minifiedString).toString(16)}`;
 
-  const stringifiedJson = JSON.stringify(jsonLd, null, space);
-  const innerHTML = space === 0 ? stringifiedJson : `\n${stringifiedJson}\n`;
-
   return {
     script: [
       {
         hid,
         type: 'application/ld+json',
-        innerHTML,
+        json: jsonLd,
       },
     ],
-    __dangerouslyDisableSanitizersByTagID: {
-      [hid]: ['innerHTML'],
-    },
   };
 };
 
 const isEmptyObject = (obj: object): boolean => obj === undefined || obj === null || Object.keys(obj).length === 0;
 
-export default function mergeHead(originalHead, { space }: Options) {
+export default function mergeHead(originalHead) {
   const head = getOriginalHeadObject(this, originalHead);
-  const jsonLd = getJsonLdHeadObject(this, this.$options.jsonld, space);
+  const jsonLd = getJsonLdHeadObject(this, this.$options.jsonld);
 
   if (isEmptyObject(head) && jsonLd === null) {
     return {};
@@ -75,9 +66,5 @@ export default function mergeHead(originalHead, { space }: Options) {
   return {
     ...head,
     script: [...(head.script || []), ...jsonLd.script],
-    __dangerouslyDisableSanitizersByTagID: {
-      ...(head.__dangerouslyDisableSanitizersByTagID || {}),
-      ...jsonLd.__dangerouslyDisableSanitizersByTagID,
-    },
   };
 }

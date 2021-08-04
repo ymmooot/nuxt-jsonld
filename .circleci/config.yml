@@ -8,18 +8,18 @@ executors:
 commands:
   yarn_install:
     steps:
-    - restore_cache:
-        name: Restore Yarn Package Cache
-        keys:
-          - nuxt-jsonld-{{ checksum "yarn.lock" }}
-    - run:
-        name: Install Dependencies
-        command: yarn install --frozen-lockfile
-    - save_cache:
-        name: Save Yarn Package Cache
-        key: nuxt-jsonld-{{ checksum "yarn.lock" }}
-        paths:
-          - ~/.cache/yarn
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - nuxt-jsonld-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: nuxt-jsonld-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
 
 jobs:
   lint:
