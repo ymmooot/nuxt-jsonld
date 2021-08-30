@@ -6483,10 +6483,10 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-schema-dts@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-0.10.0.tgz#7e1a2ba6ba5cfe12c0cd6a8e43b6c23695c2391d"
-  integrity sha512-swqBU3bFgtz/b+ldP/LEshp4clgOt130uKIgVOGLx+K3lYGUL8censjA9nQX8+jMz1oU/AeNktCIClTaNLuJzw==
+schema-dts@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-1.0.0.tgz#60e8a0f2cef5e644c44c843b03d35b37a4423c01"
+  integrity sha512-9t8gnY3RW2CbpuvA0pIpcaHFXkJTeNnWR4uaWI+PiYSfpuEeMw+2Q0Gac6YTnQb1B8TR6/+G71gQWuSE7dq6Zw==
 
 semantic-release@^17.1.1:
   version "17.4.4"
