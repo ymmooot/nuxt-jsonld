@@ -9,22 +9,13 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  extends: ['airbnb-base', 'plugin:prettier/recommended'],
+  extends: ['plugin:prettier/recommended'],
   plugins: ['prettier', '@typescript-eslint'],
   rules: {
     'no-underscore-dangle': ['error', { allow: ['_uid', '__dangerouslyDisableSanitizersByTagID'] }],
     'no-param-reassign': ['error', { props: false }],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        ts: 'never',
-        vue: 'always',
-      },
-    ],
   },
   settings: {
     'import/resolver': {
