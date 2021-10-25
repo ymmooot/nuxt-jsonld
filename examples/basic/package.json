@@ -10,7 +10,7 @@
     "start": "nuxt start"
   },
   "dependencies": {
-    "nuxt": "^2.14.5",
+    "nuxt": "^2.15.8",
     "nuxt-jsonld": "file:../../lib"
   }
 }

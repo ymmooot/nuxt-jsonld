@@ -4,20 +4,19 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
-    "generate": "nuxt-ts generate",
-    "start": "nuxt-ts start"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^2.0.0",
-    "nuxt": "^2.14.5",
+    "nuxt": "^2.15.8",
     "nuxt-jsonld": "file:../../lib",
-    "vue-class-component": "^7.2.5"
+    "vue-class-component": "^7.2.6"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.14.5",
-    "@nuxt/typescript-build": "^2.0.3",
-    "schema-dts": "^0.7.1"
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0",
+    "schema-dts": "^1.0.0"
   }
 }
