@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.2...v1.5.3) (2021-10-25)
+
+
+### Bug Fixes
+
+* fix types ([9eaf3c8](https://github.com/ymmooot/nuxt-jsonld/commit/9eaf3c8a349cc1b14e2e296a089a1dd3d7a4e8f4))
+
 ## [1.5.2](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.1...v1.5.2) (2021-08-04)
 
 
