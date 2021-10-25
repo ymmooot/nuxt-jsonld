@@ -1,11 +1,61 @@
 {
   "name": "nuxt-jsonld",
-  "version": "1.5.2",
-  "description": "manage jsonld in Vue component.",
-  "main": "lib/index.js",
+  "version": "1.5.3",
+  "description": "manage JSON-LD in Vue component.",
   "repository": "ssh://git@github.com/ymmooot/nuxt-jsonld.git",
-  "author": "Ryota Yamamoto <ryota-yamamoto@retty.me>",
+  "author": "Ryota Yamamoto <ryota.yama.9@gmail.com>",
   "license": "MIT",
+  "exports": {
+    ".": {
+      "require": "./dist/module.js",
+      "import": "./dist/module.mjs",
+      "types": "./dist/module.d.ts"
+    }
+  },
+  "main": "dist/module.mjs",
+  "types": "dist/module.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "demo:dev": "nuxi dev example",
+    "demo:build": "yarn build && yarn nuxi build example",
+    "demo:start": "node example/.output/server/index.mjs",
+    "lint": "yarn lint:es && yarn lint:prettier",
+    "lint:es": "eslint --ext .js,.ts,.vue",
+    "lint:prettier": "prettier '**/*.{js,ts,vue,html,json,md,yml}' --check",
+    "lintfix": "yarn lint:es --fix && yarn lint:prettier --write",
+    "cy": "cypress",
+    "test": "jest",
+    "test:ci": "jest --coverage && codecov",
+    "test:e2e": "cypress run --record --key 8f568853-b927-4858-9e2a-6af417990ad7",
+    "release:prepare": "shipjs prepare",
+    "release:trigger": "shipjs trigger"
+  },
+  "dependencies": {
+    "pathe": "^0.2.0",
+    "schema-dts": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@nuxtjs/eslint-config-typescript": "^9.0.0",
+    "@types/jest": "^27.4.0",
+    "babel-jest": "^27.5.1",
+    "codecov": "^3.8.3",
+    "cypress": "^9.5.4",
+    "esbuild": "^0.14.36",
+    "esbuild-jest": "^0.5.0",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.7",
+    "nuxt3": "latest",
+    "prettier": "^2.5.1",
+    "shipjs": "0.24.4",
+    "tsup": "^5.11.11",
+    "typescript": "^4.5.4"
+  },
   "keywords": [
     "attribute",
     "head",
@@ -14,69 +64,5 @@
     "vue",
     "nuxt",
     "jsonld"
-  ],
-  "scripts": {
-    "test": "jest",
-    "test:ci": "jest --coverage && codecov",
-    "prebuild": "rimraf lib",
-    "build": "tsc -p .",
-    "preversion": "npm run build",
-    "release": "semantic-release",
-    "lint": "eslint --ext .ts,.js .",
-    "lint:fix": "eslint --ext .ts,.js --fix ."
-  },
-  "files": [
-    "lib"
-  ],
-  "typings": "./lib/index.d.ts",
-  "dependencies": {
-    "schema-dts": "^1.0.0"
-  },
-  "devDependencies": {
-    "@semantic-release/changelog": "^6.0.0",
-    "@semantic-release/commit-analyzer": "^9.0.1",
-    "@semantic-release/git": "^10.0.0",
-    "@semantic-release/github": "^8.0.1",
-    "@semantic-release/npm": "^8.0.2",
-    "@semantic-release/release-notes-generator": "^10.0.2",
-    "@types/jest": "^27.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.1.0",
-    "@typescript-eslint/parser": "^5.1.0",
-    "codecov": "^3.7.2",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.1.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "2.25.2",
-    "eslint-plugin-jest": "^25.2.2",
-    "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^27.3.1",
-    "mem": "9.0.1",
-    "prettier": "^2.4.1",
-    "rimraf": "^3.0.0",
-    "semantic-release": "^18.0.0",
-    "ts-jest": "^27.0.7",
-    "typescript": "^4.4.4",
-    "vue": "^2.6.12",
-    "vue-class-component": "^7.2.5",
-    "vue-meta": "^2.4.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/github",
-      "@semantic-release/npm",
-      "@semantic-release/git"
-    ]
-  },
-  "resolutions": {
-    "mkdirp/minimist": "^1.2.5",
-    "optimist/minimist": "^1.2.5"
-  }
+  ]
 }
