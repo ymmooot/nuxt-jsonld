@@ -1,19 +1,23 @@
 # nuxt-jsonld
 
 [![version](https://img.shields.io/npm/v/nuxt-jsonld.svg)](https://www.npmjs.com/package/nuxt-jsonld)
-[![dependencies](https://david-dm.org/ymmooot/nuxt-jsonld/status.svg)](https://david-dm.org/ymmooot/nuxt-jsonld)
 [![downloads](https://img.shields.io/npm/dt/nuxt-jsonld.svg)](https://www.npmjs.com/package/nuxt-jsonld)
 [![CircleCI](https://circleci.com/gh/ymmooot/nuxt-jsonld.svg?style=shield)](https://circleci.com/gh/ymmooot/nuxt-jsonld)
 [![codecov](https://codecov.io/gh/ymmooot/nuxt-jsonld/branch/master/graph/badge.svg)](https://codecov.io/gh/ymmooot/nuxt-jsonld)
+
+⚠⚠⚠⚠⚠⚠⚠⚠⚠  
+This version is for Nuxt v2.  
+Please read [this document](https://github.com/ymmooot/nuxt-jsonld/blob/master/README.md) for Nuxt v3.  
+⚠⚠⚠⚠⚠⚠⚠⚠⚠
 
 A Nuxt.js plugin to manage jsonld in Vue component.
 
 ## Installation
 
 ```bash
-$ yarn add nuxt-jsonld
+$ yarn add nuxt-jsonld@v1
 or
-$ npm install nuxt-jsonld
+$ npm install nuxt-jsonld@v1
 ```
 
 ```js
