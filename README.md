@@ -1,44 +1,84 @@
 # nuxt-jsonld
 
 [![version](https://img.shields.io/npm/v/nuxt-jsonld.svg)](https://www.npmjs.com/package/nuxt-jsonld)
-[![dependencies](https://david-dm.org/ymmooot/nuxt-jsonld/status.svg)](https://david-dm.org/ymmooot/nuxt-jsonld)
 [![downloads](https://img.shields.io/npm/dt/nuxt-jsonld.svg)](https://www.npmjs.com/package/nuxt-jsonld)
 [![CircleCI](https://circleci.com/gh/ymmooot/nuxt-jsonld.svg?style=shield)](https://circleci.com/gh/ymmooot/nuxt-jsonld)
 [![codecov](https://codecov.io/gh/ymmooot/nuxt-jsonld/branch/master/graph/badge.svg)](https://codecov.io/gh/ymmooot/nuxt-jsonld)
 
-A Nuxt.js plugin to manage jsonld in Vue component.
+A Nuxt.js module to manage jsonld in Vue component.
+
+Please read [this](https://github.com/ymmooot/nuxt-jsonld/blob/v1/README.md) if you are using Nuxt2.
 
 ## Installation
 
 ```bash
 $ yarn add nuxt-jsonld
-or
+# or
 $ npm install nuxt-jsonld
 ```
 
-```js
-// plugins/jsonld.js
-import Vue from 'vue';
-import NuxtJsonld from 'nuxt-jsonld';
+```ts
+// nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt3';
 
-Vue.use(NuxtJsonld);
-```
-
-Then, add plugin config to `nuxt.config.js`.
-
-```js
-  plugins: ['~/plugins/jsonld'],
+export default defineNuxtConfig({
+  buildModules: ['nuxt-jsonld'],
+});
 ```
 
 ## Usage
 
+### Composition API
+
+You can call `useJsonld` with a json object.  
+Alternatively, you can pass a function for a reactive json, just as [`useHead`](https://v3.nuxtjs.org/guide/features/head-management/#usehead-composable) composable.
+
+You can use `useJsonld` without importing, since it is provided as [Nuxt auto-imports functions](https://v3.nuxtjs.org/guide/concepts/auto-imports#nuxt-auto-imports).  
+Of course, you can import explicitly from `#jsonld`.
+
+```vue
+<script lang="ts">
+// You don't need to import explicitly.
+// import { useJsonld } from '#jsonld';
+
+export default defineComponent({
+  setup() {
+    // just pass a jsonld object for static jsonld
+    useJsonld({
+      '@context': 'https://schema.org',
+      '@type': 'Thing',
+      name: 'static json',
+    });
+
+    // pass a function which returns a jsonld object for reactive jsonld
+    const count = ref(0);
+    const countUp = () => {
+      count.value += 1;
+    };
+    useJsonld(() => ({
+      '@context': 'https://schema.org',
+      '@type': 'Thing',
+      name: `reactive json: count is ${count.value}`,
+    }));
+
+    return {
+      count,
+      countUp,
+    };
+  },
+});
+</script>
+```
+
+### Options API
+
 Make a jsonld method to your Vue components and return structured data object.
 
 ```vue
-<template>...</template>
+<script lang="ts">
+import type { WithContext, ListItem } from 'schema-dts';
 
-<script>
-export default {
+export default defineComponent({
   data() {
     return {
       breadcrumbs: [
@@ -57,7 +97,7 @@ export default {
       ],
     };
   },
-  jsonld() {
+  jsonld(): WithContext<ListItem> {
     const items = this.breadcrumbs.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -72,65 +112,30 @@ export default {
       itemListElement: items,
     };
   },
-};
+});
 </script>
 ```
 
-🎉 You will get the jsonld tag! 🎉
+If you do not want to make jsonld tag, just return null
 
-```html
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@id": "https://example.com",
-          "name": "top page"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@id": "https://example.com/foo",
-          "name": "foo"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@id": "https://example.com/foo/bar",
-          "name": "bar"
-        }
-      }
-    ]
-  }
-</script>
-```
+```vue
+<script lang="ts">
+import type { WithContext, Product } from 'schema-dts';
 
-If you do not want to make jsonld tag, just return null;
+export default defineComponent({
+  props: ['product'],
+  jsonld(): WithContext<Product> | null {
+    if (!this.product) {
+      return null;
+    }
 
-```html
-<script>
-  export default {
-    props: ['foo'],
-    jsonld() {
-      if (!this.foo) {
-        return null;
-      }
-
-      return {
-        '@context': 'https://schema.org',
-        '@type': 'Product',
-        name: 'product name',
-      };
-    },
-  };
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: this.product.name,
+    };
+  },
+});
 </script>
 ```
 
@@ -156,42 +161,3 @@ You can return multiple json data as an array.
 ```
 
 Or use `@graph` notation. [#247](https://github.com/ymmooot/nuxt-jsonld/issues/247#issuecomment-579851220)
-
-### TypeScript
-
-with `Vue.extend`
-
-```html
-<script lang="ts">
-  export default Vue.extend({
-    jsonld() {
-      return {
-        '@context': 'https://schema.org',
-        '@type': 'Product',
-        name: 'product name',
-      };
-    },
-  });
-</script>
-```
-
-with `vue-property-decorator`
-
-```html
-<script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator'
-  import { Jsonld } from 'nuxt-jsonld';
-
-  @Jsonld
-  @Component
-  export default class Sample extends Vue {
-    jsonld() {
-      return {
-        '@context': 'https://schema.org',
-        '@type': 'Product'
-        name: 'product name',
-      };
-    }
-  };
-</script>
-```
