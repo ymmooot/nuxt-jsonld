@@ -2,8 +2,9 @@
 
 [![version](https://img.shields.io/npm/v/nuxt-jsonld.svg)](https://www.npmjs.com/package/nuxt-jsonld)
 [![downloads](https://img.shields.io/npm/dt/nuxt-jsonld.svg)](https://www.npmjs.com/package/nuxt-jsonld)
-[![Master](https://github.com/ymmooot/nuxt-jsonld/workflows/Master/badge.svg)](https://github.com/ymmooot/nuxt-jsonld/actions/workflows/master.yml)
+[![Test](https://github.com/ymmooot/nuxt-jsonld/workflows/Test/badge.svg)](https://github.com/ymmooot/nuxt-jsonld/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/ymmooot/nuxt-jsonld/branch/master/graph/badge.svg)](https://codecov.io/gh/ymmooot/nuxt-jsonld)
+[![nuxt-jsonld](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/8v9ivg/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/8v9ivg/runs)
 
 A Nuxt.js module to manage JSON-LD in Vue component.
 
@@ -22,7 +23,7 @@ $ npm install nuxt-jsonld
 import { defineNuxtConfig } from 'nuxt3';
 
 export default defineNuxtConfig({
-  buildModules: ['nuxt-jsonld'],
+  modules: ['nuxt-jsonld'],
 });
 ```
 
@@ -120,10 +121,8 @@ You can disable it if you don't use it.
 import { defineNuxtConfig } from 'nuxt3';
 
 export default defineNuxtConfig({
-  buildModules: ['nuxt-jsonld'],
-  'nuxt-jsonld': {
-    disableOptionsAPI: true,
-  },
+  modules: ['nuxt-jsonld'],
+  'nuxt-jsonld': { disableOptionsAPI: true },
 });
 ```
 
@@ -134,14 +133,7 @@ Or
 import { defineNuxtConfig } from 'nuxt3';
 
 export default defineNuxtConfig({
-  buildModules: [
-    [
-      'nuxt-jsonld',
-      {
-        disableOptionsAPI: true,
-      },
-    ],
-  ],
+  modules: [['nuxt-jsonld', { disableOptionsAPI: true }]],
 });
 ```
 
@@ -152,7 +144,6 @@ export default defineNuxtConfig({
 If you don't need JSON-LD tag, just return null.
 
 ```ts
-// Composition API
 useJsonld(() => {
   if (!props.product) {
     return null;
@@ -162,20 +153,6 @@ useJsonld(() => {
     '@type': 'Product',
     name: this.product.name,
   };
-});
-
-// Options API
-defineComponent({
-  jsonld() {
-    if (!this.product) {
-      return null;
-    }
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: this.product.name,
-    };
-  },
 });
 ```
 
