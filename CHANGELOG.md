@@ -1,3 +1,17 @@
+## [2.0.1](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.3...v2.0.1) (2022-04-16)
+
+
+### Features
+
+* nuxt3 ([93b415d](https://github.com/ymmooot/nuxt-jsonld/commit/93b415d4292f3b89bf33aab70b0e3a76c9259f03))
+
+
+### BREAKING CHANGES
+
+* Works with Nuxt3
+
+
+
 ## [1.5.3](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.2...v1.5.3) (2021-10-25)
 
 
