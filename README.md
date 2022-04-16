@@ -2,7 +2,7 @@
 
 [![version](https://img.shields.io/npm/v/nuxt-jsonld.svg)](https://www.npmjs.com/package/nuxt-jsonld)
 [![downloads](https://img.shields.io/npm/dt/nuxt-jsonld.svg)](https://www.npmjs.com/package/nuxt-jsonld)
-[![CircleCI](https://circleci.com/gh/ymmooot/nuxt-jsonld.svg?style=shield)](https://circleci.com/gh/ymmooot/nuxt-jsonld)
+[![Master](https://github.com/ymmooot/nuxt-jsonld/workflows/Master/badge.svg)](https://github.com/ymmooot/nuxt-jsonld/actions/workflows/master.yml)
 [![codecov](https://codecov.io/gh/ymmooot/nuxt-jsonld/branch/master/graph/badge.svg)](https://codecov.io/gh/ymmooot/nuxt-jsonld)
 
 A Nuxt.js module to manage JSON-LD in Vue component.
@@ -37,36 +37,27 @@ You can use `useJsonld` without importing, since it is provided as [Nuxt auto-im
 Of course, you can import explicitly from `#jsonld`.
 
 ```vue
-<script lang="ts">
+<script lang="ts" setup>
 // You don't need to import explicitly.
 // import { useJsonld } from '#jsonld';
 
-export default defineComponent({
-  setup() {
-    // just pass a jsonld object for static jsonld
-    useJsonld({
-      '@context': 'https://schema.org',
-      '@type': 'Thing',
-      name: 'static json',
-    });
-
-    // pass a function which returns a jsonld object for reactive jsonld
-    const count = ref(0);
-    const countUp = () => {
-      count.value += 1;
-    };
-    useJsonld(() => ({
-      '@context': 'https://schema.org',
-      '@type': 'Thing',
-      name: `reactive json: count is ${count.value}`,
-    }));
-
-    return {
-      count,
-      countUp,
-    };
-  },
+// just pass a jsonld object for static jsonld
+useJsonld({
+  '@context': 'https://schema.org',
+  '@type': 'Thing',
+  name: 'static json',
 });
+
+// pass a function which returns a jsonld object for reactive jsonld
+const count = ref(0);
+const countUp = () => {
+  count.value += 1;
+};
+useJsonld(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'Thing',
+  name: `reactive json: count is ${count.value}`,
+}));
 </script>
 ```
 
@@ -162,35 +153,19 @@ If you don't need JSON-LD tag, just return null.
 
 ```ts
 // Composition API
-defineNuxtConfig({
-  props: {
-    product: {
-      type: Object as PropType<Product>,
-      default: null,
-    },
-  },
-  setup(props) {
-    useJsonld(() => {
-      if (!props.product) {
-        return null;
-      }
-      return {
-        '@context': 'https://schema.org',
-        '@type': 'Product',
-        name: this.product.name,
-      };
-    });
-  },
+useJsonld(() => {
+  if (!props.product) {
+    return null;
+  }
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: this.product.name,
+  };
 });
 
 // Options API
-defineNuxtConfig({
-  props: {
-    product: {
-      type: Object as PropType<Product>,
-      default: null,
-    },
-  },
+defineComponent({
   jsonld() {
     if (!this.product) {
       return null;
