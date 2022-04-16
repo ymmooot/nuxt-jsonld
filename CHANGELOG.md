@@ -1,3 +1,7 @@
+## [2.0.2](https://github.com/ymmooot/nuxt-jsonld/compare/v2.0.1...v2.0.2) (2022-04-16)
+
+
+
 ## [2.0.1](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.3...v2.0.1) (2022-04-16)
 
 
