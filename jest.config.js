@@ -1,9 +1,15 @@
 module.exports = {
-  preset: 'ts-jest/presets/js-with-ts',
-  globals: {
-    'ts-jest': {
-      tsconfig: './tsconfig.test.json',
-    },
+  moduleFileExtensions: ['js', 'mjs', 'ts'],
+  collectCoverageFrom: ['src/runtime/**/*.{js,ts}', '!src/**/*.d.ts'],
+  moduleNameMapper: {
+    '^@/(.*)': '<rootDir>/$1',
+    '#app': '<rootDir>/node_modules/nuxt3/dist/app/index.mjs',
+    '#head': '<rootDir>/node_modules/nuxt3/dist/head/runtime/index.mjs',
   },
-  collectCoverageFrom: ['src/**/*.{js,ts}'],
+  transform: {
+    '^.+\\.(js|mjs)$': 'babel-jest',
+    '^.+\\.(ts)$': 'esbuild-jest',
+  },
+  transformIgnorePatterns: ['node_modules/(?!(nuxt3|unenv))'],
+  testPathIgnorePatterns: ['<rootDir>/cypress'],
 };
