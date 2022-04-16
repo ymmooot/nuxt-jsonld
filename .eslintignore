@@ -1,7 +1,9 @@
 node_modules
-yarn-error.log
-build
+.nuxt
+*.log
+cache/
 lib/
-.eslintcache
-examples
-CHANGELOG.md
+.DS_Store
+coverage
+sw.*
+dist
