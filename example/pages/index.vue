@@ -3,7 +3,6 @@
     <h1>Product List</h1>
     <code v-html="jsonld"></code>
 
-    <nuxt-link :to="{ name: 'static' }">static</nuxt-link>
     <ul>
       <li v-for="p in products" :key="p.id">
         name:
@@ -11,6 +10,8 @@
           {{ p.name }}
         </nuxt-link>
       </li>
+      <li><nuxt-link :to="{ name: 'static' }">Static JSON</nuxt-link></li>
+      <li><nuxt-link :to="{ name: 'option' }">Options API</nuxt-link></li>
     </ul>
   </div>
 </template>

@@ -4,7 +4,7 @@ import { useHead } from '#head';
 
 export default defineNuxtPlugin((nuxtApp) => {
   const mixin = {
-    beforeCreate(this) {
+    created() {
       if (typeof this.$options?.jsonld !== 'function') {
         return;
       }

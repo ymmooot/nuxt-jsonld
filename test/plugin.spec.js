@@ -25,10 +25,10 @@ describe('plugin', () => {
     };
     plugin(nuxtApp);
     expect(nuxtApp.vueApp.use).toBeCalledTimes(1);
-    let beforeCreate;
+    let created;
     const vueMock = {
       mixin: jest.fn().mockImplementation((arg) => {
-        beforeCreate = arg.beforeCreate;
+        created = arg.created;
       }),
     };
     installFunction(vueMock);
@@ -36,7 +36,7 @@ describe('plugin', () => {
     // mixin is set
     expect(vueMock.mixin).toBeCalled();
 
-    beforeCreate.call({
+    created.call({
       $options: {
         jsonld,
       },
