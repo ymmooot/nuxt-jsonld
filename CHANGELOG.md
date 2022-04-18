@@ -1,3 +1,12 @@
+## [2.0.3](https://github.com/ymmooot/nuxt-jsonld/compare/v2.0.2...v2.0.3) (2022-04-18)
+
+
+### Bug Fixes
+
+* fix a bug of Options API jsonld ([48e5ef1](https://github.com/ymmooot/nuxt-jsonld/commit/48e5ef177a889f22599800f3cce5c7a6636f58db))
+
+
+
 ## [2.0.2](https://github.com/ymmooot/nuxt-jsonld/compare/v2.0.1...v2.0.2) (2022-04-16)
 
 
