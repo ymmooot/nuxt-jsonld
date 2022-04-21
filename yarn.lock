@@ -8825,14 +8825,7 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.59.0, rollup@^2.60.0, rollup@^2.70.1:
-  version "2.70.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.70.1.tgz#824b1f1f879ea396db30b0fc3ae8d2fead93523e"
-  integrity sha512-CRYsI5EuzLbXdxC6RnYhOuRdtz4bhejPMSWjsFLfVM/7w/85n2szZv6yExqUXsBdz5KT8eoubeyDUDjhLHEslA==
-  optionalDependencies:
-    fsevents "~2.3.2"
-
-rollup@^2.70.2:
+rollup@^2.59.0, rollup@^2.60.0, rollup@^2.70.1, rollup@^2.70.2:
   version "2.70.2"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.70.2.tgz#808d206a8851628a065097b7ba2053bd83ba0c0d"
   integrity sha512-EitogNZnfku65I1DD5Mxe8JYRUCy0hkK5X84IlDtUs+O6JRMpRciXTzyCUuX11b5L5pvjH+OmFXiQ3XjabcXgg==
@@ -9912,9 +9905,9 @@ tslib@^2.0.3, tslib@^2.1.0:
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tsup@^5.11.11:
-  version "5.12.5"
-  resolved "https://registry.yarnpkg.com/tsup/-/tsup-5.12.5.tgz#3cb67b568d5ea7460756469329f8533f933bf815"
-  integrity sha512-lKwzJsB49sDto51QjqOB4SdiBLKRvgTymEBuBCovcksdDwFEz3esrkbf3m497PXntUKVTzcgOfPdTgknMtvufw==
+  version "5.12.6"
+  resolved "https://registry.yarnpkg.com/tsup/-/tsup-5.12.6.tgz#29e057066bcc2cdd0238104e5a68e95d4f6f49a6"
+  integrity sha512-tpePOgdMRKRgazF+ujq9k1Fo44PUFUJJjRLtxq87pQrYW/Ub/fu1GpFGLzdUF9qjJ4FX1ykhf2d9mWCNy+jAtg==
   dependencies:
     bundle-require "^3.0.2"
     cac "^6.7.12"
