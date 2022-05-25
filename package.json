@@ -53,7 +53,7 @@
     "nuxt3": "latest",
     "prettier": "^2.5.1",
     "shipjs": "0.24.4",
-    "tsup": "^5.11.11",
+    "tsup": "^6.0.1",
     "typescript": "^4.5.4"
   },
   "keywords": [
