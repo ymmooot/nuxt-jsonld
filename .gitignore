@@ -7,3 +7,5 @@ coverage/
 dist/
 .nuxt
 .output
+cypress/videos/*
+cypress/fixtures/*
