@@ -44,7 +44,7 @@
     "babel-jest": "^28.0.1",
     "codecov": "^3.8.3",
     "cypress": "^10.1.0",
-    "esbuild": "^0.14.36",
+    "esbuild": "^0.15.1",
     "esbuild-jest": "^0.5.0",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
