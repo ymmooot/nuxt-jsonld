@@ -4450,7 +4450,7 @@ esbuild-windows-arm64@0.15.3:
   resolved "https://registry.yarnpkg.com/esbuild-windows-arm64/-/esbuild-windows-arm64-0.15.3.tgz#68810c8ba6ab93e42e3aa323f37f6538f0379df6"
   integrity sha512-sk6fVXCzGB0uW089+8LdeanZkQUZ+3/xdbWshgLGRawV0NyjSFH4sZPIy+DJnhEnT0pPt1DabZtqrq2DT0FWNw==
 
-esbuild@^0.14.36, esbuild@^0.14.47:
+esbuild@^0.14.47:
   version "0.14.54"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.14.54.tgz#8b44dcf2b0f1a66fc22459943dccf477535e9aa2"
   integrity sha512-Cy9llcy8DvET5uznocPyqL3BFRrFXSVqbgpMJ9Wz8oVjZlh/zUSNbPRbov0VX7VxN2JH1Oa0uNxZ7eLRb62pJA==
@@ -4477,7 +4477,7 @@ esbuild@^0.14.36, esbuild@^0.14.47:
     esbuild-windows-64 "0.14.54"
     esbuild-windows-arm64 "0.14.54"
 
-esbuild@^0.15.1:
+esbuild@^0.15.1, esbuild@^0.15.3:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.15.3.tgz#d4180ef567a4563de425e2b2166f871467cc2b0b"
   integrity sha512-D1qLizJTYlGIOK5m/1ckH8vR2U573eLMMA57qvWg/9jj8jPIhjpafv4kxb6ra2eeTlVq8tISxjsyRKbTaeF6PA==
