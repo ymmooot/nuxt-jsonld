@@ -20,7 +20,7 @@ $ npm install nuxt-jsonld
 
 ```ts
 // nuxt.config.ts
-import { defineNuxtConfig } from 'nuxt3';
+import { defineNuxtConfig } from 'nuxt';
 
 export default defineNuxtConfig({
   modules: ['nuxt-jsonld'],
@@ -118,7 +118,7 @@ You can disable it if you don't use it.
 
 ```ts
 // nuxt.config.ts
-import { defineNuxtConfig } from 'nuxt3';
+import { defineNuxtConfig } from 'nuxt';
 
 export default defineNuxtConfig({
   modules: ['nuxt-jsonld'],
@@ -130,7 +130,7 @@ Or
 
 ```ts
 // nuxt.config.ts
-import { defineNuxtConfig } from 'nuxt3';
+import { defineNuxtConfig } from 'nuxt';
 
 export default defineNuxtConfig({
   modules: [['nuxt-jsonld', { disableOptionsAPI: true }]],

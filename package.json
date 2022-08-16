@@ -7,7 +7,6 @@
   "license": "MIT",
   "exports": {
     ".": {
-      "require": "./dist/module.js",
       "import": "./dist/module.mjs",
       "types": "./dist/module.d.ts"
     }
@@ -50,7 +49,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^28.0.1",
-    "nuxt3": "latest",
+    "nuxt": "3.0.0-rc.8",
     "prettier": "^2.5.1",
     "shipjs": "0.24.4",
     "tsup": "^6.0.1",
