@@ -10,8 +10,8 @@
     "declaration": true,
     "lib": ["es2015", "es2017"],
     "paths": {
-      "#app": ["./node_modules/nuxt3/dist/app"],
-      "#head": ["./node_modules/nuxt3/dist/head/runtime"]
+      "#app": ["./node_modules/nuxt/dist/app"],
+      "#head": ["./node_modules/nuxt/dist/head/runtime"]
     }
   },
   "include": ["src/**/*"]

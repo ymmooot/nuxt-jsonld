@@ -3,13 +3,13 @@ module.exports = {
   collectCoverageFrom: ['src/runtime/**/*.{js,ts}', '!src/**/*.d.ts'],
   moduleNameMapper: {
     '^@/(.*)': '<rootDir>/$1',
-    '#app': '<rootDir>/node_modules/nuxt3/dist/app/index.mjs',
-    '#head': '<rootDir>/node_modules/nuxt3/dist/head/runtime/index.mjs',
+    '#app': '<rootDir>/node_modules/nuxt/dist/app/index.mjs',
+    '#head': '<rootDir>/node_modules/nuxt/dist/head/runtime/index.mjs',
   },
   transform: {
     '^.+\\.(js|mjs)$': 'babel-jest',
     '^.+\\.(ts)$': 'esbuild-jest',
   },
-  transformIgnorePatterns: ['node_modules/(?!(nuxt3|unenv))'],
+  transformIgnorePatterns: ['node_modules/(?!(nuxt|unenv))'],
   testPathIgnorePatterns: ['<rootDir>/cypress'],
 };
