@@ -3030,10 +3030,10 @@ builtins@^4.0.0:
   dependencies:
     semver "^7.0.0"
 
-bundle-require@^3.0.2:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/bundle-require/-/bundle-require-3.0.4.tgz#2b52ba77d99c0a586b5854cd21d36954e63cc110"
-  integrity sha512-VXG6epB1yrLAvWVQpl92qF347/UXmncQj7J3U8kZEbdVZ1ZkQyr4hYeL/9RvcE8vVVdp53dY78Fd/3pqfRqI1A==
+bundle-require@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/bundle-require/-/bundle-require-3.1.0.tgz#e07256ff02c72cd3a665afa84ce930d111ae4252"
+  integrity sha512-IIXtAO7fKcwPHNPt9kY/WNVJqy7NDy6YqJvv6ENH0TOZoJ+yjpEsn1w40WKZbR2ibfu5g1rfgJTvmFHpm5aOMA==
   dependencies:
     load-tsconfig "^0.2.0"
 
@@ -9981,11 +9981,11 @@ tslib@^2.0.3, tslib@^2.1.0:
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tsup@^6.0.1:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/tsup/-/tsup-6.2.2.tgz#9d22cb265929813e17bcf17f9a192d2f10f099ff"
-  integrity sha512-vJ9IAdif4GKAz2XMZzjX1hNqhBezJWXjm0qeQEoI7y//a64cxgCF8178eTMV4jBu7YNKnfAPpPSuyXW4mN+9rA==
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/tsup/-/tsup-6.2.3.tgz#87f57b2e53d49f1c1ab89aba21fed96aaab0ec9f"
+  integrity sha512-J5Pu2Dx0E1wlpIEsVFv9ryzP1pZ1OYsJ2cBHZ7GrKteytNdzaSz5hmLX7/nAxtypq+jVkVvA79d7S83ETgHQ5w==
   dependencies:
-    bundle-require "^3.0.2"
+    bundle-require "^3.1.0"
     cac "^6.7.12"
     chokidar "^3.5.1"
     debug "^4.3.1"
