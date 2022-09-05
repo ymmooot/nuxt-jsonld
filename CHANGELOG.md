@@ -1,3 +1,12 @@
+## [2.0.5](https://github.com/ymmooot/nuxt-jsonld/compare/v2.0.4...v2.0.5) (2022-09-05)
+
+
+### Bug Fixes
+
+* update nuxt version constraint ([e1f4707](https://github.com/ymmooot/nuxt-jsonld/commit/e1f4707a90d6d187dfd65f7049cd48088c9f3413))
+
+
+
 ## [2.0.3](https://github.com/ymmooot/nuxt-jsonld/compare/v2.0.2...v2.0.3) (2022-04-18)
 
 
