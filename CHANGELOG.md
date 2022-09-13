@@ -1,3 +1,12 @@
+## [2.0.6](https://github.com/ymmooot/nuxt-jsonld/compare/v2.0.5...v2.0.6) (2022-09-13)
+
+
+### Bug Fixes
+
+* add Graph type to top level type ([92a9e19](https://github.com/ymmooot/nuxt-jsonld/commit/92a9e19e2a2435286e08cb075e1b7359eb4730f0)), closes [#940](https://github.com/ymmooot/nuxt-jsonld/issues/940)
+
+
+
 ## [2.0.5](https://github.com/ymmooot/nuxt-jsonld/compare/v2.0.4...v2.0.5) (2022-09-05)
 
 
