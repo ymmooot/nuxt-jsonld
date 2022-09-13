@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { WithContext, ItemList } from 'schema-dts';
+import { WithContext, ItemList, Graph } from 'schema-dts';
 import { getJsonldForDemo } from '@/mixins';
 
 export default defineComponent({

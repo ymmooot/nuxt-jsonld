@@ -8,7 +8,7 @@
     "outDir": "./dist/",
     "sourceMap": false,
     "declaration": true,
-    "lib": ["es2015", "es2017"],
+    "lib": ["ESNext"],
     "paths": {
       "#app": ["./node_modules/nuxt/dist/app"],
       "#head": ["./node_modules/nuxt/dist/head/runtime"]
