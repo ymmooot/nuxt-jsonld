@@ -3124,10 +3124,10 @@ builtins@^5.0.1:
   dependencies:
     semver "^7.0.0"
 
-bundle-require@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/bundle-require/-/bundle-require-3.1.0.tgz#e07256ff02c72cd3a665afa84ce930d111ae4252"
-  integrity sha512-IIXtAO7fKcwPHNPt9kY/WNVJqy7NDy6YqJvv6ENH0TOZoJ+yjpEsn1w40WKZbR2ibfu5g1rfgJTvmFHpm5aOMA==
+bundle-require@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/bundle-require/-/bundle-require-3.1.2.tgz#1374a7bdcb8b330a7ccc862ccbf7c137cc43ad27"
+  integrity sha512-Of6l6JBAxiyQ5axFxUM6dYeP/W7X2Sozeo/4EYB9sJhL+dqL7TKjg+shwxp6jlu/6ZSERfsYtIpSJ1/x3XkAEA==
   dependencies:
     load-tsconfig "^0.2.0"
 
@@ -9038,10 +9038,17 @@ rollup-pluginutils@^2.8.2:
   optionalDependencies:
     fsevents "~2.3.2"
 
-rollup@^2.74.1, rollup@^2.77.3:
+rollup@^2.77.3:
   version "2.79.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.79.0.tgz#9177992c9f09eb58c5e56cbfa641607a12b57ce2"
   integrity sha512-x4KsrCgwQ7ZJPcFA/SUu6QVcYlO7uRLfLAy0DSA4NS2eG8japdbpM50ToH7z4iObodRYOJ0soneF0iaQRJ6zhA==
+  optionalDependencies:
+    fsevents "~2.3.2"
+
+rollup@^3.2.5:
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.2.5.tgz#9452168ac083218c8212bf53d2448bdc6b8b0de7"
+  integrity sha512-/Ha7HhVVofduy+RKWOQJrxe4Qb3xyZo+chcpYiD8SoQa4AG7llhupUtyfKSSrdBM2mWJjhM8wZwmbY23NmlIYw==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -10058,11 +10065,11 @@ tslib@^2.4.0:
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
 
 tsup@^6.0.1:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/tsup/-/tsup-6.3.0.tgz#aa270a788e54248d4a5541f722c8763bca778e3c"
-  integrity sha512-IaNQO/o1rFgadLhNonVKNCT2cks+vvnWX3DnL8sB87lBDqRvJXHENr5lSPJlqwplUlDxSwZK8dSg87rgBu6Emw==
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/tsup/-/tsup-6.4.0.tgz#d860955c5b248a61959a97dbae5e0365129b9fa4"
+  integrity sha512-4OlbqIK/SF+cJp0mMqPM2pKULvgj/1S2Gm3I1aFoFGIryUOyIqPZBoqKkqVQT6uFtWJ5AHftIv0riXKfHox1zQ==
   dependencies:
-    bundle-require "^3.1.0"
+    bundle-require "^3.1.2"
     cac "^6.7.12"
     chokidar "^3.5.1"
     debug "^4.3.1"
@@ -10072,7 +10079,7 @@ tsup@^6.0.1:
     joycon "^3.0.1"
     postcss-load-config "^3.0.1"
     resolve-from "^5.0.0"
-    rollup "^2.74.1"
+    rollup "^3.2.5"
     source-map "0.8.0-beta.0"
     sucrase "^3.20.3"
     tree-kill "^1.2.2"
