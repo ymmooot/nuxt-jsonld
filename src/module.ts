@@ -1,5 +1,5 @@
 import { resolve } from 'pathe';
-import { defineNuxtModule, addPlugin, addAutoImport } from '@nuxt/kit';
+import { defineNuxtModule, addPlugin, addImports } from '@nuxt/kit';
 import type { Nuxt } from '@nuxt/schema';
 import type { JsonLDFunc } from './types';
 
@@ -20,10 +20,9 @@ export default defineNuxtModule<ModuleOptions>({
     const composable = resolve(__dirname, './runtime/composable');
     nuxt.options.build.transpile.push(runtimeDir);
     nuxt.options.alias['#jsonld'] = composable;
-    addAutoImport({
-      name: 'useJsonld',
-      from: composable,
-    });
+    addImports([
+      { name: 'useJsonld', as: 'useJsonld', from: composable }
+    ]);
 
     if (!options.disableOptionsAPI) {
       addPlugin(resolve(runtimeDir, 'plugin'));
