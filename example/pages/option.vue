@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Options API</h1>
-    <code v-html="jsonld"></code>
     <div>
       <p>{{ count }}</p>
       <button @click="count++">+</button>
@@ -11,10 +10,7 @@
 </template>
 
 <script>
-import { getJsonldForDemo } from '@/mixins';
-
 export default {
-  mixins: [getJsonldForDemo],
   data() {
     return {
       count: 0,

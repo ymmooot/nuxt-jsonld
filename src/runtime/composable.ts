@@ -10,12 +10,17 @@ export const useJsonld = (json: JsonLD | JsonLDFunc) => {
   }
 
   const jsonComputed = computed(() => (isFunc(json) ? json() : json));
-  useHead(() => ({
-    script: [
-      {
-        type: 'application/ld+json',
-        children: jsonComputed.value ? JSON.stringify(jsonComputed.value, null, '') : undefined,
-      },
-    ],
-  }));
+  useHead(() => {
+    if (!jsonComputed.value) {
+      return {};
+    }
+    return {
+      script: [
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify(jsonComputed.value, null, ''),
+        },
+      ],
+    };
+  });
 };

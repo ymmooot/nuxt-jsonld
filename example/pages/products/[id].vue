@@ -1,9 +1,9 @@
 <template>
   <div>
     <h1>Product Detail with Reactivity</h1>
-    <code v-if="!product.purchaseDate">No JSON-LD will be shown. Click the button.</code>
-    <code v-else v-html="jsonld"></code>
-    <button @click="updatePurchaseDate">Update Purchase Date</button>
+    <code v-if="!product.count">No JSON-LD will be shown. Click the button.</code>
+    <code v-else>{{ product.count }}</code>
+    <button type="button" @click="updateCount">Update Count</button>
     <div>
       <nuxt-link to="/"> Back to list </nuxt-link>
     </div>
@@ -11,20 +11,17 @@
 </template>
 
 <script lang="ts">
-import { getJsonldForDemo } from '@/mixins';
-
 export default defineComponent({
-  mixins: [getJsonldForDemo],
   setup() {
     const { params } = useRoute();
-    const purchaseDate = ref<string>(null);
-    const updatePurchaseDate = () => {
-      purchaseDate.value = new Date().toISOString();
+    const count = ref<number>(0);
+    const updateCount = () => {
+      count.value++;
     };
     const product = reactive({
-      name: params.id as string,
+      name: params.id,
       description: `This is a sample ${params.id} product.`,
-      purchaseDate,
+      count,
     });
 
     useHead({
@@ -32,8 +29,8 @@ export default defineComponent({
     });
 
     useJsonld(() => {
-      if (purchaseDate.value === null) {
-        return;
+      if (!product.count) {
+        return null;
       }
       return {
         '@context': 'https://schema.org',
@@ -43,7 +40,7 @@ export default defineComponent({
     });
 
     return {
-      updatePurchaseDate,
+      updateCount,
       product,
     };
   },

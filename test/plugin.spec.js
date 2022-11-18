@@ -1,4 +1,4 @@
-import plugin from '../src/runtime/plugin';
+import plugin from '../src/runtime/plugin-impl';
 
 let useHeadArg = undefined;
 jest.mock('#head', () => ({

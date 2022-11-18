@@ -54,14 +54,7 @@ describe('useJsonld', () => {
   test('passing a function returning null', () => {
     useJsonld(() => null);
     expect(useHead).toBeCalledTimes(1);
-    expect(useHeadArg()).toEqual({
-      script: [
-        {
-          children: undefined,
-          type: 'application/ld+json',
-        },
-      ],
-    });
+    expect(useHeadArg()).toEqual({});
   });
 
   test('passing null', () => {
