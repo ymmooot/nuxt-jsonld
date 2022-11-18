@@ -1,8 +1,6 @@
 <template>
   <div>
     <h1>Product List</h1>
-    <code v-html="jsonld"></code>
-
     <ul>
       <li v-for="p in products" :key="p.id">
         name:
@@ -17,11 +15,9 @@
 </template>
 
 <script lang="ts">
-import { WithContext, ItemList, Graph } from 'schema-dts';
-import { getJsonldForDemo } from '@/mixins';
+import { WithContext, ItemList } from 'schema-dts';
 
 export default defineComponent({
-  mixins: [getJsonldForDemo],
   setup() {
     useHead({
       title: 'Product List',

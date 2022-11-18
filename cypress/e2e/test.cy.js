@@ -33,47 +33,6 @@ describe('nuxt-jsonld', () => {
       });
   });
 
-  it('dumps reactive jsonld', () => {
-    cy.visit('/products/foo');
-    const clock = cy.clock(Date.UTC(2022, 0, 1, 13, 10, 10));
-
-    // empty tag is shown
-    cy.get('script[type="application/ld+json"]')
-      .should('exist')
-      .then((el) => {
-        expect(el.text()).eq('');
-      });
-
-    // jsonld is set
-    cy.contains('Update Purchase Date').click();
-    cy.get('script[type="application/ld+json"]')
-      .should('exist')
-      .then((el) => {
-        const json = JSON.parse(el.text());
-        expect(json).to.have.property('@context', 'https://schema.org');
-        expect(json).to.have.property('@type', 'Product');
-        expect(json).to.have.property('name', 'foo');
-        expect(json).to.have.property('description', 'This is a sample foo product.');
-        expect(json).to.have.property('purchaseDate', '2022-01-01T13:10:10.000Z');
-      });
-
-    // one second elapsed
-    clock.tick(1000);
-
-    // purchase date is updated
-    cy.contains('Update Purchase Date').click();
-    cy.get('script[type="application/ld+json"]')
-      .should('exist')
-      .then((el) => {
-        const json = JSON.parse(el.text());
-        expect(json).to.have.property('@context', 'https://schema.org');
-        expect(json).to.have.property('@type', 'Product');
-        expect(json).to.have.property('name', 'foo');
-        expect(json).to.have.property('description', 'This is a sample foo product.');
-        expect(json).to.have.property('purchaseDate', '2022-01-01T13:10:11.000Z');
-      });
-  });
-
   it('replaces jsonld on page transition', () => {
     cy.visit('/static');
     cy.get('script[type="application/ld+json"]')
@@ -86,6 +45,7 @@ describe('nuxt-jsonld', () => {
 
     cy.contains('Back to list').click();
     cy.url().should('equal', fullpath('/'));
+    cy.wait(300);
     cy.get('script[type="application/ld+json"]')
       .should('exist')
       .then((el) => {
@@ -94,5 +54,41 @@ describe('nuxt-jsonld', () => {
         expect(json).to.have.property('@type', 'ItemList');
       });
     cy.get('script[type="application/ld+json"]').should('have.length', 1);
+  });
+
+  it('dumps reactive jsonld', () => {
+    cy.visit('/products/foo');
+
+    // no jsonld yet
+    cy.get('script[type="application/ld+json"]').should('not.exist');
+    cy.wait(300);
+
+    // jsonld is set
+    cy.contains('Update Count').click();
+    cy.get('code').contains('1').should('exist');
+    cy.wait(300);
+    cy.get('script[type="application/ld+json"]').then((el) => {
+      const json = JSON.parse(el.text());
+      expect(json).to.have.property('@context', 'https://schema.org');
+      expect(json).to.have.property('@type', 'Product');
+      expect(json).to.have.property('name', 'foo');
+      expect(json).to.have.property('description', 'This is a sample foo product.');
+      expect(json).to.have.property('count', 1);
+    });
+
+    // count is updated
+    cy.contains('Update Count').click();
+    cy.get('code').contains('2').should('exist');
+    cy.wait(300);
+    cy.get('script[type="application/ld+json"]')
+      .should('exist')
+      .then((el) => {
+        const json = JSON.parse(el.text());
+        expect(json).to.have.property('@context', 'https://schema.org');
+        expect(json).to.have.property('@type', 'Product');
+        expect(json).to.have.property('name', 'foo');
+        expect(json).to.have.property('description', 'This is a sample foo product.');
+        expect(json).to.have.property('count', 2);
+      });
   });
 });
