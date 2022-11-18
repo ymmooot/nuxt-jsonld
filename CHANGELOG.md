@@ -1,3 +1,12 @@
+## [2.0.7](https://github.com/ymmooot/nuxt-jsonld/compare/v2.0.6...v2.0.7) (2022-11-18)
+
+
+### Bug Fixes
+
+* updated nuxt dependency, replaced addAutoImport with addImports ([7d98d17](https://github.com/ymmooot/nuxt-jsonld/commit/7d98d17236e5bb3ffed472ad1f52d235920145d7))
+
+
+
 ## [2.0.6](https://github.com/ymmooot/nuxt-jsonld/compare/v2.0.5...v2.0.6) (2022-09-13)
 
 
