@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: '18.x'
       - name: Cache node modules
         uses: actions/cache@v2
         env:
@@ -29,7 +29,7 @@ jobs:
 
       - run: yarn
       - run: yarn lint
-      - run: yarn test:ci
+      - run: yarn workspace nuxt-jsonld test:ci
       - uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -39,6 +39,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: cypress-io/github-action@v2
         with:
-          build: yarn demo:build
-          start: yarn demo:start
-          command: yarn test:e2e
+          build: yarn workspace example build
+          start: yarn workspace example start
+          command: yarn cy:ci

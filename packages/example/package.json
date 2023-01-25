@@ -1,0 +1,11 @@
+{
+  "name": "example",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "prepare": "yarn workspace nuxt-jsonld build",
+    "dev": "yarn prepare && nuxi dev",
+    "build": "yarn prepare && nuxi build",
+    "start": "node ./.output/server/index.mjs"
+  }
+}

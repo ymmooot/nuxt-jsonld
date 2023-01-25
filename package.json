@@ -1,67 +1,28 @@
 {
-  "name": "nuxt-jsonld",
-  "version": "2.0.7",
-  "description": "manage JSON-LD in Vue component.",
-  "repository": "ssh://git@github.com/ymmooot/nuxt-jsonld.git",
-  "author": "Ryota Yamamoto <ryota.yama.9@gmail.com>",
-  "license": "MIT",
-  "exports": {
-    ".": {
-      "import": "./dist/module.mjs",
-      "types": "./dist/module.d.ts"
-    }
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
   },
-  "main": "dist/module.mjs",
-  "types": "dist/module.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "tsup",
-    "demo:dev": "nuxi dev example",
-    "demo:build": "yarn build && yarn nuxi build example",
-    "demo:start": "node example/.output/server/index.mjs",
     "lint": "yarn lint:es && yarn lint:prettier",
     "lint:es": "eslint --ext .js,.ts,.vue",
     "lint:prettier": "prettier '**/*.{js,ts,vue,html,json,md,yml}' --check",
     "lintfix": "yarn lint:es --fix && yarn lint:prettier --write",
-    "cy": "cypress",
-    "test": "jest",
-    "test:ci": "jest --coverage && codecov",
-    "test:e2e": "cypress run --record --key 8f568853-b927-4858-9e2a-6af417990ad7",
-    "release:prepare": "shipjs prepare",
-    "release:trigger": "shipjs trigger"
-  },
-  "dependencies": {
-    "pathe": "^1.1.0",
-    "schema-dts": "^1.0.0"
+    "cy": "cypress open --config-file ./cypress/cypress.config.ts",
+    "cy:run": "cypress run --config-file ./cypress/cypress.config.ts",
+    "cy:ci": "cypress run --config-file ./cypress/cypress.config.ts --record --key 8f568853-b927-4858-9e2a-6af417990ad7"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.11",
-    "@nuxtjs/eslint-config-typescript": "^12.0.0",
-    "@types/jest": "^29.0.0",
-    "babel-jest": "^29.0.1",
-    "codecov": "^3.8.3",
     "cypress": "^12.1.0",
-    "esbuild": "^0.17.3",
-    "esbuild-jest": "^0.5.0",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^29.0.1",
-    "nuxt": "^3.0.0",
-    "prettier": "^2.5.1",
-    "shipjs": "0.25.1",
-    "tsup": "^6.0.1",
-    "typescript": "^4.5.4"
+    "prettier": "^2.5.1"
   },
-  "keywords": [
-    "attribute",
-    "head",
-    "meta",
-    "seo",
-    "vue",
-    "nuxt",
-    "jsonld"
-  ]
+  "volta": {
+    "node": "18.13.0",
+    "yarn": "1.22.19"
+  }
 }
