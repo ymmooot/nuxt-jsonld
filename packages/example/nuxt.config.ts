@@ -1,4 +1,6 @@
+import NuxtJsonld from 'nuxt-jsonld';
+
 export default defineNuxtConfig({
-  modules: ['nuxt-jsonld'],
+  modules: [NuxtJsonld],
   css: ['@/css/index.css'],
 });
