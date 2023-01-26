@@ -12,4 +12,4 @@ Please read [this](https://github.com/ymmooot/nuxt-jsonld/blob/v1/README.md) if 
 
 ## Usage
 
-Check more detail [here](https://github.com/ymmooot/nuxt-jsonld/README.md)
+Check more detail [here](https://github.com/ymmooot/nuxt-jsonld/blob/master/README.md)
