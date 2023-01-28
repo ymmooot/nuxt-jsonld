@@ -36,7 +36,7 @@
     "codecov": "^3.8.3",
     "esbuild": "^0.17.3",
     "esbuild-jest": "^0.5.0",
-    "jest": "^29.4.0",
+    "jest": "^29.4.1",
     "nuxt": "^3.0.0",
     "prettier": "^2.5.1",
     "shipjs": "0.25.1",
