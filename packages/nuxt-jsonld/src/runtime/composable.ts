@@ -1,10 +1,12 @@
-import { computed } from 'vue';
-import type { JsonLD, JsonLDFunc } from '../types';
+import { computed, unref } from 'vue';
+import type { JsonLD, JsonLDFunc, JsonLDObj } from '../types';
 import { useHead } from '#head';
 
-const isFunc = (json: JsonLD | JsonLDFunc): json is JsonLDFunc => typeof json === 'function';
+const isFunc = (json: JsonLD): json is JsonLDFunc => typeof json === 'function';
 
-export const useJsonld = (json: JsonLD | JsonLDFunc) => {
+const replacer = (_key: string, value: any) => unref(value)
+
+export const useJsonld = (json: JsonLD) => {
   if (!json) {
     return;
   }
@@ -14,11 +16,14 @@ export const useJsonld = (json: JsonLD | JsonLDFunc) => {
     if (!jsonComputed.value) {
       return {};
     }
+
+    const json = JSON.stringify(jsonComputed.value, replacer, '')
+
     return {
       script: [
         {
           type: 'application/ld+json',
-          children: JSON.stringify(jsonComputed.value, null, ''),
+          children: json,
         },
       ],
     };

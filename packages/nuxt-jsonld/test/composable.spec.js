@@ -1,5 +1,5 @@
 import { useJsonld } from '../src/runtime/composable';
-import { ref } from 'vue';
+import { ref, computed, reactive } from 'vue';
 import { useHead } from '#head';
 
 let useHeadArg = undefined;
@@ -61,4 +61,48 @@ describe('useJsonld', () => {
     useJsonld(null);
     expect(useHead).not.toBeCalled();
   });
+
+  test('ref field', () => {
+    const nameRef = ref('foo')
+    useJsonld({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      name: nameRef,
+      alternateName: computed(() => nameRef.value + 'bar'),
+      author: reactive({
+        '@type': 'Person',
+        name: ref('John Doe'),
+      })
+    });
+    expect(useHeadArg()).toEqual({
+      script: [
+        {
+          type: 'application/ld+json',
+          children: '{"@context":"https://schema.org","@type":"Article","name":"foo","alternateName":"foobar","author":{"@type":"Person","name":"John Doe"}}',
+        },
+      ],
+    });
+  })
+
+  test('ref field in function', () => {
+    const nameRef = ref('foo')
+    useJsonld(() => ({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      name: nameRef,
+      alternateName: computed(() => nameRef.value + 'bar'),
+      author: reactive({
+        '@type': 'Person',
+        name: ref('John Doe'),
+      })
+    }));
+    expect(useHeadArg()).toEqual({
+      script: [
+        {
+          type: 'application/ld+json',
+          children: '{"@context":"https://schema.org","@type":"Article","name":"foo","alternateName":"foobar","author":{"@type":"Person","name":"John Doe"}}',
+        },
+      ],
+    });
+  })
 });

@@ -28,6 +28,12 @@ export default defineComponent({
       title: `Product: ${product.name}`,
     });
 
+    useJsonld({
+      '@context': 'https://schema.org',
+      '@type': 'Thing',
+      name: ref(new Date()),
+    });
+
     useJsonld(() => {
       if (!product.count) {
         return null;
@@ -36,6 +42,7 @@ export default defineComponent({
         '@context': 'https://schema.org',
         '@type': 'Product',
         ...product,
+        alternateName: computed(() => `${params.id} product ${count.value}`),
       };
     });
 

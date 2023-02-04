@@ -2,6 +2,7 @@ import { resolve } from 'pathe';
 import { defineNuxtModule, addPlugin, addImports } from '@nuxt/kit';
 import type { Nuxt } from '@nuxt/schema';
 import type { JsonLDFunc } from './types';
+export * from './types';
 
 type ModuleOptions = {
   disableOptionsAPI: boolean;
