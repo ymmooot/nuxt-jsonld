@@ -18,5 +18,8 @@
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "schema-dts": "^1.0.0"
+  },
+  "volta": {
+    "node": "16.19.0"
   }
 }
