@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.3...v1.5.4) (2023-02-05)
+
+
+### Bug Fixes
+
+* fix a bug that jsonld is not generated on SSR with nuxt/bridge ([5077cf2](https://github.com/ymmooot/nuxt-jsonld/commit/5077cf2c9c9e2bf97e67e2fb66250c9dc07efe1e)), closes [#1085](https://github.com/ymmooot/nuxt-jsonld/issues/1085)
+
 ## [1.5.3](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.2...v1.5.3) (2021-10-25)
 
 
