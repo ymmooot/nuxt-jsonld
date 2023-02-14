@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.4...v1.5.5) (2023-02-14)
+
+
+### Bug Fixes
+
+* add type graph ([fd31e26](https://github.com/ymmooot/nuxt-jsonld/commit/fd31e264ea1e921e73f692db111c7993ff3a6b6a))
+
 ## [1.5.4](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.3...v1.5.4) (2023-02-05)
 
 
