@@ -1,6 +1,18 @@
 import Vue from 'vue';
 import createJsonldMixin from '../src/createMixin';
 
+Vue.prototype.$meta = function () {
+  return {
+    addApp: () => {
+      return {
+        set: () => {},
+      };
+    },
+  };
+};
+
+process.server = true;
+
 const mockInstanceFactory = (head, mixinOptions) => {
   const mock = new Vue({
     mixins: [createJsonldMixin(mixinOptions)],
