@@ -36,13 +36,6 @@ jobs:
       - yarn_install
       - run: yarn test:ci
 
-  release:
-    executor: node
-    steps:
-      - checkout
-      - yarn_install
-      - run: npx semantic-release
-
 workflows-references:
   hook-on-v1: &hook-on-v1
     filters:

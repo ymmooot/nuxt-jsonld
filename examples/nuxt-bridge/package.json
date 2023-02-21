@@ -4,14 +4,17 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "start": "nuxt start"
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "start": "nuxi preview"
   },
   "dependencies": {
-    "nuxt": "^2.15.8",
+    "nuxt": "^2.16.0",
     "nuxt-jsonld": "file:../../lib"
+  },
+  "devDependencies": {
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge"
   },
   "volta": {
     "node": "16.19.1"
