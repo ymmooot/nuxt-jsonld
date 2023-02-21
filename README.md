@@ -34,6 +34,24 @@ Then, add plugin config to `nuxt.config.js`.
   plugins: ['~/plugins/jsonld'],
 ```
 
+### with nuxt-bridge
+
+If you are using nuxt-bridge, you have to add `defineNuxtPlugin`.
+
+```js
+// plugins/jsonld.js
+import Vue from 'vue';
+import NuxtJsonld from 'nuxt-jsonld';
+
+Vue.use(NuxtJsonld);
+
+export default defineNuxtPlugin(nuxtApp => {
+  if (typeof NuxtJsonld.default !== 'undefined')  {
+    nuxtApp.vueApp.use(NuxtJsonld.default)
+  }
+})
+```
+
 ## Usage
 
 Make a jsonld method to your Vue components and return structured data object.
