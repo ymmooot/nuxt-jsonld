@@ -6,28 +6,18 @@
   "repository": "ssh://git@github.com/ymmooot/nuxt-jsonld.git",
   "author": "Ryota Yamamoto <ryota-yamamoto@retty.me>",
   "license": "MIT",
-  "keywords": [
-    "attribute",
-    "head",
-    "meta",
-    "seo",
-    "vue",
-    "nuxt",
-    "jsonld"
-  ],
+  "keywords": ["attribute", "head", "meta", "seo", "vue", "nuxt", "jsonld"],
   "scripts": {
     "test": "jest",
     "test:ci": "jest --coverage && codecov",
     "prebuild": "rimraf lib",
     "build": "tsc -p .",
     "preversion": "npm run build",
-    "release": "semantic-release",
+    "release": "shipjs prepare",
     "lint": "eslint --ext .ts,.js .",
     "lint:fix": "eslint --ext .ts,.js --fix ."
   },
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
   "typings": "./lib/index.d.ts",
   "dependencies": {
     "schema-dts": "^1.0.0"
@@ -48,6 +38,7 @@
     "prettier": "^2.4.1",
     "rimraf": "^3.0.0",
     "semantic-release": "^18.0.0",
+    "shipjs": "0.25.1",
     "ts-jest": "^27.0.7",
     "typescript": "^4.4.4",
     "vue": "^2.6.12",
