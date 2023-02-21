@@ -1,3 +1,12 @@
+## [1.5.6](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.5...v1.5.6) (2023-02-21)
+
+
+### Bug Fixes
+
+* fix bugs of generating static site ([c45669e](https://github.com/ymmooot/nuxt-jsonld/commit/c45669edd9e8de3eea57bbb7140f064ea25f35fe)), closes [#1085](https://github.com/ymmooot/nuxt-jsonld/issues/1085) [#1104](https://github.com/ymmooot/nuxt-jsonld/issues/1104)
+
+
+
 ## [1.5.5](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.4...v1.5.5) (2023-02-14)
 
 
