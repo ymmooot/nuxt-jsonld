@@ -9268,10 +9268,10 @@ sane@^4.0.3:
     minimist "^1.1.1"
     walker "~1.0.5"
 
-schema-dts@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-1.1.0.tgz#33227971076ef1daa33e56a3127a8aae030e81c9"
-  integrity sha512-vdmbs/5ycj4zyKpZIDqTcy+IZi4s7c38RVAYuDmRi7zgxUT8wRWPMLzg0jr7FjdVunYu9yZ00F3+XcZTTFcTOQ==
+schema-dts@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-1.1.1.tgz#7b677c315b6cba906aa54b4073a263be37771390"
+  integrity sha512-9fvYCE8+yxiYTqwXgQojd061V+wnVvMrtacJhY5KAzqXI5oBmmpl0Oso88bJnS7DUi9hTSXye4snfoj8GTg8lA==
 
 scule@^1.0.0:
   version "1.0.0"
