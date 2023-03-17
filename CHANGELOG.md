@@ -1,3 +1,12 @@
+## [1.5.7](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.6...v1.5.7) (2023-03-17)
+
+
+### Bug Fixes
+
+* fix a bug that generates duplicate meta tags ([f3303ae](https://github.com/ymmooot/nuxt-jsonld/commit/f3303aee636fe56aecb5213fdd337e8ba264031a)), closes [#1124](https://github.com/ymmooot/nuxt-jsonld/issues/1124)
+
+
+
 ## [1.5.6](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.5...v1.5.6) (2023-02-21)
 
 
