@@ -24,7 +24,7 @@ function hashCode(s: string) {
   return hash;
 }
 
-const getJsonLdHeadObject = (that, jsonLdFunc: Function): JsonLDObject => {
+export const getJsonLdHeadObject = (that, jsonLdFunc: Function): JsonLDObject => {
   const jsonLd = jsonLdFunc.call(that);
   if (jsonLd === null) {
     return null;

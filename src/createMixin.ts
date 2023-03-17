@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import mergeHead from './mergeHead';
+import mergeHead, { getJsonLdHeadObject } from './mergeHead';
 
 type JsonldMixin = {
   created?: () => void;
@@ -14,10 +14,12 @@ export default (): JsonldMixin => {
         // When generating static site, we need to use `created` to access `this` of the component.
         created(this: Vue) {
           if (this.$options && typeof this.$options.jsonld === 'function') {
-            const originalHead = this.$options.head ?? this.$options.computed?.$metaInfo;
             const vApp = this.$meta().addApp('nuxt-jsonld');
-            const initialHead = mergeHead.call(this, originalHead);
-            vApp.set(initialHead);
+            const jsonld = getJsonLdHeadObject(this, this.$options.jsonld);
+            if (jsonld !== null) {
+              // @ts-ignore
+              vApp.set(jsonld);
+            }
           }
         },
       }
