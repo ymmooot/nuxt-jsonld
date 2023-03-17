@@ -1,6 +1,6 @@
 {
   "name": "nuxt-jsonld",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "manage jsonld in Vue component.",
   "main": "lib/index.js",
   "repository": "ssh://git@github.com/ymmooot/nuxt-jsonld.git",
