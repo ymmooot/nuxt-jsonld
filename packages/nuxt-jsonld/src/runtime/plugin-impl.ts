@@ -1,5 +1,5 @@
 import { computed } from 'vue';
-import { useHead } from '#head';
+import { useHead } from '@unhead/vue';
 
 export default (nuxtApp) => {
   const mixin = {

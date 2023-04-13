@@ -1,9 +1,9 @@
 import { useJsonld } from '../src/runtime/composable';
 import { ref } from 'vue';
-import { useHead } from '#head';
+import { useHead } from '@unhead/vue';
 
 let useHeadArg = undefined;
-jest.mock('#head', () => ({
+jest.mock('@unhead/vue', () => ({
   useHead: jest.fn().mockImplementation((arg) => {
     useHeadArg = arg;
   }),
