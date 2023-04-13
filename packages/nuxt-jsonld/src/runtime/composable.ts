@@ -1,6 +1,6 @@
 import { computed } from 'vue';
 import type { JsonLD, JsonLDFunc } from '../types';
-import { useHead } from '#head';
+import { useHead } from '@unhead/vue';
 
 const isFunc = (json: JsonLD | JsonLDFunc): json is JsonLDFunc => typeof json === 'function';
 
