@@ -6,6 +6,9 @@
   "author": "Ryota Yamamoto <ryota.yama.9@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "exports": {
     ".": {
       "types": "./dist/module.d.ts",
