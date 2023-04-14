@@ -15,11 +15,11 @@
     "cy:ci": "cypress run --config-file ./cypress/cypress.config.ts --record --key 8f568853-b927-4858-9e2a-6af417990ad7"
   },
   "devDependencies": {
-    "cypress": "^12.4.0",
-    "eslint": "^8.6.0",
-    "eslint-config-prettier": "^8.3.0",
+    "cypress": "^12.8.1",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.8.7"
   },
   "volta": {
     "node": "18.13.0",
