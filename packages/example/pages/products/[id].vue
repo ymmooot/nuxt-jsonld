@@ -28,10 +28,12 @@ export default defineComponent({
       title: `Product: ${product.name}`,
     });
 
+    const name = computed(() => `${params.id} product ${count.value}`);
+
     useJsonld({
       '@context': 'https://schema.org',
       '@type': 'Thing',
-      name: ref(new Date()),
+      name,
     });
 
     useJsonld(() => {

@@ -63,7 +63,7 @@ describe('useJsonld', () => {
   });
 
   test('ref field', () => {
-    const nameRef = ref('foo')
+    const nameRef = ref('foo');
     useJsonld({
       '@context': 'https://schema.org',
       '@type': 'Article',
@@ -72,20 +72,21 @@ describe('useJsonld', () => {
       author: reactive({
         '@type': 'Person',
         name: ref('John Doe'),
-      })
+      }),
     });
     expect(useHeadArg()).toEqual({
       script: [
         {
           type: 'application/ld+json',
-          children: '{"@context":"https://schema.org","@type":"Article","name":"foo","alternateName":"foobar","author":{"@type":"Person","name":"John Doe"}}',
+          children:
+            '{"@context":"https://schema.org","@type":"Article","name":"foo","alternateName":"foobar","author":{"@type":"Person","name":"John Doe"}}',
         },
       ],
     });
-  })
+  });
 
   test('ref field in function', () => {
-    const nameRef = ref('foo')
+    const nameRef = ref('foo');
     useJsonld(() => ({
       '@context': 'https://schema.org',
       '@type': 'Article',
@@ -94,15 +95,16 @@ describe('useJsonld', () => {
       author: reactive({
         '@type': 'Person',
         name: ref('John Doe'),
-      })
+      }),
     }));
     expect(useHeadArg()).toEqual({
       script: [
         {
           type: 'application/ld+json',
-          children: '{"@context":"https://schema.org","@type":"Article","name":"foo","alternateName":"foobar","author":{"@type":"Person","name":"John Doe"}}',
+          children:
+            '{"@context":"https://schema.org","@type":"Article","name":"foo","alternateName":"foobar","author":{"@type":"Person","name":"John Doe"}}',
         },
       ],
     });
-  })
+  });
 });
