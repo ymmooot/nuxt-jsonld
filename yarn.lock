@@ -1635,11 +1635,11 @@
     which "^3.0.0"
     ws "^8.13.0"
 
-"@nuxt/kit@3.4.2", "@nuxt/kit@^3.3.3", "@nuxt/kit@^3.4.2":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.4.2.tgz#a7ae05f154c43560f18dd56c49df1b23a2c2553b"
+"@nuxt/kit@3.4.3", "@nuxt/kit@^3.3.3", "@nuxt/kit@^3.4.2":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.4.3.tgz#2ab6efb0a4db7b4e5f4d8d7d7e696fa30a6e8771"
   dependencies:
-    "@nuxt/schema" "3.4.2"
+    "@nuxt/schema" "3.4.3"
     c12 "^1.4.1"
     consola "^3.1.0"
     defu "^6.1.2"
@@ -1658,9 +1658,9 @@
     unimport "^3.0.6"
     untyped "^1.3.2"
 
-"@nuxt/schema@3.4.2", "@nuxt/schema@^3.4.2":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema/-/schema-3.4.2.tgz#1cdafdc3246027bb9964c2ccb172003213c4d989"
+"@nuxt/schema@3.4.3", "@nuxt/schema@^3.4.2":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema/-/schema-3.4.3.tgz#106548003b7bbc40428b2af290b31b1e89acffc5"
   dependencies:
     defu "^6.1.2"
     hookable "^5.5.3"
@@ -1701,19 +1701,19 @@
   version "1.1.1"
   resolved "https://registry.npmjs.org/@nuxt/ui-templates/-/ui-templates-1.1.1.tgz"
 
-"@nuxt/vite-builder@3.4.2":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@nuxt/vite-builder/-/vite-builder-3.4.2.tgz#d536a35c7e0d5cf931b831d7ffdf4cd5272c9fd6"
+"@nuxt/vite-builder@3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@nuxt/vite-builder/-/vite-builder-3.4.3.tgz#ab6f969e8a15c39930836ab6e6e19e2440dc3d19"
   dependencies:
-    "@nuxt/kit" "3.4.2"
+    "@nuxt/kit" "3.4.3"
     "@rollup/plugin-replace" "^5.0.2"
-    "@vitejs/plugin-vue" "^4.1.0"
+    "@vitejs/plugin-vue" "^4.2.1"
     "@vitejs/plugin-vue-jsx" "^3.0.1"
     autoprefixer "^10.4.14"
     clear "^0.1.0"
     cssnano "^6.0.0"
     defu "^6.1.2"
-    esbuild "^0.17.17"
+    esbuild "^0.17.18"
     escape-string-regexp "^5.0.0"
     estree-walker "^3.0.3"
     externality "^1.0.0"
@@ -1723,7 +1723,7 @@
     knitwork "^1.0.0"
     magic-string "^0.30.0"
     mlly "^1.2.0"
-    ohash "^1.1.1"
+    ohash "^1.1.2"
     pathe "^1.1.0"
     perfect-debounce "^0.1.3"
     pkg-types "^1.0.2"
@@ -1735,7 +1735,7 @@
     strip-literal "^1.0.1"
     ufo "^1.1.1"
     unplugin "^1.3.1"
-    vite "~4.3.0"
+    vite "~4.3.3"
     vite-node "^0.30.1"
     vite-plugin-checker "^0.5.6"
     vue-bundle-renderer "^1.0.3"
@@ -2302,9 +2302,9 @@
     "@babel/plugin-transform-typescript" "^7.20.7"
     "@vue/babel-plugin-jsx" "^1.1.1"
 
-"@vitejs/plugin-vue@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/@vitejs/plugin-vue/-/plugin-vue-4.1.0.tgz"
+"@vitejs/plugin-vue@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-4.2.1.tgz#c3ccce9956e8cdca946f465188777e4e3e488f6a"
 
 "@vue/babel-helper-vue-transform-on@^1.0.2":
   version "1.0.2"
@@ -4130,7 +4130,7 @@ esbuild-jest@^0.5.0:
     "@babel/plugin-transform-modules-commonjs" "^7.12.13"
     babel-jest "^26.6.3"
 
-esbuild@^0.17.16, esbuild@^0.17.17, esbuild@^0.17.18, esbuild@^0.17.5, esbuild@^0.17.6, esbuild@~0.17.6:
+esbuild@^0.17.16, esbuild@^0.17.18, esbuild@^0.17.5, esbuild@^0.17.6, esbuild@~0.17.6:
   version "0.17.18"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.17.18.tgz#f4f8eb6d77384d68cd71c53eb6601c7efe05e746"
   optionalDependencies:
@@ -7407,22 +7407,22 @@ nth-check@^2.0.1:
   dependencies:
     boolbase "^1.0.0"
 
-nuxi@3.4.2:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/nuxi/-/nuxi-3.4.2.tgz#52c5acd629cfe44a0e3d75e350ccbd3ad090d8d8"
+nuxi@3.4.3:
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/nuxi/-/nuxi-3.4.3.tgz#06833bab32b494f92d913917246ad27192192613"
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt@^3.4.2:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-3.4.2.tgz#d5238373df8132b568ddee7e5fc251e7ede1a895"
+nuxt@^3.4.3:
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-3.4.3.tgz#0db58e3a70afa3c06744868cd6a13e5f0d83dbf1"
   dependencies:
     "@nuxt/devalue" "^2.0.0"
-    "@nuxt/kit" "3.4.2"
-    "@nuxt/schema" "3.4.2"
+    "@nuxt/kit" "3.4.3"
+    "@nuxt/schema" "3.4.3"
     "@nuxt/telemetry" "^2.2.0"
     "@nuxt/ui-templates" "^1.1.1"
-    "@nuxt/vite-builder" "3.4.2"
+    "@nuxt/vite-builder" "3.4.3"
     "@unhead/ssr" "^1.1.26"
     "@unhead/vue" "^1.1.26"
     "@vue/shared" "^3.2.47"
@@ -7444,10 +7444,10 @@ nuxt@^3.4.2:
     magic-string "^0.30.0"
     mlly "^1.2.0"
     nitropack "^2.3.3"
-    nuxi "3.4.2"
+    nuxi "3.4.3"
     nypm "^0.2.0"
     ofetch "^1.0.1"
-    ohash "^1.1.1"
+    ohash "^1.1.2"
     pathe "^1.1.0"
     perfect-debounce "^0.1.3"
     prompts "^2.4.2"
@@ -7534,7 +7534,7 @@ ofetch@^1.0.1:
     node-fetch-native "^1.0.2"
     ufo "^1.1.0"
 
-ohash@^1.0.0, ohash@^1.1.1:
+ohash@^1.0.0, ohash@^1.1.1, ohash@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/ohash/-/ohash-1.1.2.tgz#902dd01484f5573ef941d8f9e81105a2e13fd9ba"
 
@@ -8541,6 +8541,12 @@ rollup@^3.18.0, rollup@^3.20.2:
 rollup@^3.2.5:
   version "3.2.5"
   resolved "https://registry.npmjs.org/rollup/-/rollup-3.2.5.tgz"
+  optionalDependencies:
+    fsevents "~2.3.2"
+
+rollup@^3.21.0:
+  version "3.21.2"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.21.2.tgz#c3a06bc8d235a0c0a8f1f7d9da73426f53706bdc"
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -9891,13 +9897,13 @@ vite-plugin-vue-inspector@^3.4.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vite@~4.3.0:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-4.3.1.tgz#9badb1377f995632cdcf05f32103414db6fbb95a"
+vite@~4.3.3:
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-4.3.3.tgz#26adb4aa01439fc4546c480ea547674d87289396"
   dependencies:
     esbuild "^0.17.5"
-    postcss "^8.4.21"
-    rollup "^3.20.2"
+    postcss "^8.4.23"
+    rollup "^3.21.0"
   optionalDependencies:
     fsevents "~2.3.2"
 
