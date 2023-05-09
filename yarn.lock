@@ -350,6 +350,10 @@
   version "7.21.5"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.21.5.tgz#821bb520118fd25b982eaf8d37421cf5c64a312b"
 
+"@babel/parser@^7.21.8":
+  version "7.21.8"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.21.8.tgz#642af7d0333eab9c0ad70b14ac5e76dbde7bfdf8"
+
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@^7.18.6":
   version "7.18.6"
   resolved "https://registry.npmjs.org/@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression/-/plugin-bugfix-safari-id-destructuring-collision-in-function-expression-7.18.6.tgz"
@@ -1612,67 +1616,67 @@
   version "2.0.0"
   resolved "https://registry.npmjs.org/@nuxt/devalue/-/devalue-2.0.0.tgz"
 
-"@nuxt/devtools-kit@0.4.5":
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/@nuxt/devtools-kit/-/devtools-kit-0.4.5.tgz#1e085c9805470b722d1ab20ca0bf0928912e700e"
+"@nuxt/devtools-kit@0.4.6":
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/@nuxt/devtools-kit/-/devtools-kit-0.4.6.tgz#45da6924c8695d9f87c7ee8cbe78c70890538f9b"
   dependencies:
-    "@nuxt/kit" "^3.4.2"
-    "@nuxt/schema" "^3.4.2"
+    "@nuxt/kit" "^3.4.3"
+    "@nuxt/schema" "^3.4.3"
     execa "^7.1.1"
 
-"@nuxt/devtools-wizard@0.4.5":
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/@nuxt/devtools-wizard/-/devtools-wizard-0.4.5.tgz#148fa5872fb8df8a1e08083397107913df8cd099"
+"@nuxt/devtools-wizard@0.4.6":
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/@nuxt/devtools-wizard/-/devtools-wizard-0.4.6.tgz#fafc39a8fd40d9953a10eab22eb81191cbd0a807"
   dependencies:
     consola "^3.1.0"
     diff "^5.1.0"
     execa "^7.1.1"
     global-dirs "^3.0.1"
-    magicast "^0.2.4"
+    magicast "^0.2.5"
     pathe "^1.1.0"
     picocolors "^1.0.0"
-    pkg-types "^1.0.2"
+    pkg-types "^1.0.3"
     prompts "^2.4.2"
     rc9 "^2.1.0"
     semver "^7.5.0"
 
-"@nuxt/devtools@^0.4.5":
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/@nuxt/devtools/-/devtools-0.4.5.tgz#1f4cad55d1f44213276351d29175f61be70a7962"
+"@nuxt/devtools@^0.4.6":
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/@nuxt/devtools/-/devtools-0.4.6.tgz#1d116c2ed8b09f3f806064cd13546819d492f30f"
   dependencies:
-    "@nuxt/devtools-kit" "0.4.5"
-    "@nuxt/devtools-wizard" "0.4.5"
-    "@nuxt/kit" "^3.4.2"
+    "@nuxt/devtools-kit" "0.4.6"
+    "@nuxt/devtools-wizard" "0.4.6"
+    "@nuxt/kit" "^3.4.3"
     birpc "^0.2.11"
     consola "^3.1.0"
     execa "^7.1.1"
     fast-glob "^3.2.12"
     get-port-please "^3.0.1"
     global-dirs "^3.0.1"
-    h3 "^1.6.4"
+    h3 "^1.6.5"
     hookable "^5.5.3"
     image-meta "^0.1.1"
     is-installed-globally "^0.4.0"
     launch-editor "^2.6.0"
     local-pkg "^0.4.3"
     nypm "^0.2.0"
-    pacote "^15.1.2"
+    pacote "^15.1.3"
     pathe "^1.1.0"
-    perfect-debounce "^0.1.3"
+    perfect-debounce "^1.0.0"
     picocolors "^1.0.0"
-    pkg-types "^1.0.2"
+    pkg-types "^1.0.3"
     rc9 "^2.1.0"
     semver "^7.5.0"
-    sirv "^2.0.2"
+    sirv "^2.0.3"
     tinyws "^0.1.0"
     unimport "^3.0.6"
-    vite-plugin-inspect "^0.7.24"
-    vite-plugin-vue-inspector "^3.4.0"
+    vite-plugin-inspect "^0.7.25"
+    vite-plugin-vue-inspector "^3.4.1"
     wait-on "^7.0.1"
-    which "^3.0.0"
+    which "^3.0.1"
     ws "^8.13.0"
 
-"@nuxt/kit@3.4.3", "@nuxt/kit@^3.3.3", "@nuxt/kit@^3.4.2":
+"@nuxt/kit@3.4.3", "@nuxt/kit@^3.3.3", "@nuxt/kit@^3.4.3":
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.4.3.tgz#2ab6efb0a4db7b4e5f4d8d7d7e696fa30a6e8771"
   dependencies:
@@ -1695,7 +1699,7 @@
     unimport "^3.0.6"
     untyped "^1.3.2"
 
-"@nuxt/schema@3.4.3", "@nuxt/schema@^3.4.2":
+"@nuxt/schema@3.4.3", "@nuxt/schema@^3.4.3":
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/@nuxt/schema/-/schema-3.4.3.tgz#106548003b7bbc40428b2af290b31b1e89acffc5"
   dependencies:
@@ -3596,6 +3600,10 @@ cookie-es@^0.5.0:
   version "0.5.0"
   resolved "https://registry.npmjs.org/cookie-es/-/cookie-es-0.5.0.tgz"
 
+cookie-es@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cookie-es/-/cookie-es-1.0.0.tgz#4759684af168dfc54365b2c2dda0a8d7ee1e4865"
+
 copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://registry.npmjs.org/copy-descriptor/-/copy-descriptor-0.1.1.tgz"
@@ -5222,16 +5230,16 @@ gzip-size@^7.0.0:
   dependencies:
     duplexer "^0.1.2"
 
-h3@^1.5.0, h3@^1.6.4:
-  version "1.6.4"
-  resolved "https://registry.npmjs.org/h3/-/h3-1.6.4.tgz"
+h3@^1.5.0, h3@^1.6.4, h3@^1.6.5:
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/h3/-/h3-1.6.5.tgz#0836ffb87aa4a557871e02bdcf6116f41f7240fc"
   dependencies:
-    cookie-es "^0.5.0"
+    cookie-es "^1.0.0"
     defu "^6.1.2"
     destr "^1.2.2"
-    iron-webcrypto "^0.6.0"
+    iron-webcrypto "^0.7.0"
     radix3 "^1.0.1"
-    ufo "^1.1.1"
+    ufo "^1.1.2"
     uncrypto "^0.1.2"
 
 handlebars@^4.7.7:
@@ -5575,9 +5583,9 @@ ip@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/ip/-/ip-2.0.0.tgz"
 
-iron-webcrypto@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.npmjs.org/iron-webcrypto/-/iron-webcrypto-0.6.0.tgz"
+iron-webcrypto@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/iron-webcrypto/-/iron-webcrypto-0.7.0.tgz#781262e56127404c4e49e5e150a49408d3dec30f"
 
 is-accessor-descriptor@^0.1.6:
   version "0.1.6"
@@ -6773,12 +6781,12 @@ magic-string@^0.30.0:
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.4.13"
 
-magicast@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/magicast/-/magicast-0.2.4.tgz#73cf3e88166ec9db724709b1871553b3e6817400"
+magicast@^0.2.5:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/magicast/-/magicast-0.2.6.tgz#08c9f1900177ca1896e9c07981912171d4ed8ec1"
   dependencies:
-    "@babel/parser" "^7.21.4"
-    "@babel/types" "^7.21.4"
+    "@babel/parser" "^7.21.8"
+    "@babel/types" "^7.21.5"
     recast "^0.22.0"
 
 make-dir@^3.0.0, make-dir@^3.1.0, make-dir@~3.1.0:
@@ -7075,7 +7083,7 @@ mkdirp@^1.0.0, mkdirp@^1.0.3, mkdirp@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
 
-mlly@^1.0.0, mlly@^1.1.1, mlly@^1.2.0:
+mlly@^1.0.0, mlly@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/mlly/-/mlly-1.2.0.tgz"
   dependencies:
@@ -7708,9 +7716,9 @@ p-try@^2.0.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/p-try/-/p-try-2.2.0.tgz"
 
-pacote@^15.1.2:
-  version "15.1.2"
-  resolved "https://registry.yarnpkg.com/pacote/-/pacote-15.1.2.tgz#78b4c1403231fab368c752943f1969c6d8f026bb"
+pacote@^15.1.3:
+  version "15.1.3"
+  resolved "https://registry.yarnpkg.com/pacote/-/pacote-15.1.3.tgz#4c0e7fb5e7ab3b27fb3f86514b451ad4c4f64e9d"
   dependencies:
     "@npmcli/git" "^4.0.0"
     "@npmcli/installed-package-contents" "^2.0.1"
@@ -7718,7 +7726,7 @@ pacote@^15.1.2:
     "@npmcli/run-script" "^6.0.0"
     cacache "^17.0.0"
     fs-minipass "^3.0.0"
-    minipass "^4.0.0"
+    minipass "^5.0.0"
     npm-package-arg "^10.0.0"
     npm-packlist "^7.0.0"
     npm-pick-manifest "^8.0.0"
@@ -7862,6 +7870,10 @@ perfect-debounce@^0.1.3:
   version "0.1.3"
   resolved "https://registry.npmjs.org/perfect-debounce/-/perfect-debounce-0.1.3.tgz"
 
+perfect-debounce@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/perfect-debounce/-/perfect-debounce-1.0.0.tgz#9c2e8bc30b169cc984a58b7d5b28049839591d2a"
+
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz"
@@ -7892,12 +7904,12 @@ pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
-pkg-types@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/pkg-types/-/pkg-types-1.0.2.tgz"
+pkg-types@^1.0.2, pkg-types@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/pkg-types/-/pkg-types-1.0.3.tgz#988b42ab19254c01614d13f4f65a2cfc7880f868"
   dependencies:
     jsonc-parser "^3.2.0"
-    mlly "^1.1.1"
+    mlly "^1.2.0"
     pathe "^1.1.0"
 
 pluralize@^8.0.0:
@@ -8834,9 +8846,9 @@ sigstore@^1.3.0:
     make-fetch-happen "^11.0.1"
     tuf-js "^1.1.3"
 
-sirv@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.npmjs.org/sirv/-/sirv-2.0.2.tgz"
+sirv@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/sirv/-/sirv-2.0.3.tgz#ca5868b87205a74bef62a469ed0296abceccd446"
   dependencies:
     "@polka/url" "^1.0.0-next.20"
     mrmime "^1.0.0"
@@ -9602,6 +9614,10 @@ ufo@^1.0.0, ufo@^1.1.0, ufo@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/ufo/-/ufo-1.1.1.tgz"
 
+ufo@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/ufo/-/ufo-1.1.2.tgz#d0d9e0fa09dece0c31ffd57bd363f030a35cfe76"
+
 uglify-js@^3.1.4:
   version "3.15.4"
   resolved "https://registry.npmjs.org/uglify-js/-/uglify-js-3.15.4.tgz"
@@ -9898,20 +9914,20 @@ vite-plugin-checker@^0.5.6:
     vscode-languageserver-textdocument "^1.0.1"
     vscode-uri "^3.0.2"
 
-vite-plugin-inspect@^0.7.24:
-  version "0.7.24"
-  resolved "https://registry.yarnpkg.com/vite-plugin-inspect/-/vite-plugin-inspect-0.7.24.tgz#b99c12d34c6f1d54ab36f031ba0603b5d5b8120c"
+vite-plugin-inspect@^0.7.25:
+  version "0.7.26"
+  resolved "https://registry.yarnpkg.com/vite-plugin-inspect/-/vite-plugin-inspect-0.7.26.tgz#5ec08a16a7b2198e708cfd56b39ce3cba8d0933a"
   dependencies:
     "@antfu/utils" "^0.7.2"
     "@rollup/pluginutils" "^5.0.2"
     debug "^4.3.4"
     fs-extra "^11.1.1"
     picocolors "^1.0.0"
-    sirv "^2.0.2"
+    sirv "^2.0.3"
 
-vite-plugin-vue-inspector@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.npmjs.org/vite-plugin-vue-inspector/-/vite-plugin-vue-inspector-3.4.0.tgz"
+vite-plugin-vue-inspector@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-vue-inspector/-/vite-plugin-vue-inspector-3.4.1.tgz#10f58745015eef74dd41126eddfeeac535354bf6"
   dependencies:
     "@babel/core" "^7.21.3"
     "@babel/plugin-syntax-import-meta" "^7.10.4"
@@ -10109,9 +10125,9 @@ which@^2.0.1, which@^2.0.2:
   dependencies:
     isexe "^2.0.0"
 
-which@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/which/-/which-3.0.0.tgz"
+which@^3.0.0, which@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/which/-/which-3.0.1.tgz#89f1cd0c23f629a8105ffe69b8172791c87b4be1"
   dependencies:
     isexe "^2.0.0"
 
