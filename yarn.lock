@@ -3379,11 +3379,7 @@ c12@^1.4.1:
     pkg-types "^1.0.2"
     rc9 "^2.1.0"
 
-cac@^6.7.12:
-  version "6.7.12"
-  resolved "https://registry.npmjs.org/cac/-/cac-6.7.12.tgz"
-
-cac@^6.7.14:
+cac@^6.7.12, cac@^6.7.14:
   version "6.7.14"
   resolved "https://registry.npmjs.org/cac/-/cac-6.7.14.tgz"
 
@@ -4487,7 +4483,7 @@ esbuild-jest@^0.5.0:
     "@babel/plugin-transform-modules-commonjs" "^7.12.13"
     babel-jest "^26.6.3"
 
-esbuild@^0.17.19, esbuild@^0.17.5, esbuild@^0.17.6, esbuild@~0.17.6:
+esbuild@^0.17.19, esbuild@^0.17.5, esbuild@~0.17.6:
   version "0.17.19"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.17.19.tgz#087a727e98299f0462a3d0bcdd9cd7ff100bd955"
   optionalDependencies:
@@ -8324,12 +8320,12 @@ postcss-import@^15.1.0:
     read-cache "^1.0.0"
     resolve "^1.1.7"
 
-postcss-load-config@^3.0.1:
-  version "3.1.4"
-  resolved "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-3.1.4.tgz"
+postcss-load-config@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-load-config/-/postcss-load-config-4.0.1.tgz#152383f481c2758274404e4962743191d73875bd"
   dependencies:
     lilconfig "^2.0.5"
-    yaml "^1.10.2"
+    yaml "^2.1.1"
 
 postcss-merge-longhand@^6.0.0:
   version "6.0.0"
@@ -8947,19 +8943,7 @@ rollup-plugin-visualizer@^5.9.0:
     source-map "^0.7.4"
     yargs "^17.5.1"
 
-rollup@^3.2.5:
-  version "3.2.5"
-  resolved "https://registry.npmjs.org/rollup/-/rollup-3.2.5.tgz"
-  optionalDependencies:
-    fsevents "~2.3.2"
-
-rollup@^3.21.0:
-  version "3.21.2"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.21.2.tgz#c3a06bc8d235a0c0a8f1f7d9da73426f53706bdc"
-  optionalDependencies:
-    fsevents "~2.3.2"
-
-rollup@^3.21.8:
+rollup@^3.2.5, rollup@^3.21.0, rollup@^3.21.8:
   version "3.25.1"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.25.1.tgz#9fff79d22ff1a904b2b595a2fb9bc3793cb987d8"
   optionalDependencies:
@@ -9884,19 +9868,19 @@ tslib@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
 
-tsup@^6.7.0:
-  version "6.7.0"
-  resolved "https://registry.npmjs.org/tsup/-/tsup-6.7.0.tgz"
+tsup@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/tsup/-/tsup-7.1.0.tgz#11369762b68032da118a714a38d5a1d26ac45293"
   dependencies:
     bundle-require "^4.0.0"
     cac "^6.7.12"
     chokidar "^3.5.1"
     debug "^4.3.1"
-    esbuild "^0.17.6"
+    esbuild "^0.18.2"
     execa "^5.0.0"
     globby "^11.0.3"
     joycon "^3.0.1"
-    postcss-load-config "^3.0.1"
+    postcss-load-config "^4.0.1"
     resolve-from "^5.0.0"
     rollup "^3.2.5"
     source-map "0.8.0-beta.0"
@@ -10614,9 +10598,9 @@ yallist@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/yallist/-/yallist-4.0.0.tgz"
 
-yaml@^1.10.2:
-  version "1.10.2"
-  resolved "https://registry.npmjs.org/yaml/-/yaml-1.10.2.tgz"
+yaml@^2.1.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.3.1.tgz#02fe0975d23cd441242aa7204e09fc28ac2ac33b"
 
 yaml@^2.2.2:
   version "2.2.2"
