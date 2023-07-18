@@ -32,7 +32,7 @@
     "schema-dts": "^1.1.2"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-env": "^7.22.9",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@types/jest": "^29.5.2",
     "babel-jest": "^29.6.1",
