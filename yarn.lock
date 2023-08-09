@@ -1947,17 +1947,17 @@
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.2.tgz#5749f04df13bda4c863338d8dabaf370f45ef7c7"
 
-"@nuxt/devtools-kit@0.7.5":
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/@nuxt/devtools-kit/-/devtools-kit-0.7.5.tgz#f7f6574cbef614f636d46c14be4db0f3c442c5f8"
+"@nuxt/devtools-kit@0.7.6":
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/@nuxt/devtools-kit/-/devtools-kit-0.7.6.tgz#9577c64872c15b5153314e8c308d1424f37c485c"
   dependencies:
     "@nuxt/kit" "^3.6.5"
     "@nuxt/schema" "^3.6.5"
     execa "^7.2.0"
 
-"@nuxt/devtools-wizard@0.7.5":
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/@nuxt/devtools-wizard/-/devtools-wizard-0.7.5.tgz#904c04f0dca73bf803142f14261c0b2ed402e318"
+"@nuxt/devtools-wizard@0.7.6":
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/@nuxt/devtools-wizard/-/devtools-wizard-0.7.6.tgz#b891f07715eda7e2b19186f57a09b0a004455bc3"
   dependencies:
     consola "^3.2.3"
     diff "^5.1.0"
@@ -1971,12 +1971,12 @@
     rc9 "^2.1.1"
     semver "^7.5.4"
 
-"@nuxt/devtools@^0.7.5":
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/@nuxt/devtools/-/devtools-0.7.5.tgz#4b644487b3277207ad019e287304e75e013e0852"
+"@nuxt/devtools@^0.7.6":
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/@nuxt/devtools/-/devtools-0.7.6.tgz#0fa1bafd147ce72dbc316a2bc34852e0dd12c60e"
   dependencies:
-    "@nuxt/devtools-kit" "0.7.5"
-    "@nuxt/devtools-wizard" "0.7.5"
+    "@nuxt/devtools-kit" "0.7.6"
+    "@nuxt/devtools-wizard" "0.7.6"
     "@nuxt/kit" "^3.6.5"
     birpc "^0.2.12"
     boxen "^7.1.1"
@@ -2005,7 +2005,7 @@
     sirv "^2.0.3"
     unimport "^3.1.3"
     vite-plugin-inspect "^0.7.35"
-    vite-plugin-vue-inspector "^3.5.0"
+    vite-plugin-vue-inspector "^3.6.0"
     wait-on "^7.0.1"
     which "^3.0.1"
     ws "^8.13.0"
@@ -10684,9 +10684,9 @@ vite-plugin-inspect@^0.7.35:
     picocolors "^1.0.0"
     sirv "^2.0.3"
 
-vite-plugin-vue-inspector@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-vue-inspector/-/vite-plugin-vue-inspector-3.5.0.tgz#09819a2f8863d1b43151c94bd7474aec3fc1dd24"
+vite-plugin-vue-inspector@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-vue-inspector/-/vite-plugin-vue-inspector-3.6.0.tgz#d3703983ed635070d28d3f6decfd3cb213eb4942"
   dependencies:
     "@babel/core" "^7.21.3"
     "@babel/plugin-syntax-import-meta" "^7.10.4"
