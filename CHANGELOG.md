@@ -1,3 +1,12 @@
+## [1.5.8](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.7...v1.5.8) (2023-08-25)
+
+
+### Bug Fixes
+
+* vue type augmentations ([#1274](https://github.com/ymmooot/nuxt-jsonld/issues/1274)) ([2c3144b](https://github.com/ymmooot/nuxt-jsonld/commit/2c3144b38f5e9610fb27c42f53bf4aa9bd4c29b8))
+
+
+
 ## [1.5.7](https://github.com/ymmooot/nuxt-jsonld/compare/v1.5.6...v1.5.7) (2023-03-17)
 
 
