@@ -1,15 +1,15 @@
 import plugin from '../src/runtime/plugin-impl';
 
 let useHeadArg = undefined;
-jest.mock('@unhead/vue', () => ({
-  useHead: jest.fn().mockImplementation((arg) => {
+vi.mock('@unhead/vue', () => ({
+  useHead: vi.fn().mockImplementation((arg) => {
     useHeadArg = arg;
   }),
 }));
 
 describe('plugin', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     useHeadArg = undefined;
   });
 
@@ -18,7 +18,7 @@ describe('plugin', () => {
     let installFunction;
     const nuxtApp = {
       vueApp: {
-        use: jest.fn().mockImplementation((arg) => {
+        use: vi.fn().mockImplementation((arg) => {
           installFunction = arg.install;
         }),
       },
@@ -27,7 +27,7 @@ describe('plugin', () => {
     expect(nuxtApp.vueApp.use).toBeCalledTimes(1);
     let created;
     const vueMock = {
-      mixin: jest.fn().mockImplementation((arg) => {
+      mixin: vi.fn().mockImplementation((arg) => {
         created = arg.created;
       }),
     };

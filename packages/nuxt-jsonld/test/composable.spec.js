@@ -3,15 +3,15 @@ import { ref } from 'vue';
 import { useHead } from '@unhead/vue';
 
 let useHeadArg = undefined;
-jest.mock('@unhead/vue', () => ({
-  useHead: jest.fn().mockImplementation((arg) => {
+vi.mock('@unhead/vue', () => ({
+  useHead: vi.fn().mockImplementation((arg) => {
     useHeadArg = arg;
   }),
 }));
 
 describe('useJsonld', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     useHeadArg = undefined;
   });
 
