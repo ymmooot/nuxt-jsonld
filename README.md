@@ -8,7 +8,7 @@
 
 A Nuxt.js module to manage JSON-LD in Vue component.
 
-Please read [this](https://github.com/ymmooot/nuxt-jsonld/blob/v1/README.md) if you are using Nuxt2.
+Please read [`nuxt-jsonld@v1` document](https://github.com/ymmooot/nuxt-jsonld/blob/v1/README.md) if you are using Nuxt2.
 
 ## Installation
 
@@ -174,3 +174,5 @@ You can return multiple json data as an array.
 ```
 
 Or use `@graph` notation. [#247](https://github.com/ymmooot/nuxt-jsonld/issues/247#issuecomment-579851220)
+
+Note: Safari will log an error to the console when using an array to describe multiple data. While the library functions correctly, please exercise caution if you are aggregating error logs with tools like Sentry. To avoid this issue, use `@graph`. [#1280](https://github.com/ymmooot/nuxt-jsonld/issues/1280)
