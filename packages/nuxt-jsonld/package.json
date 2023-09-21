@@ -41,7 +41,7 @@
     "shipjs": "0.26.3",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
-    "vitest": "^0.34.4"
+    "vitest": "^0.34.5"
   },
   "keywords": [
     "attribute",
