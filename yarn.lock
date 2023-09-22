@@ -2690,10 +2690,10 @@
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-4.3.4.tgz#a289dff38e01949fe7be581d5542cabaeb961dec"
   integrity sha512-ciXNIHKPriERBisHFBvnTbfKa6r9SAesOYXeGDzgegcvy9Q4xdScSHAmKbNT0M3O0S9LKhIf5/G+UYG4NnnzYw==
 
-"@vitest/coverage-istanbul@^0.34.4":
-  version "0.34.4"
-  resolved "https://registry.yarnpkg.com/@vitest/coverage-istanbul/-/coverage-istanbul-0.34.4.tgz#467089db9ac8c62169e1d82ac099bb8ed25a094b"
-  integrity sha512-jJiN+U5drYrv1fU39T8jOVWc3RklYkNeTR7UyiVD8fa+Tbav9pAxq02pti93OPZIDoXwwg+RhFAuRuAz///rkQ==
+"@vitest/coverage-istanbul@^0.34.5":
+  version "0.34.5"
+  resolved "https://registry.yarnpkg.com/@vitest/coverage-istanbul/-/coverage-istanbul-0.34.5.tgz#3560fab4ba3250cdef81403d409ed0bd4a1b00a2"
+  integrity sha512-t07VrdRSRKw7QgOZ20i1bmstv9seUm7Fay8wVtswKHBlMmAAW3K5x+0u18O50mLuVl208Lx21tH/6O7W4BWR9Q==
   dependencies:
     istanbul-lib-coverage "^3.2.0"
     istanbul-lib-instrument "^6.0.0"
