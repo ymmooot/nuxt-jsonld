@@ -32,7 +32,7 @@
     "schema-dts": "^1.1.2"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.22.15",
+    "@babel/preset-env": "^7.22.20",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@vitest/coverage-istanbul": "^0.34.6",
     "codecov": "^3.8.3",
