@@ -15,7 +15,7 @@
     "cy:ci": "cypress run --config-file ./cypress/cypress.config.ts --record --key 8f568853-b927-4858-9e2a-6af417990ad7"
   },
   "devDependencies": {
-    "cypress": "^13.5.0",
+    "cypress": "^13.5.1",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
