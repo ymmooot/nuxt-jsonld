@@ -28,7 +28,7 @@
     "release:trigger": "shipjs trigger"
   },
   "dependencies": {
-    "pathe": "^1.1.1",
+    "pathe": "^1.1.2",
     "schema-dts": "^1.1.2"
   },
   "devDependencies": {
