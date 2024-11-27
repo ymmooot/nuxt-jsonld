@@ -10,6 +10,7 @@
       </li>
       <li><nuxt-link :to="{ name: 'static' }">Static JSON</nuxt-link></li>
       <li><nuxt-link :to="{ name: 'option' }">Options API</nuxt-link></li>
+      <li><nuxt-link :to="{ name: 'composable-options' }">Composable API Options</nuxt-link></li>
     </ul>
   </div>
 </template>

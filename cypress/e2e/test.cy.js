@@ -91,4 +91,16 @@ describe('nuxt-jsonld', () => {
         expect(json).to.have.property('count', 2);
       });
   });
+
+  it('places jsonld with tagPosition', () => {
+    cy.visit('/composable-options');
+    cy.get('body script[type="application/ld+json"]')
+      .should('exist')
+      .then((el) => {
+        const json = JSON.parse(el.text());
+        expect(json).to.have.property('@context', 'https://schema.org');
+        expect(json).to.have.property('@type', 'WebSite');
+        expect(json).to.have.property('name', 'nuxt-jsonld composable options');
+      });
+  });
 });
