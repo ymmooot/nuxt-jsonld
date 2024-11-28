@@ -7,6 +7,7 @@ export default defineConfig({
     environment: 'happy-dom',
     coverage: {
       provider: 'istanbul',
+      include: ['src/runtime/**/*', '!src/runtime/plugin.ts'],
     },
   },
 });
