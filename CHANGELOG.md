@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/ymmooot/nuxt-jsonld/compare/v2.0.8...v2.1.0) (2024-11-28)
+
+
+### Features
+
+* Add tagPosition parameter ([65dd6c3](https://github.com/ymmooot/nuxt-jsonld/commit/65dd6c3e558a4a5a70b7af432e8424e2055cea05))
+
+
+
 ## [2.0.8](https://github.com/ymmooot/nuxt-jsonld/compare/v2.0.7...v2.0.8) (2023-04-13)
 
 
