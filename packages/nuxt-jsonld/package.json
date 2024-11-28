@@ -35,6 +35,8 @@
     "@babel/preset-env": "^7.24.7",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@vitest/coverage-istanbul": "^2.1.6",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^15.11.7",
     "nuxt": "^3.11.2",
     "prettier": "^3.3.2",
     "shipjs": "0.26.3",

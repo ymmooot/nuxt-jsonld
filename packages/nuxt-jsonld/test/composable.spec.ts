@@ -1,18 +1,21 @@
+import { describe, beforeEach, it, test, expect, vi, type Mock } from 'vitest';
+import { ref, toValue } from 'vue';
 import { useJsonld } from '../src/runtime/composable';
-import { ref } from 'vue';
-import { useHead } from '@unhead/vue';
 
-let useHeadArg = undefined;
+const { useHead } = vi.hoisted(() => {
+  return {
+    useHead: vi.fn(),
+  };
+});
 vi.mock('@unhead/vue', () => ({
-  useHead: vi.fn().mockImplementation((arg) => {
-    useHeadArg = arg;
-  }),
+  useHead,
 }));
+
+const getLastCalledParams = (mock: Mock<any>) => mock.mock.calls[mock.mock.calls.length - 1];
 
 describe('useJsonld', () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    useHeadArg = undefined;
   });
 
   it('calls useHead with a function which returns object including script tag', () => {
@@ -22,7 +25,7 @@ describe('useJsonld', () => {
       name: 'foo',
     });
     expect(useHead).toBeCalledTimes(1);
-    expect(useHeadArg()).toEqual({
+    expect(toValue(getLastCalledParams(useHead)[0])).toEqual({
       script: [
         {
           type: 'application/ld+json',
@@ -41,7 +44,7 @@ describe('useJsonld', () => {
     }));
 
     expect(useHead).toBeCalledTimes(1);
-    expect(useHeadArg()).toEqual({
+    expect(toValue(getLastCalledParams(useHead)[0])).toEqual({
       script: [
         {
           type: 'application/ld+json',
@@ -54,7 +57,7 @@ describe('useJsonld', () => {
   test('passing a function returning null', () => {
     useJsonld(() => null);
     expect(useHead).toBeCalledTimes(1);
-    expect(useHeadArg()).toEqual({});
+    expect(toValue(getLastCalledParams(useHead)[0])).toEqual({});
   });
 
   test('passing null', () => {
