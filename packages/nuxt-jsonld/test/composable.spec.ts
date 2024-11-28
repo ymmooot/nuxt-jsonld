@@ -64,4 +64,21 @@ describe('useJsonld', () => {
     useJsonld(null);
     expect(useHead).not.toBeCalled();
   });
+
+  it('proxies options', () => {
+    useJsonld(
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Thing',
+        name: 'foo',
+      },
+      {
+        tagPosition: 'bodyClose',
+      }
+    );
+    expect(useHead).toBeCalledTimes(1);
+    expect(toValue(getLastCalledParams(useHead)[1])).toEqual({
+      tagPosition: 'bodyClose',
+    });
+  });
 });
