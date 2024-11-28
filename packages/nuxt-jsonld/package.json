@@ -1,6 +1,6 @@
 {
   "name": "nuxt-jsonld",
-  "version": "2.0.8",
+  "version": "2.1.0",
   "description": "manage JSON-LD in Vue component.",
   "repository": "ssh://git@github.com/ymmooot/nuxt-jsonld.git",
   "author": "Ryota Yamamoto <ryota.yama.9@gmail.com>",
