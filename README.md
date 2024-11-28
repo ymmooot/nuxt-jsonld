@@ -30,7 +30,7 @@ export default defineNuxtConfig({
 ### Composition API
 
 You can call `useJsonld` with a json object.  
-Alternatively, you can pass a function for a reactive json, just as [`useHead`](https://v3.nuxtjs.org/guide/features/head-management/#usehead-composable) composable.
+Alternatively, you can pass a function for a reactive json.
 
 You can use `useJsonld` without importing, since it is provided as [Nuxt auto-imports functions](https://v3.nuxtjs.org/guide/concepts/auto-imports#nuxt-auto-imports).  
 Of course, you can import explicitly from `#jsonld`.
@@ -58,6 +58,26 @@ useJsonld(() => ({
   name: `reactive json: count is ${count.value}`,
 }));
 </script>
+```
+
+#### tagPosition
+
+You can use the `tagPosition: 'bodyClose'` option on applicable tags to append them to the end of the `<body>` tag.
+This option works the same as the one described in [useHead](https://nuxt.com/docs/getting-started/seo-meta#body-tags).
+
+default: `head`
+
+```ts
+useJsonld(
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Thing',
+    name: 'static json',
+  },
+  {
+    tagPosition: 'bodyClose', // 'head', 'bodyOpen', 'bodyClose'
+  }
+);
 ```
 
 ### Options API
