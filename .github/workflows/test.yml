@@ -12,12 +12,12 @@ jobs:
   unit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '18.x'
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         env:
           cache-name: cache-node-modules
         with:
@@ -30,14 +30,14 @@ jobs:
       - run: yarn
       - run: yarn lint
       - run: yarn workspace nuxt-jsonld test:ci
-      - uses: codecov/codecov-action@v2
+      - uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
   e2e:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: cypress-io/github-action@v2
+      - uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
         with:
           build: yarn workspace example build
           start: yarn workspace example start
