@@ -1,4 +1,6 @@
 import { defineNuxtPlugin } from 'nuxt/app';
-import plugin from './plugin-impl';
+import { vuePlugin } from './plugin-impl';
 
-export default defineNuxtPlugin(plugin);
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.use(vuePlugin);
+});
