@@ -4,6 +4,7 @@ import { useHead, type UseHeadOptions } from '@unhead/vue';
 
 const isFunc = (json: JsonLD | JsonLDFunc): json is JsonLDFunc => typeof json === 'function';
 export type UseJsonldOptions = Pick<UseHeadOptions, 'tagPosition'>;
+export type { JsonLD, JsonLDFunc } from '../types';
 
 export const useJsonld = (json: JsonLD | JsonLDFunc, options?: UseJsonldOptions) => {
   if (!json) {
