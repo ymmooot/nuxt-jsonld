@@ -25,7 +25,6 @@ describe('nuxt-jsonld', () => {
         expect(json).to.have.property('@context', 'https://schema.org');
         expect(json).to.have.property('@type', 'Thing');
         expect(json).to.have.property('name', 'Static json');
-
         const json2 = JSON.parse(el[1].innerText);
         expect(json2).to.have.property('@context', 'https://schema.org');
         expect(json2).to.have.property('@type', 'Thing');

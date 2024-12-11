@@ -8,15 +8,11 @@
   </div>
 </template>
 
-<script lang="ts">
-export default defineComponent({
-  setup() {
-    useJsonld({
-      '@context': 'https://schema.org',
-      '@type': 'Thing',
-      name: 'Static json',
-    });
-  },
+<script lang="ts" setup>
+useJsonld({
+  '@context': 'https://schema.org',
+  '@type': 'Thing',
+  name: 'Static json',
 });
 </script>
 
