@@ -1,7 +1,5 @@
-import NuxtJsonld from 'nuxt-jsonld';
-
 export default defineNuxtConfig({
-  modules: [NuxtJsonld],
+  modules: ['nuxt-jsonld'],
   css: ['@/css/index.css'],
-  devtools: true,
+  compatibilityDate: '2024-12-11',
 });

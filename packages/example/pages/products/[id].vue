@@ -10,39 +10,30 @@
   </div>
 </template>
 
-<script lang="ts">
-export default defineComponent({
-  setup() {
-    const { params } = useRoute();
-    const count = ref<number>(0);
-    const updateCount = () => {
-      count.value++;
-    };
-    const product = reactive({
-      name: params.id,
-      description: `This is a sample ${params.id} product.`,
-      count,
-    });
+<script lang="ts" setup>
+const { params } = useRoute();
+const count = ref<number>(0);
+const updateCount = () => {
+  count.value++;
+};
+const product = reactive({
+  name: params.id,
+  description: `This is a sample ${params.id} product.`,
+  count,
+});
 
-    useHead({
-      title: `Product: ${product.name}`,
-    });
+useHead({
+  title: `Product: ${product.name}`,
+});
 
-    useJsonld(() => {
-      if (!product.count) {
-        return null;
-      }
-      return {
-        '@context': 'https://schema.org',
-        '@type': 'Product',
-        ...product,
-      };
-    });
-
-    return {
-      updateCount,
-      product,
-    };
-  },
+useJsonld(() => {
+  if (!product.count) {
+    return null;
+  }
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    ...product,
+  };
 });
 </script>
