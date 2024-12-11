@@ -11,12 +11,13 @@
       <li><nuxt-link :to="{ name: 'static' }">Static JSON</nuxt-link></li>
       <li><nuxt-link :to="{ name: 'option' }">Options API</nuxt-link></li>
       <li><nuxt-link :to="{ name: 'composable-options' }">Composable API Options</nuxt-link></li>
+      <li><nuxt-link :to="{ name: 'context' }">Context</nuxt-link></li>
     </ul>
   </div>
 </template>
 
 <script lang="ts">
-import { WithContext, ItemList } from 'schema-dts';
+import type { WithContext, ItemList } from 'schema-dts';
 
 export default defineComponent({
   setup() {
