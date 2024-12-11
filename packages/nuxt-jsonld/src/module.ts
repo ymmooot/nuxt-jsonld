@@ -2,6 +2,7 @@ import { resolve } from 'pathe';
 import { defineNuxtModule, addPlugin, addImports } from '@nuxt/kit';
 import type { Nuxt } from '@nuxt/schema';
 import type { JsonLDFunc } from './types';
+export type { JsonLD, JsonLDFunc } from './types';
 
 export type { UseJsonldOptions } from './runtime/composable';
 
