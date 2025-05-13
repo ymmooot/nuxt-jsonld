@@ -13,7 +13,7 @@ export const vuePlugin: Plugin = {
           script: [
             {
               type: 'application/ld+json',
-              children: jsonComputed.value
+              innerHTML: jsonComputed.value
                 ? JSON.stringify(jsonComputed.value, null, '')
                 : undefined,
             },

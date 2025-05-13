@@ -19,7 +19,7 @@ export const useJsonld = (json: JsonLD | JsonLDFunc, options?: UseJsonldOptions)
       script: [
         {
           type: 'application/ld+json',
-          children: JSON.stringify(jsonComputed.value, null, ''),
+          innerHTML: JSON.stringify(jsonComputed.value, null, ''),
         },
       ],
     };
