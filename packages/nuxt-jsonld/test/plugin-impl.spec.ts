@@ -64,7 +64,7 @@ describe('plugin-impl', () => {
       script: [
         {
           type: 'application/ld+json',
-          children: '{"@context":"https://schema.org","@type":"Thing","name":0}',
+          innerHTML: '{"@context":"https://schema.org","@type":"Thing","name":0}',
         },
       ],
     });
@@ -90,7 +90,7 @@ describe('plugin-impl', () => {
       script: [
         {
           type: 'application/ld+json',
-          children: undefined,
+          innerHTML: undefined,
         },
       ],
     });

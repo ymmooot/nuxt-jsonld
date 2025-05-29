@@ -29,7 +29,7 @@ describe('useJsonld', () => {
       script: [
         {
           type: 'application/ld+json',
-          children: '{"@context":"https://schema.org","@type":"Thing","name":"foo"}',
+          innerHTML: '{"@context":"https://schema.org","@type":"Thing","name":"foo"}',
         },
       ],
     });
@@ -48,7 +48,7 @@ describe('useJsonld', () => {
       script: [
         {
           type: 'application/ld+json',
-          children: '{"@context":"https://schema.org","@type":"Thing","name":"foo"}',
+          innerHTML: '{"@context":"https://schema.org","@type":"Thing","name":"foo"}',
         },
       ],
     });
