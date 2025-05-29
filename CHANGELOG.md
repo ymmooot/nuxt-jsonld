@@ -1,3 +1,12 @@
+## [2.1.1](https://github.com/ymmooot/nuxt-jsonld/compare/v2.1.0...v2.1.1) (2025-05-29)
+
+
+### Bug Fixes
+
+* Change `children` prop to `innerHTML` ([212313d](https://github.com/ymmooot/nuxt-jsonld/commit/212313d7b1b46e552f043c761fcc9bbf2f838fea)), closes [ymmooot/nuxt-jsonld#1466](https://github.com/ymmooot/nuxt-jsonld/issues/1466) [#1467](https://github.com/ymmooot/nuxt-jsonld/issues/1467)
+
+
+
 # [2.1.0](https://github.com/ymmooot/nuxt-jsonld/compare/v2.0.8...v2.1.0) (2024-11-28)
 
 
