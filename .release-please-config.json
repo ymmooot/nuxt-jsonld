@@ -1,0 +1,8 @@
+{
+  "packages": {
+    "packages/nuxt-jsonld": {
+      "release-type": "node",
+      "package-name": "nuxt-jsonld"
+    }
+  }
+}
