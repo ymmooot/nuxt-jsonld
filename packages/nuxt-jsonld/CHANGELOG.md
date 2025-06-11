@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.2.0](https://github.com/ymmooot/nuxt-jsonld/compare/v2.1.2...v2.2.0) (2025-06-11)
+## [2.2.0](https://github.com/ymmooot/nuxt-jsonld/compare/v2.1.1...v2.2.0) (2025-06-11)
 
 ### Bug Fixes
 
