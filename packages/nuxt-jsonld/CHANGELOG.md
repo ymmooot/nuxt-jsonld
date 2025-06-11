@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.2](https://github.com/ymmooot/nuxt-jsonld/compare/v2.1.1...v2.1.2) (2025-06-11)
+
+
+### Bug Fixes
+
+* augment `vue` rather than `@vue/runtime-core` ([ca43314](https://github.com/ymmooot/nuxt-jsonld/commit/ca433146b3b86095c7c3c55be8c49157223af5f4))
+* trigger release-please ([3589c7d](https://github.com/ymmooot/nuxt-jsonld/commit/3589c7d6c0018e5701d048a9805f2f3712b54271))
+
 ## [2.2.0](https://github.com/ymmooot/nuxt-jsonld/compare/nuxt-jsonld-v2.1.1...nuxt-jsonld-v2.2.0) (2025-06-11)
 
 ### Bug Fixes
