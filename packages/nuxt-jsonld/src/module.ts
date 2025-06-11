@@ -30,7 +30,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
 });
 
-declare module '@vue/runtime-core' {
+declare module 'vue' {
   interface ComponentCustomOptions {
     jsonld?: JsonLDFunc;
   }
