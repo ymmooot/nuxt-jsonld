@@ -2,7 +2,8 @@
   "packages": {
     "packages/nuxt-jsonld": {
       "release-type": "node",
-      "package-name": "nuxt-jsonld"
+      "package-name": "nuxt-jsonld",
+      "include-component-in-tag": false
     }
   }
 }
