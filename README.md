@@ -4,11 +4,11 @@
 [![downloads](https://img.shields.io/npm/dt/nuxt-jsonld.svg)](https://www.npmjs.com/package/nuxt-jsonld)
 [![Test](https://github.com/ymmooot/nuxt-jsonld/workflows/Test/badge.svg)](https://github.com/ymmooot/nuxt-jsonld/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/ymmooot/nuxt-jsonld/branch/master/graph/badge.svg)](https://codecov.io/gh/ymmooot/nuxt-jsonld)
-[![nuxt-jsonld](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/8v9ivg/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/8v9ivg/runs)
+[![nuxt-jsonld](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/8v9ivg/master&style=flat&logo=cypress)](https://cloud.cypress.io/projects/8v9ivg/runs)
 
-A Nuxt.js module to manage JSON-LD in Vue component.
+A Nuxt module to manage JSON-LD in Vue components. Supports Nuxt 3 and Nuxt 4.
 
-Please read [`nuxt-jsonld@v1` document](https://github.com/ymmooot/nuxt-jsonld/blob/v1/README.md) if you are using Nuxt2.
+Please read [`nuxt-jsonld@v1` document](https://github.com/ymmooot/nuxt-jsonld/blob/v1/README.md) if you are using Nuxt 2.
 
 ## Installation
 
@@ -32,7 +32,7 @@ export default defineNuxtConfig({
 You can call `useJsonld` with a json object.  
 Alternatively, you can pass a function for a reactive json.
 
-You can use `useJsonld` without importing, since it is provided as [Nuxt auto-imports functions](https://v3.nuxtjs.org/guide/concepts/auto-imports#nuxt-auto-imports).  
+You can use `useJsonld` without importing, since it is provided as [Nuxt auto-imports functions](https://nuxt.com/docs/guide/concepts/auto-imports).  
 Of course, you can import explicitly from `#jsonld`.
 
 ```vue
@@ -86,7 +86,7 @@ Make a jsonld method to your Vue components and return structured data object.
 
 ```vue
 <script lang="ts">
-import type { WithContext, ListItem } from 'schema-dts';
+import type { WithContext, BreadcrumbList } from 'schema-dts';
 
 export default defineComponent({
   data() {
@@ -107,7 +107,7 @@ export default defineComponent({
       ],
     };
   },
-  jsonld(): WithContext<ListItem> {
+  jsonld(): WithContext<BreadcrumbList> {
     const items = this.breadcrumbs.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -165,7 +165,7 @@ useJsonld(() => {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: this.product.name,
+    name: props.product.name,
   };
 });
 ```
@@ -179,7 +179,7 @@ You can return multiple json data as an array.
   {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: [/* breadcrumb items*/],
+    itemListElement: [/* breadcrumb items */],
   },
   {
     '@context': 'https://schema.org',
