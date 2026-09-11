@@ -14,7 +14,6 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-jsonld',
     compatibility: {
       nuxt: '>=3.0.0',
-      bridge: false,
     },
   },
   setup(options, nuxt: Nuxt) {

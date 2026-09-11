@@ -179,16 +179,12 @@ You can return multiple json data as an array.
   {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: [
-      /* breadcrumb items*/
-    ],
+    itemListElement: [/* breadcrumb items*/],
   },
   {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    mainEntityOfPage: {
-      /* article info */
-    },
+    mainEntityOfPage: {/* article info */},
   },
 ];
 ```

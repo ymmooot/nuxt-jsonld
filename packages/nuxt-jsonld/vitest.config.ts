@@ -1,5 +1,3 @@
-/// <reference types="vitest/config" />
-
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
@@ -7,7 +5,8 @@ export default defineConfig({
     environment: 'happy-dom',
     coverage: {
       provider: 'istanbul',
-      include: ['src/runtime/**/*', '!src/runtime/plugin.ts'],
+      include: ['src/runtime/**/*'],
+      exclude: ['src/runtime/plugin.ts'],
     },
   },
 });
