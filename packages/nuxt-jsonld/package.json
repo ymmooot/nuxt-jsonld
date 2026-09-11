@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "pathe": "^2.0.3",
-    "schema-dts": "^1.1.5"
+    "schema-dts": "^2.0.0"
   },
   "devDependencies": {
     "@vitest/coverage-istanbul": "^5.0.0",
