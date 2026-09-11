@@ -13,6 +13,12 @@ Please read [`nuxt-jsonld@v1` document](https://github.com/ymmooot/nuxt-jsonld/b
 ## Installation
 
 ```bash
+$ npx nuxi module add nuxt-jsonld
+```
+
+This installs the package and registers it in `nuxt.config.ts`. To do it by hand instead:
+
+```bash
 $ pnpm add nuxt-jsonld
 # or
 $ npm install nuxt-jsonld
