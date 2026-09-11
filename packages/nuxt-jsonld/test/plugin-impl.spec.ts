@@ -13,7 +13,7 @@ vi.mock('@unhead/vue', () => ({
   useHead,
 }));
 
-const getLastCalledParams = (mock: Mock<any>) => mock.mock.calls[mock.mock.calls.length - 1];
+const getLastCalledParams = (mock: Mock) => mock.mock.calls[mock.mock.calls.length - 1];
 
 describe('plugin-impl', () => {
   beforeEach(() => {

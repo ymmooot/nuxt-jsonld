@@ -13,7 +13,7 @@ Please read [`nuxt-jsonld@v1` document](https://github.com/ymmooot/nuxt-jsonld/b
 ## Installation
 
 ```bash
-$ yarn add nuxt-jsonld
+$ pnpm add nuxt-jsonld
 # or
 $ npm install nuxt-jsonld
 ```
@@ -179,16 +179,12 @@ You can return multiple json data as an array.
   {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: [
-      /* breadcrumb items*/
-    ],
+    itemListElement: [/* breadcrumb items*/],
   },
   {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    mainEntityOfPage: {
-      /* article info */
-    },
+    mainEntityOfPage: {/* article info */},
   },
 ];
 ```
