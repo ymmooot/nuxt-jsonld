@@ -3,12 +3,13 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "prepare": "yarn workspace nuxt-jsonld build",
-    "dev": "nuxi dev",
-    "build": "yarn prepare && nuxi build",
+    "build:lib": "pnpm --filter nuxt-jsonld build",
+    "dev": "pnpm build:lib && nuxi dev",
+    "build": "pnpm build:lib && nuxi build",
     "start": "node ./.output/server/index.mjs"
   },
   "dependencies": {
-    "nuxt": "^4.5.2"
+    "nuxt": "^4.5.2",
+    "nuxt-jsonld": "workspace:*"
   }
 }

@@ -1,15 +1,10 @@
 {
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
   "scripts": {
-    "lint": "yarn lint:es && yarn lint:prettier",
+    "lint": "pnpm lint:es && pnpm lint:prettier",
     "lint:es": "eslint .",
     "lint:prettier": "prettier '**/*.{js,ts,vue,html,json,md,yml}' --check",
-    "lintfix": "yarn lint:es --fix && yarn lint:prettier --write",
+    "lintfix": "pnpm lint:es --fix && pnpm lint:prettier --write",
     "cy": "cypress open --config-file ./cypress/cypress.config.ts",
     "cy:run": "cypress run --config-file ./cypress/cypress.config.ts",
     "cy:ci": "cypress run --config-file ./cypress/cypress.config.ts --record --key 8f568853-b927-4858-9e2a-6af417990ad7"
@@ -20,10 +15,11 @@
     "eslint": "^10.10.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
-    "prettier": "^3.9.6"
+    "prettier": "^3.9.6",
+    "typescript": "^5.9.3"
   },
-  "volta": {
-    "node": "24.15.0",
-    "yarn": "1.22.22"
+  "packageManager": "pnpm@11.15.0",
+  "engines": {
+    "node": ">=22.19.0"
   }
 }

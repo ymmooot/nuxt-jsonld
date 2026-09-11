@@ -13,7 +13,7 @@ Please read [`nuxt-jsonld@v1` document](https://github.com/ymmooot/nuxt-jsonld/b
 ## Installation
 
 ```bash
-$ yarn add nuxt-jsonld
+$ pnpm add nuxt-jsonld
 # or
 $ npm install nuxt-jsonld
 ```
