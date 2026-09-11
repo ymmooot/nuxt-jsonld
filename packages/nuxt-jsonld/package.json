@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@nuxt/schema": "^4.5.2",
-    "@types/node": "^22.20.2",
+    "@types/node": "^26.5.0",
     "@unhead/vue": "^3.4.0",
     "@vitest/coverage-istanbul": "^5.0.0",
     "@vue/test-utils": "^2.5.0",
