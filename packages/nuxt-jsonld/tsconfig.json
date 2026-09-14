@@ -1,14 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "target": "ESNext",
     "module": "ESNext",
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
-    "outDir": "./dist/",
-    "sourceMap": false,
-    "declaration": true,
     "lib": ["ESNext"],
     "types": ["@nuxt/schema"]
   },
