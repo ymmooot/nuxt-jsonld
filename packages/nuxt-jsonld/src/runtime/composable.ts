@@ -1,6 +1,7 @@
 import { computed } from 'vue';
 import type { JsonLD, JsonLDFunc } from './types';
 import { useHead, type UseHeadOptions } from '@unhead/vue';
+import { defaultOptions } from '#jsonld-options';
 
 const isFunc = (json: JsonLD | JsonLDFunc): json is JsonLDFunc => typeof json === 'function';
 export type UseJsonldOptions = Pick<UseHeadOptions, 'tagPosition'>;
@@ -23,5 +24,5 @@ export const useJsonld = (json: JsonLD | JsonLDFunc, options?: UseJsonldOptions)
         },
       ],
     };
-  }, options);
+  }, options ?? defaultOptions);
 };

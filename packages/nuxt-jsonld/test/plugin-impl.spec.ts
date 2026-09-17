@@ -70,6 +70,31 @@ describe('plugin-impl', () => {
     });
   });
 
+  it('passes the plugin options to useHead', () => {
+    mount(
+      {
+        template: '<div />',
+        jsonld() {
+          return {
+            '@context': 'https://schema.org',
+            '@type': 'Thing',
+            name: 'foo',
+          };
+        },
+      },
+      {
+        global: {
+          plugins: [[vuePlugin, { tagPosition: 'bodyClose' }]],
+        },
+      }
+    );
+
+    expect(useHead).toBeCalledTimes(1);
+    expect(toValue(getLastCalledParams(useHead)[1])).toEqual({
+      tagPosition: 'bodyClose',
+    });
+  });
+
   it('calls useHead with enpty when $jsonld response is undefined', () => {
     mount(
       {

@@ -72,6 +72,7 @@ useJsonld(() => ({
 
 You can use the `tagPosition: 'bodyClose'` option on applicable tags to append them to the end of the `<body>` tag.
 This option works the same as the one described in [useHead](https://nuxt.com/docs/getting-started/seo-meta#body-tags).
+Set [`tagPosition` in `nuxt.config.ts`](#tagposition-1) if you want the same position for the whole site.
 
 default: `head`
 
@@ -89,6 +90,11 @@ useJsonld(
 ```
 
 ### Options API
+
+> [!WARNING]
+> The Options API `jsonld` method is deprecated and will be removed in the next major version.
+> Use the `useJsonld` composable instead.
+> It is disabled by default. Set [`enableOptionsAPI`](#enableoptionsapi) to keep using it.
 
 Make a jsonld method to your Vue components and return structured data object.
 
@@ -136,17 +142,13 @@ export default defineComponent({
 
 ## Options
 
-### disableOptionsAPI
-
-Options API `jsonld` method is implemented using global mixin.  
-You can disable it if you don't use it.  
-(default: `false`)
+Options are given under the `nuxt-jsonld` key.
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
   modules: ['nuxt-jsonld'],
-  'nuxt-jsonld': { disableOptionsAPI: true },
+  'nuxt-jsonld': { tagPosition: 'bodyClose' },
 });
 ```
 
@@ -155,7 +157,34 @@ Or
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: [['nuxt-jsonld', { disableOptionsAPI: true }]],
+  modules: [['nuxt-jsonld', { tagPosition: 'bodyClose' }]],
+});
+```
+
+### tagPosition
+
+The default [`tagPosition`](#tagposition) for the whole site.  
+Every `useJsonld` call can still override it with its own option.  
+(default: `head`)
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  modules: ['nuxt-jsonld'],
+  'nuxt-jsonld': { tagPosition: 'bodyClose' }, // 'head', 'bodyOpen', 'bodyClose'
+});
+```
+
+### enableOptionsAPI
+
+Enable the deprecated [Options API](#options-api) `jsonld` method, which is implemented using a global mixin.  
+(default: `false`)
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  modules: ['nuxt-jsonld'],
+  'nuxt-jsonld': { enableOptionsAPI: true },
 });
 ```
 

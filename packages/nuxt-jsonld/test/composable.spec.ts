@@ -2,13 +2,19 @@ import { describe, beforeEach, it, test, expect, vi, type Mock } from 'vitest';
 import { ref, toValue } from 'vue';
 import { useJsonld } from '../src/runtime/composable';
 
-const { useHead } = vi.hoisted(() => {
+const { useHead, defaultOptions } = vi.hoisted(() => {
   return {
     useHead: vi.fn(),
+    defaultOptions: vi.fn<() => { tagPosition?: string } | undefined>(),
   };
 });
 vi.mock('@unhead/vue', () => ({
   useHead,
+}));
+vi.mock('#jsonld-options', () => ({
+  get defaultOptions() {
+    return defaultOptions();
+  },
 }));
 
 const getLastCalledParams = (mock: Mock) => mock.mock.calls[mock.mock.calls.length - 1];
@@ -66,6 +72,37 @@ describe('useJsonld', () => {
   });
 
   it('proxies options', () => {
+    useJsonld(
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Thing',
+        name: 'foo',
+      },
+      {
+        tagPosition: 'bodyClose',
+      }
+    );
+    expect(useHead).toBeCalledTimes(1);
+    expect(toValue(getLastCalledParams(useHead)[1])).toEqual({
+      tagPosition: 'bodyClose',
+    });
+  });
+
+  it('falls back to the module options when no options are given', () => {
+    defaultOptions.mockReturnValue({ tagPosition: 'bodyOpen' });
+    useJsonld({
+      '@context': 'https://schema.org',
+      '@type': 'Thing',
+      name: 'foo',
+    });
+    expect(useHead).toBeCalledTimes(1);
+    expect(toValue(getLastCalledParams(useHead)[1])).toEqual({
+      tagPosition: 'bodyOpen',
+    });
+  });
+
+  it('prefers the given options over the module options', () => {
+    defaultOptions.mockReturnValue({ tagPosition: 'bodyOpen' });
     useJsonld(
       {
         '@context': 'https://schema.org',

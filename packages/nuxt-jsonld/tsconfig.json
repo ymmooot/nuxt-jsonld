@@ -5,7 +5,10 @@
     "moduleResolution": "bundler",
     "esModuleInterop": true,
     "lib": ["ESNext"],
-    "types": ["@nuxt/schema"]
+    "types": ["@nuxt/schema"],
+    "paths": {
+      "#jsonld-options": ["./src/runtime/options"]
+    }
   },
   "include": ["./src/**/*"]
 }
