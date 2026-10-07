@@ -5,7 +5,13 @@
     "moduleResolution": "bundler",
     "esModuleInterop": true,
     "lib": ["ESNext"],
-    "types": ["@nuxt/schema"]
+    "types": ["@nuxt/schema"],
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "paths": {
+      "#imports": ["./node_modules/@unhead/vue"]
+    }
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*", "./test/**/*"]
 }

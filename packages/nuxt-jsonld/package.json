@@ -22,6 +22,7 @@
   "scripts": {
     "build": "nuxt-module-build build",
     "test": "vitest",
+    "typecheck": "tsc",
     "test:ci": "vitest run --coverage"
   },
   "dependencies": {
