@@ -93,6 +93,8 @@ useJsonld(
 
 ### Options API
 
+The Options API is disabled by default. Enable it with [`optionsAPI: true`](#optionsapi).
+
 Make a jsonld method to your Vue components and return structured data object.
 
 ```vue
@@ -139,17 +141,17 @@ export default defineComponent({
 
 ## Options
 
-### disableOptionsAPI
+### optionsAPI
 
-Options API `jsonld` method is implemented using global mixin.  
-You can disable it if you don't use it.  
+Options API `jsonld` method is implemented using global mixin, so it is disabled by default.  
+Set this to `true` if you use it.  
 (default: `false`)
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
   modules: ['nuxt-jsonld'],
-  'nuxt-jsonld': { disableOptionsAPI: true },
+  'nuxt-jsonld': { optionsAPI: true },
 });
 ```
 
@@ -158,7 +160,7 @@ Or
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: [['nuxt-jsonld', { disableOptionsAPI: true }]],
+  modules: [['nuxt-jsonld', { optionsAPI: true }]],
 });
 ```
 
