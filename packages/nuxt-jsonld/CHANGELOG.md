@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/ymmooot/nuxt-jsonld/compare/v2.3.0...v2.3.1) (2026-10-07)
+
+
+### Bug Fixes
+
+* import useHead from #imports instead of @unhead/vue ([#1506](https://github.com/ymmooot/nuxt-jsonld/issues/1506)) ([83e3d70](https://github.com/ymmooot/nuxt-jsonld/commit/83e3d70031385b57acbafccbf63b6b6baafc1aae))
+
 ## [2.3.0](https://github.com/ymmooot/nuxt-jsonld/compare/v2.2.1...v2.3.0) (2026-09-11)
 
 
