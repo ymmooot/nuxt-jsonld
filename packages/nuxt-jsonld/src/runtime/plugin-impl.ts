@@ -1,5 +1,5 @@
 import { computed, type Plugin } from 'vue';
-import { useHead } from '@unhead/vue';
+import { useHead } from '#imports';
 
 export const vuePlugin: Plugin = {
   install(Vue) {
