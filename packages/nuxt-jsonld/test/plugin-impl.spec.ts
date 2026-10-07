@@ -9,7 +9,7 @@ const { useHead } = vi.hoisted(() => {
     useHead: vi.fn(),
   };
 });
-vi.mock('@unhead/vue', () => ({
+vi.mock('#imports', () => ({
   useHead,
 }));
 
