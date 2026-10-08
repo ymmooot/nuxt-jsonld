@@ -166,6 +166,16 @@ export default defineNuxtConfig({
 
 ## Tips
 
+### TypeScript
+
+`JsonLD`, `JsonLDFunc` and `UseJsonldOptions` are exported from `nuxt-jsonld`.  
+For individual Schema.org types, import them from `schema-dts`.
+
+```ts
+import type { JsonLD, JsonLDFunc, UseJsonldOptions } from 'nuxt-jsonld';
+import type { WithContext, Product } from 'schema-dts';
+```
+
 ### Hide JSON-LD
 
 If you don't need JSON-LD tag, just return null.
