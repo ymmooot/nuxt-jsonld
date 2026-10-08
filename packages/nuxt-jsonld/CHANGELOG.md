@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.0.0](https://github.com/ymmooot/nuxt-jsonld/compare/v2.3.1...v3.0.0) (2026-10-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* the Options API is disabled by default. Set `optionsAPI: true` to keep using the `jsonld` component option. The `disableOptionsAPI` option is removed.
+* the module is disabled on Nuxt 3.
+
+### Features
+
+* make the Options API opt-in with `optionsAPI` ([1d119ea](https://github.com/ymmooot/nuxt-jsonld/commit/1d119ea6cbd05d1df30d258f4b076ab2c4f59fd0))
+* require Nuxt 4 ([f332548](https://github.com/ymmooot/nuxt-jsonld/commit/f33254833533916a7b11c0ad23cb3b77b835bee8))
+
 ## [2.3.1](https://github.com/ymmooot/nuxt-jsonld/compare/v2.3.0...v2.3.1) (2026-10-07)
 
 
