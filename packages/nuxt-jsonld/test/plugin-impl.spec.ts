@@ -44,7 +44,7 @@ describe('plugin-impl', () => {
             count: 0,
           };
         },
-        jsonld() {
+        jsonld(this: { count: number }) {
           return {
             '@context': 'https://schema.org',
             '@type': 'Thing',

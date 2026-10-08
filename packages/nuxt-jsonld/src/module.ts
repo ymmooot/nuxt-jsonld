@@ -5,7 +5,7 @@ export type { UseJsonldOptions } from './runtime/composable';
 export type { JsonLD, JsonLDFunc } from './runtime/types';
 
 export interface ModuleOptions {
-  disableOptionsAPI: boolean;
+  optionsAPI: boolean;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -13,11 +13,11 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-jsonld',
     configKey: 'nuxt-jsonld',
     compatibility: {
-      nuxt: '>=3.0.0',
+      nuxt: '>=4.0.0',
     },
   },
   defaults: {
-    disableOptionsAPI: false,
+    optionsAPI: false,
   },
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
@@ -27,7 +27,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.alias['#jsonld'] = composable;
     addImports([{ name: 'useJsonld', as: 'useJsonld', from: composable }]);
 
-    if (!options.disableOptionsAPI) {
+    if (options.optionsAPI) {
       addPlugin(resolver.resolve('./runtime/plugin'));
     }
   },

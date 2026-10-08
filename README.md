@@ -6,9 +6,12 @@
 [![codecov](https://codecov.io/gh/ymmooot/nuxt-jsonld/branch/master/graph/badge.svg)](https://codecov.io/gh/ymmooot/nuxt-jsonld)
 [![nuxt-jsonld](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/8v9ivg/master&style=flat&logo=cypress)](https://cloud.cypress.io/projects/8v9ivg/runs)
 
-A Nuxt module to manage JSON-LD in Vue components. Supports Nuxt 3 and Nuxt 4.
+A Nuxt module to manage JSON-LD in Vue components. Requires Nuxt 4.
 
-Please read [`nuxt-jsonld@v1` document](https://github.com/ymmooot/nuxt-jsonld/blob/v1/README.md) if you are using Nuxt 2.
+For older versions of Nuxt, use the matching major version of `nuxt-jsonld`:
+
+- Nuxt 3: [`nuxt-jsonld@2`](https://github.com/ymmooot/nuxt-jsonld/blob/v2.3.1/README.md)
+- Nuxt 2: [`nuxt-jsonld@1`](https://github.com/ymmooot/nuxt-jsonld/blob/v1/README.md)
 
 ## Installation
 
@@ -90,6 +93,8 @@ useJsonld(
 
 ### Options API
 
+The Options API is disabled by default. Enable it with [`optionsAPI: true`](#optionsapi).
+
 Make a jsonld method to your Vue components and return structured data object.
 
 ```vue
@@ -136,17 +141,17 @@ export default defineComponent({
 
 ## Options
 
-### disableOptionsAPI
+### optionsAPI
 
-Options API `jsonld` method is implemented using global mixin.  
-You can disable it if you don't use it.  
+Options API `jsonld` method is implemented using global mixin, so it is disabled by default.  
+Set this to `true` if you use it.  
 (default: `false`)
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
   modules: ['nuxt-jsonld'],
-  'nuxt-jsonld': { disableOptionsAPI: true },
+  'nuxt-jsonld': { optionsAPI: true },
 });
 ```
 
@@ -155,7 +160,7 @@ Or
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: [['nuxt-jsonld', { disableOptionsAPI: true }]],
+  modules: [['nuxt-jsonld', { optionsAPI: true }]],
 });
 ```
 

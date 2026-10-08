@@ -20,6 +20,7 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
+      - run: pnpm --filter nuxt-jsonld typecheck
       - run: pnpm --filter nuxt-jsonld test:ci
       - uses: codecov/codecov-action@v7
         with:
