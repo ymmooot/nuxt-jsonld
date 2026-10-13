@@ -26,7 +26,7 @@
     "test:ci": "vitest run --coverage"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.0.0",
+    "@nuxt/kit": "^4.6.1",
     "schema-dts": "^2.1.0"
   },
   "devDependencies": {
