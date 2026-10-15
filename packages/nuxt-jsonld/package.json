@@ -33,7 +33,7 @@
     "@nuxt/module-builder": "^1.0.3",
     "@nuxt/schema": "^4.6.0",
     "@unhead/vue": "^3.4.2",
-    "@vitest/coverage-istanbul": "^5.0.3",
+    "@vitest/coverage-istanbul": "^5.0.4",
     "@vue/test-utils": "^2.5.1",
     "happy-dom": "^20.14.5",
     "nuxt": "^4.6.0",
